@@ -40,6 +40,8 @@
     ::-webkit-scrollbar-track { background: #f4f4f5; }
     ::-webkit-scrollbar-thumb { background: #d4d4d8; border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: #a1a1aa; }
+    .filter-card { transition: all 0.25s ease; cursor: pointer; }
+    .filter-card:hover { transform: translateY(-2px); }
   </style>
 </head>
 
@@ -273,14 +275,14 @@
     <!-- Main Workspace -->
     <main class="p-4 lg:p-6 space-y-6" id="orderSection">
 
-      <!-- ================= 4 DYNAMIC STATS CARDS ================= -->
+      <!-- ================= 4 DYNAMIC STATS CARDS (Top Row) ================= -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         
-        <!-- 1. নির্বাচিত সময়ের মোট সেল (Live Dynamic Black Card) -->
+        <!-- 1. মোট সেল (সর্বমোট সমূহ) -->
         <div class="bg-black text-white rounded-3xl p-5 shadow-lg relative overflow-hidden flex flex-col justify-between">
           <div class="flex justify-between items-start">
-            <span class="text-xs font-semibold text-zinc-300 flex items-center gap-1.5" id="salesCardTitle">
-              <i class="fa-solid fa-box-open"></i> মোট সেল (নির্বাচিত সময়)
+            <span class="text-xs font-semibold text-zinc-300 flex items-center gap-1.5">
+              <i class="fa-solid fa-cart-shopping"></i> মোট অর্ডার (সর্বমোট সমূহ)
             </span>
             <span class="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center text-xs text-white">
               <i class="fa-solid fa-arrow-trend-up"></i>
@@ -288,50 +290,51 @@
           </div>
 
           <div class="my-3 flex items-baseline gap-2">
-            <h3 id="statSelectedSales" class="text-3xl font-black tracking-tight num">৳০</h3>
+            <h3 id="statTotalRevenueCard" class="text-3xl font-black tracking-tight num">৳০</h3>
           </div>
 
-          <p class="text-[11px] text-zinc-400 font-medium" id="salesCardSubtitle">ফিল্টারের সময় অনুযায়ী মোট সেলস</p>
+          <p class="text-[11px] text-zinc-400 font-medium">সর্বমোট বিক্রয় পরিমাণ</p>
         </div>
 
-        <!-- 2. Total Orders (মোট অর্ডার ও মূল্য) -->
+        <!-- 2. মোট আজকের অর্ডার -->
         <div class="bg-white border border-zinc-200 rounded-3xl p-5 shadow-sm flex flex-col justify-between">
           <div class="flex justify-between items-start">
             <span class="text-xs font-semibold text-zinc-500 flex items-center gap-1.5">
-              <i class="fa-regular fa-calendar text-blue-500"></i> মোট অর্ডার সংখ্যা
+              <i class="fa-regular fa-calendar text-blue-500"></i> মোট আজকের অর্ডার
             </span>
             <span class="w-8 h-8 rounded-full bg-zinc-100 text-zinc-800 flex items-center justify-center text-xs">
-              <i class="fa-solid fa-cart-shopping"></i>
+              <i class="fa-solid fa-cart-flatbed"></i>
             </span>
           </div>
 
           <div class="my-3 flex items-baseline gap-2">
-            <h3 id="statTotalOrdersCount" class="text-3xl font-black text-zinc-900 tracking-tight num">০</h3>
+            <h3 id="statTodayCount" class="text-3xl font-black text-zinc-900 tracking-tight num">০</h3>
             <span class="text-xs text-zinc-400 font-bold">টি অর্ডার</span>
           </div>
 
-          <p class="text-[11px] text-zinc-500 font-semibold">সর্বমোট বিল: <span id="statTotalRevenue" class="text-zinc-800 font-extrabold num">৳০</span></p>
+          <p class="text-[11px] text-zinc-500 font-semibold">গতকাল: <span id="statYesterdayRevenue" class="text-zinc-800 font-extrabold num">৳০</span></p>
         </div>
 
-        <!-- 3. ডেলিভার্ড অর্ডার (Delivered Orders & Value) -->
+        <!-- 3. কনফার্মড অর্ডার -->
         <div class="bg-white border border-zinc-200 rounded-3xl p-5 shadow-sm flex flex-col justify-between">
           <div class="flex justify-between items-start">
-            <span class="text-xs font-semibold text-zinc-900 flex items-center gap-1.5">
-              <i class="fa-solid fa-circle-check"></i> ডেলিভার্ড সম্পন্ন
+            <span class="text-xs font-semibold text-emerald-700 flex items-center gap-1.5">
+              <i class="fa-solid fa-circle-check"></i> কনফার্মড অর্ডার
             </span>
-            <span class="w-8 h-8 rounded-full bg-zinc-100 text-zinc-900 flex items-center justify-center text-xs">
+            <span class="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center text-xs">
               <i class="fa-solid fa-user-check"></i>
             </span>
           </div>
 
           <div class="my-3 flex items-baseline gap-2">
-            <h3 id="statDeliveredAmount" class="text-3xl font-black text-zinc-900 tracking-tight num">৳০</h3>
+            <h3 id="statConfirmedCount" class="text-3xl font-black text-emerald-700 tracking-tight num">০</h3>
+            <span class="text-xs text-zinc-400 font-bold">টি</span>
           </div>
 
-          <p class="text-[11px] text-zinc-500 font-medium">সফল ডেলিভারি: <strong id="statDeliveredCount" class="text-zinc-900 font-bold num">০</strong> টি</p>
+          <p class="text-[11px] text-zinc-500 font-medium">মোট অর্ডার: <strong id="statConfirmedTotalSub" class="text-emerald-700 font-bold num">০ টি</strong></p>
         </div>
 
-        <!-- 4. ক্যানসেলড অর্ডার (Cancelled Orders & Lost Value) -->
+        <!-- 4. বাতিল (Cancelled) -->
         <div class="bg-white border border-zinc-200 rounded-3xl p-5 shadow-sm flex flex-col justify-between">
           <div class="flex justify-between items-start">
             <span class="text-xs font-semibold text-rose-600 flex items-center gap-1.5">
@@ -343,10 +346,100 @@
           </div>
 
           <div class="my-3 flex items-baseline gap-2">
-            <h3 id="statCancelledAmount" class="text-3xl font-black text-rose-600 tracking-tight num">৳০</h3>
+            <h3 id="statCancelledCountCard" class="text-3xl font-black text-rose-600 tracking-tight num">০</h3>
+            <span class="text-xs text-zinc-400 font-bold">টি</span>
           </div>
 
-          <p class="text-[11px] text-zinc-500 font-medium">মোট বাতিল: <strong id="statCancelledCount" class="text-rose-600 font-bold num">০</strong> টি</p>
+          <p class="text-[11px] text-zinc-500 font-medium">মোট অর্ডার: <strong id="statCancelledTotalSub" class="text-rose-600 font-bold num">০ টি</strong></p>
+        </div>
+
+      </div>
+
+      <!-- ================= 6 INTERACTIVE QUICK FILTER CARDS (Bottom Row) ================= -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-3">
+        
+        <!-- 1. সব অর্ডার -->
+        <div onclick="setQuickFilter('ALL')" id="filterCard-ALL" class="filter-card bg-black text-white rounded-2xl p-3.5 shadow-sm flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center text-sm">
+              <i class="fa-solid fa-border-all"></i>
+            </div>
+            <div>
+              <div id="quickCount-ALL" class="text-lg font-black num leading-tight">০</div>
+              <div class="text-[11px] text-zinc-300 font-medium">সব অর্ডার</div>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-right text-xs text-zinc-400"></i>
+        </div>
+
+        <!-- 2. কনফার্মড -->
+        <div onclick="setQuickFilter('Confirmed')" id="filterCard-Confirmed" class="filter-card bg-white border border-zinc-200 rounded-2xl p-3.5 shadow-sm flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-sm">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div>
+              <div id="quickCount-Confirmed" class="text-lg font-black text-zinc-900 num leading-tight">০</div>
+              <div class="text-[11px] text-zinc-500 font-medium">কনফার্মড</div>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-right text-xs text-zinc-400"></i>
+        </div>
+
+        <!-- 3. প্রসেসিং (Pending) -->
+        <div onclick="setQuickFilter('Pending')" id="filterCard-Pending" class="filter-card bg-white border border-zinc-200 rounded-2xl p-3.5 shadow-sm flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-sm">
+              <i class="fa-solid fa-spinner"></i>
+            </div>
+            <div>
+              <div id="quickCount-Pending" class="text-lg font-black text-zinc-900 num leading-tight">০</div>
+              <div class="text-[11px] text-zinc-500 font-medium">প্রসেসিং</div>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-right text-xs text-zinc-400"></i>
+        </div>
+
+        <!-- 4. শিpped -->
+        <div onclick="setQuickFilter('Shipped')" id="filterCard-Shipped" class="filter-card bg-white border border-zinc-200 rounded-2xl p-3.5 shadow-sm flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-sm">
+              <i class="fa-solid fa-truck-fast"></i>
+            </div>
+            <div>
+              <div id="quickCount-Shipped" class="text-lg font-black text-zinc-900 num leading-tight">০</div>
+              <div class="text-[11px] text-zinc-500 font-medium">শিপড</div>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-right text-xs text-zinc-400"></i>
+        </div>
+
+        <!-- 5. ডেলিভার্ড -->
+        <div onclick="setQuickFilter('Delivered')" id="filterCard-Delivered" class="filter-card bg-white border border-zinc-200 rounded-2xl p-3.5 shadow-sm flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div>
+              <div id="quickCount-Delivered" class="text-lg font-black text-zinc-900 num leading-tight">০</div>
+              <div class="text-[11px] text-zinc-500 font-medium">ডেলিভার্ড</div>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-right text-xs text-zinc-400"></i>
+        </div>
+
+        <!-- 6. ক্যানসেলড -->
+        <div onclick="setQuickFilter('Cancelled')" id="filterCard-Cancelled" class="filter-card bg-white border border-zinc-200 rounded-2xl p-3.5 shadow-sm flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center text-sm">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div>
+              <div id="quickCount-Cancelled" class="text-lg font-black text-zinc-900 num leading-tight">০</div>
+              <div class="text-[11px] text-zinc-500 font-medium">ক্যানসেলড</div>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-right text-xs text-zinc-400"></i>
         </div>
 
       </div>
@@ -545,6 +638,7 @@
     const PASSWORD = "admin123"; 
 
     let allOrders = [];
+    let currentQuickStatus = 'ALL';
 
     const toEn = (s) => String(s).replace(/[০-৯]/g, d => "০১২৩৪৫৬৭৮৯".indexOf(d));
     const parseAmount = (str) => {
@@ -579,7 +673,7 @@
     // Load Orders from Worker
     async function loadOrders() {
       const icon = document.getElementById('refreshIcon');
-      icon.classList.add('fa-spin');
+      if(icon) icon.classList.add('fa-spin');
 
       try {
         const res = await fetch(`${WORKER_URL}/orders?store=AL`);
@@ -595,17 +689,20 @@
       } catch (err) {
         alert("অর্ডার লোড হতে সমস্যা হয়েছে! Worker চেক করুন।");
       } finally {
-        icon.classList.remove('fa-spin');
+        if(icon) icon.classList.remove('fa-spin');
       }
     }
 
-    // Dynamic Analytics Calculator based on filtered & total dataset
+    // Dynamic Analytics Calculator & Quick Counter Update
     function calculateAnalytics(filteredOrders, allList) {
       let selectedSales = 0;
       let totalRevenue = 0, totalOrdersCount = allList.length;
-      let deliveredAmount = 0, deliveredCount = 0;
-      let cancelledAmount = 0, cancelledCount = 0;
-      let processingCount = 0, shippedCount = 0;
+      let todayCount = 0, yesterdayRevenue = 0;
+      let confirmedCount = 0, pendingCount = 0, shippedCount = 0, deliveredCount = 0, cancelledCount = 0;
+
+      const today = new Date();
+      const yesterday = new Date();
+      yesterday.setDate(yesterday.getDate() - 1);
 
       // 1. Calculate Selected Period Sales for the Black Card
       filteredOrders.forEach(o => {
@@ -615,7 +712,7 @@
         }
       });
 
-      // 2. Overall counts
+      // 2. Overall counts & categories
       allList.forEach(o => {
         const amt = o.numericTotal;
         totalRevenue += amt;
@@ -623,33 +720,85 @@
         const s = (o.status || 'Pending').toLowerCase();
         if (s.includes('deliver')) {
           deliveredCount++;
-          deliveredAmount += amt;
         } else if (s.includes('cancel')) {
           cancelledCount++;
-          cancelledAmount += amt;
         } else if (s.includes('ship')) {
           shippedCount++;
+        } else if (s.includes('confirm')) {
+          confirmedCount++;
         } else {
-          processingCount++;
+          pendingCount++;
+        }
+
+        // Today check
+        if (isSameDay(o.time, today)) {
+          todayCount++;
+        }
+        // Yesterday revenue check
+        if (isSameDay(o.time, yesterday)) {
+          if (!s.includes('cancel')) yesterdayRevenue += amt;
         }
       });
 
-      document.getElementById('statSelectedSales').innerText = `৳${selectedSales.toLocaleString()}`;
-      document.getElementById('statTotalOrdersCount').innerText = totalOrdersCount;
-      document.getElementById('statTotalRevenue').innerText = `৳${totalRevenue.toLocaleString()}`;
-      document.getElementById('statDeliveredAmount').innerText = `৳${deliveredAmount.toLocaleString()}`;
-      document.getElementById('statDeliveredCount').innerText = deliveredCount;
-      document.getElementById('statCancelledAmount').innerText = `৳${cancelledAmount.toLocaleString()}`;
-      document.getElementById('statCancelledCount').innerText = cancelledCount;
+      // Top Stat Cards
+      document.getElementById('statTotalRevenueCard').innerText = `৳${totalRevenue.toLocaleString()}`;
+      document.getElementById('statTodayCount').innerText = todayCount;
+      document.getElementById('statYesterdayRevenue').innerText = `৳${yesterdayRevenue.toLocaleString()}`;
+      
+      document.getElementById('statConfirmedCount').innerText = confirmedCount;
+      document.getElementById('statConfirmedTotalSub').innerText = `${confirmedCount} টি`;
 
-      // Sidebar summary
-      document.getElementById('sideDeliveredCount').innerText = String(deliveredCount).padStart(2, '0');
-      document.getElementById('sideProcessingCount').innerText = String(processingCount).padStart(2, '0');
-      document.getElementById('sideShippedCount').innerText = String(shippedCount).padStart(2, '0');
-      document.getElementById('sideCancelledCount').innerText = String(cancelledCount).padStart(2, '0');
+      document.getElementById('statCancelledCountCard').innerText = cancelledCount;
+      document.getElementById('statCancelledTotalSub').innerText = `${cancelledCount} টি`;
+
+      // Bottom Quick Filter Badges Counts
+      document.getElementById('quickCount-ALL').innerText = totalOrdersCount;
+      document.getElementById('quickCount-Confirmed').innerText = confirmedCount;
+      document.getElementById('quickCount-Pending').innerText = pendingCount;
+      document.getElementById('quickCount-Shipped').innerText = shippedCount;
+      document.getElementById('quickCount-Delivered').innerText = deliveredCount;
+      document.getElementById('quickCount-Cancelled').innerText = cancelledCount;
     }
 
-    // Helper Date Functions - Fixed & Robust Parser
+    // Set Quick Filter when clicking bottom 6 cards
+    function setQuickFilter(statusKey) {
+      currentQuickStatus = statusKey;
+      
+      // Update active styles on the 6 quick filter cards
+      const keys = ['ALL', 'Confirmed', 'Pending', 'Shipped', 'Delivered', 'Cancelled'];
+      keys.forEach(k => {
+        const card = document.getElementById(`filterCard-${k}`);
+        if(!card) return;
+        if(k === statusKey) {
+          card.className = "filter-card bg-black text-white rounded-2xl p-3.5 shadow-sm flex items-center justify-between";
+          const countEl = document.getElementById(`quickCount-${k}`);
+          if(countEl) countEl.className = "text-lg font-black num leading-tight text-white";
+          const labelEl = card.querySelector('.text-\\[11px\\]');
+          if(labelEl) labelEl.className = "text-[11px] text-zinc-300 font-medium";
+        } else {
+          card.className = "filter-card bg-white border border-zinc-200 rounded-2xl p-3.5 shadow-sm flex items-center justify-between";
+          const countEl = document.getElementById(`quickCount-${k}`);
+          if(countEl) countEl.className = "text-lg font-black text-zinc-900 num leading-tight";
+          const labelEl = card.querySelector('.text-\\[11px\\]');
+          if(labelEl) labelEl.className = "text-[11px] text-zinc-500 font-medium";
+        }
+      });
+
+      // Sync with top status select dropdown
+      const statusSelect = document.getElementById('statusFilter');
+      if(statusSelect) {
+        if(statusKey === 'ALL') statusSelect.value = 'ALL';
+        else if(statusKey === 'Pending') statusSelect.value = 'Pending';
+        else if(statusKey === 'Confirmed') statusSelect.value = 'Confirmed';
+        else if(statusKey === 'Shipped') statusSelect.value = 'Shipped';
+        else if(statusKey === 'Delivered') statusSelect.value = 'Delivered';
+        else if(statusKey === 'Cancelled') statusSelect.value = 'Cancelled';
+      }
+
+      filterOrders();
+    }
+
+    // Helper Date Functions - Robust Parser
     function parseOrderDate(dateStr) {
       if (!dateStr) return null;
       let d = new Date(dateStr);
@@ -732,7 +881,13 @@
     // Filter Logic
     function filterOrders() {
       const q = document.getElementById('searchInput').value.toLowerCase().trim();
-      const status = document.getElementById('statusFilter').value;
+      const statusSelectVal = document.getElementById('statusFilter').value;
+      
+      // If dropdown changed manually, sync with currentQuickStatus
+      if (statusSelectVal !== 'ALL') {
+        currentQuickStatus = statusSelectVal;
+      }
+
       const datePreset = document.getElementById('dateFilter').value;
       const startD = document.getElementById('startDateInput').value;
       const endD = document.getElementById('endDateInput').value;
@@ -747,7 +902,11 @@
                            (o.orderId && o.orderId.toLowerCase().includes(q)) ||
                            (o.address && o.address.toLowerCase().includes(q));
         
-        const matchStatus = (status === 'ALL' || o.status === status);
+        let matchStatus = true;
+        if (currentQuickStatus !== 'ALL') {
+          const itemStatus = (o.status || 'Pending');
+          matchStatus = (itemStatus.toLowerCase() === currentQuickStatus.toLowerCase());
+        }
 
         let matchDate = true;
         if (datePreset === 'TODAY') {
