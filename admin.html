@@ -278,11 +278,11 @@
       <!-- ================= 4 DYNAMIC STATS CARDS (Top Row) ================= -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         
-        <!-- 1. মোট সেল (সর্বমোট সমূহ) -->
+        <!-- 1. মোট সেল (নির্বাচিত সময় অনুযায়ী ডাইনামিক আপডেট হবে) -->
         <div class="bg-black text-white rounded-3xl p-5 shadow-lg relative overflow-hidden flex flex-col justify-between">
           <div class="flex justify-between items-start">
-            <span class="text-xs font-semibold text-zinc-300 flex items-center gap-1.5">
-              <i class="fa-solid fa-cart-shopping"></i> মোট অর্ডার (সর্বমোট সমূহ)
+            <span class="text-xs font-semibold text-zinc-300 flex items-center gap-1.5" id="salesCardTitle">
+              <i class="fa-solid fa-box-open"></i> মোট অর্ডার (সর্বমোট সমূহ)
             </span>
             <span class="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center text-xs text-white">
               <i class="fa-solid fa-arrow-trend-up"></i>
@@ -290,10 +290,10 @@
           </div>
 
           <div class="my-3 flex items-baseline gap-2">
-            <h3 id="statTotalRevenueCard" class="text-3xl font-black tracking-tight num">৳০</h3>
+            <h3 id="statSelectedSales" class="text-3xl font-black tracking-tight num">৳০</h3>
           </div>
 
-          <p class="text-[11px] text-zinc-400 font-medium">সর্বমোট বিক্রয় পরিমাণ</p>
+          <p class="text-[11px] text-zinc-400 font-medium" id="salesCardSubtitle">ফিল্টারের সময় অনুযায়ী মোট সেলস</p>
         </div>
 
         <!-- 2. মোট আজকের অর্ডার -->
@@ -327,11 +327,10 @@
           </div>
 
           <div class="my-3 flex items-baseline gap-2">
-            <h3 id="statConfirmedCount" class="text-3xl font-black text-emerald-700 tracking-tight num">০</h3>
-            <span class="text-xs text-zinc-400 font-bold">টি</span>
+            <h3 id="statConfirmedAmount" class="text-3xl font-black text-emerald-700 tracking-tight num">৳০</h3>
           </div>
 
-          <p class="text-[11px] text-zinc-500 font-medium">মোট অর্ডার: <strong id="statConfirmedTotalSub" class="text-emerald-700 font-bold num">০ টি</strong></p>
+          <p class="text-[11px] text-zinc-500 font-medium">অর্ডার পরিমাণ: <strong id="statConfirmedCount" class="text-emerald-700 font-bold num">০</strong> টি</p>
         </div>
 
         <!-- 4. বাতিল (Cancelled) -->
@@ -346,11 +345,10 @@
           </div>
 
           <div class="my-3 flex items-baseline gap-2">
-            <h3 id="statCancelledCountCard" class="text-3xl font-black text-rose-600 tracking-tight num">০</h3>
-            <span class="text-xs text-zinc-400 font-bold">টি</span>
+            <h3 id="statCancelledAmount" class="text-3xl font-black text-rose-600 tracking-tight num">৳০</h3>
           </div>
 
-          <p class="text-[11px] text-zinc-500 font-medium">মোট অর্ডার: <strong id="statCancelledTotalSub" class="text-rose-600 font-bold num">০ টি</strong></p>
+          <p class="text-[11px] text-zinc-500 font-medium">অর্ডার পরিমাণ: <strong id="statCancelledCount" class="text-rose-600 font-bold num">০</strong> টি</p>
         </div>
 
       </div>
@@ -699,12 +697,13 @@
       let totalRevenue = 0, totalOrdersCount = allList.length;
       let todayCount = 0, yesterdayRevenue = 0;
       let confirmedCount = 0, pendingCount = 0, shippedCount = 0, deliveredCount = 0, cancelledCount = 0;
+      let confirmedAmount = 0, cancelledAmount = 0;
 
       const today = new Date();
       const yesterday = new Date();
       yesterday.setDate(yesterday.getDate() - 1);
 
-      // 1. Calculate Selected Period Sales for the Black Card
+      // 1. Calculate Selected Period Sales for the Black Card (Top Left)
       filteredOrders.forEach(o => {
         const s = (o.status || 'Pending').toLowerCase();
         if (!s.includes('cancel')) {
@@ -722,10 +721,12 @@
           deliveredCount++;
         } else if (s.includes('cancel')) {
           cancelledCount++;
+          cancelledAmount += amt;
         } else if (s.includes('ship')) {
           shippedCount++;
         } else if (s.includes('confirm')) {
           confirmedCount++;
+          confirmedAmount += amt;
         } else {
           pendingCount++;
         }
@@ -740,16 +741,41 @@
         }
       });
 
-      // Top Stat Cards
-      document.getElementById('statTotalRevenueCard').innerText = `৳${totalRevenue.toLocaleString()}`;
+      // Top Stat Cards Update
+      const datePreset = document.getElementById('dateFilter').value;
+      let subTitleText = "ফিল্টারের সময় অনুযায়ী মোট সেলস";
+      let mainTitleText = "মোট অর্ডার (সর্বমোট সমূহ)";
+      if(datePreset === 'TODAY') {
+        subTitleText = "আজকের দিনের মোট বিক্রয় পরিমাণ";
+        mainTitleText = "আজকের মোট অর্ডার ও সেল";
+      } else if(datePreset === 'YESTERDAY') {
+        subTitleText = "গতকালের মোট বিক্রয় পরিমাণ";
+        mainTitleText = "গতকালের মোট অর্ডার ও সেল";
+      } else if(datePreset === '7DAYS') {
+        subTitleText = "বিগত ৭ দিনের মোট বিক্রয় পরিমাণ";
+        mainTitleText = "৭ দিনের মোট অর্ডার ও সেল";
+      } else if(datePreset === '30DAYS') {
+        subTitleText = "বিগত ৩০ দিনের মোট বিক্রয় পরিমাণ";
+        mainTitleText = "৩০ দিনের মোট অর্ডার ও সেল";
+      } else if(datePreset === 'CUSTOM') {
+        subTitleText = "নির্বাচিত তারিখের মোট বিক্রয় পরিমাণ";
+        mainTitleText = "কাস্টম রেঞ্জ মোট অর্ডার ও সেল";
+      }
+
+      document.getElementById('salesCardTitle').innerHTML = `<i class="fa-solid fa-box-open"></i> ${mainTitleText}`;
+      document.getElementById('statSelectedSales').innerText = `৳${selectedSales.toLocaleString()}`;
+      document.getElementById('salesCardSubtitle').innerText = subTitleText;
+
       document.getElementById('statTodayCount').innerText = todayCount;
       document.getElementById('statYesterdayRevenue').innerText = `৳${yesterdayRevenue.toLocaleString()}`;
       
+      // Confirmed Card: Amount + Sub quantity
+      document.getElementById('statConfirmedAmount').innerText = `৳${confirmedAmount.toLocaleString()}`;
       document.getElementById('statConfirmedCount').innerText = confirmedCount;
-      document.getElementById('statConfirmedTotalSub').innerText = `${confirmedCount} টি`;
 
-      document.getElementById('statCancelledCountCard').innerText = cancelledCount;
-      document.getElementById('statCancelledTotalSub').innerText = `${cancelledCount} টি`;
+      // Cancelled Card: Amount + Sub quantity
+      document.getElementById('statCancelledAmount').innerText = `৳${cancelledAmount.toLocaleString()}`;
+      document.getElementById('statCancelledCount').innerText = cancelledCount;
 
       // Bottom Quick Filter Badges Counts
       document.getElementById('quickCount-ALL').innerText = totalOrdersCount;
@@ -764,7 +790,6 @@
     function setQuickFilter(statusKey) {
       currentQuickStatus = statusKey;
       
-      // Update active styles on the 6 quick filter cards
       const keys = ['ALL', 'Confirmed', 'Pending', 'Shipped', 'Delivered', 'Cancelled'];
       keys.forEach(k => {
         const card = document.getElementById(`filterCard-${k}`);
@@ -784,7 +809,6 @@
         }
       });
 
-      // Sync with top status select dropdown
       const statusSelect = document.getElementById('statusFilter');
       if(statusSelect) {
         if(statusKey === 'ALL') statusSelect.value = 'ALL';
@@ -883,7 +907,6 @@
       const q = document.getElementById('searchInput').value.toLowerCase().trim();
       const statusSelectVal = document.getElementById('statusFilter').value;
       
-      // If dropdown changed manually, sync with currentQuickStatus
       if (statusSelectVal !== 'ALL') {
         currentQuickStatus = statusSelectVal;
       }
