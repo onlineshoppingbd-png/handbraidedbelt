@@ -139,8 +139,8 @@
         <div class="flex items-center gap-2.5">
           <span class="w-9 h-9 rounded-xl bg-white/10 text-white flex items-center justify-center text-base"><i class="fa-solid fa-sliders"></i></span>
           <div>
-            <h3 class="font-bold text-base">API, পিক্সেল ও ইমেইল সেটিংস</h3>
-            <p class="text-[11px] text-zinc-400">কুরিয়ার, ফেসবুক পিক্সেল ও নোটিফিকেশন কনফিগারেশন</p>
+            <h3 class="font-bold text-base">API & পিক্সেল সেটিংস</h3>
+            <p class="text-[11px] text-zinc-400">কুরিয়ার ও ফেসবুক পিক্সেল কনফিগারেশন</p>
           </div>
         </div>
         <button onclick="closeSettingsModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-sm transition">
@@ -149,8 +149,6 @@
       </div>
 
       <form id="settingsForm" onsubmit="saveSettings(event)" class="p-6 overflow-y-auto space-y-4 text-xs sm:text-sm">
-        
-        <!-- 1. Meta Pixel -->
         <div class="bg-zinc-50 p-4 rounded-2xl border border-zinc-200">
           <label class="block font-bold text-zinc-800 mb-1 flex items-center gap-1.5">
             <i class="fa-brands fa-facebook text-blue-600 text-sm"></i> Meta (Facebook) Pixel ID
@@ -158,7 +156,6 @@
           <input type="text" id="cfgMetaPixel" placeholder="যেমন: 1507252884365898" class="w-full bg-white border border-zinc-200 rounded-xl px-3 py-2 font-mono text-xs outline-none focus:border-black" />
         </div>
 
-        <!-- 2. SteadFast Courier API -->
         <div class="bg-zinc-50 p-4 rounded-2xl border border-zinc-200 space-y-3">
           <div class="font-bold text-zinc-800 flex items-center gap-1.5">
             <i class="fa-solid fa-truck-fast text-black text-sm"></i> SteadFast Courier API
@@ -173,23 +170,11 @@
           </div>
         </div>
 
-        <!-- 3. BDCourier API Key -->
         <div class="bg-zinc-50 p-4 rounded-2xl border border-zinc-200">
           <label class="block font-bold text-zinc-800 mb-1 flex items-center gap-1.5">
             <i class="fa-solid fa-shield-virus text-amber-600 text-sm"></i> BDCourier API Key
           </label>
           <input type="text" id="cfgBdCourierKey" placeholder="BDCourier Key..." class="w-full bg-white border border-zinc-200 rounded-xl px-3 py-2 font-mono text-xs outline-none focus:border-black" />
-        </div>
-
-        <!-- 4. ✨ NEW: অর্ডার নোটিফিকেশন ইমেইল (নির্দেশনাসহ) -->
-        <div class="bg-zinc-50 p-4 rounded-2xl border border-zinc-200">
-          <label class="block font-bold text-zinc-800 mb-1 flex items-center gap-1.5">
-            <i class="fa-solid fa-envelope text-emerald-600 text-sm"></i> অর্ডার নোটিফিকেশন ইমেইল (Merchant Email)
-          </label>
-          <input type="email" id="cfgNotifyEmail" placeholder="যেমন: owner@gmail.com" class="w-full bg-white border border-zinc-200 rounded-xl px-3 py-2.5 text-xs outline-none focus:border-black font-medium" />
-          <p class="text-[11px] text-zinc-500 mt-1.5 leading-relaxed">
-            💡 <b>নির্দেশনা:</b> ওয়েবসাইটে নতুন কোনো অর্ডার আসার সাথে সাথে এই ইমেইলে অর্ডারের সম্পূর্ণ ইনভয়েস ও কাস্টমারের বিবরণী নিজে থেকেই চলে যাবে।
-          </p>
         </div>
 
         <button type="submit" id="saveCfgBtn" class="w-full bg-black hover:bg-zinc-800 text-white font-bold py-3 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm">
@@ -221,7 +206,7 @@
         <i class="fa-solid fa-chart-pie text-zinc-400 w-4 text-center"></i> লাইভ রিপোর্ট & অ্যানালিটিক্স
       </a>
       <button onclick="openSettingsModal()" class="w-full flex items-center gap-3 px-3.5 py-3 rounded-xl hover:bg-zinc-50 hover:text-zinc-900 transition text-left">
-        <i class="fa-solid fa-gear text-zinc-400 w-4 text-center"></i> সেটিংস (API, পিক্সেল ও ইমেইল)
+        <i class="fa-solid fa-gear text-zinc-400 w-4 text-center"></i> সেটিংস (API & Pixel)
       </button>
     </nav>
 
@@ -290,10 +275,10 @@
     <!-- Main Workspace -->
     <main class="p-4 lg:p-6 space-y-6" id="orderSection">
 
-      <!-- ================= 4 DYNAMIC STATS CARDS ================= -->
+      <!-- ================= 4 DYNAMIC STATS CARDS (Top Row) ================= -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         
-        <!-- 1. মোট সেল -->
+        <!-- 1. মোট সেল (নির্বাচিত সময় অনুযায়ী ডাইনামিক আপডেট হবে) -->
         <div class="bg-black text-white rounded-3xl p-5 shadow-lg relative overflow-hidden flex flex-col justify-between">
           <div class="flex justify-between items-start">
             <span class="text-xs font-semibold text-zinc-300 flex items-center gap-1.5" id="salesCardTitle">
@@ -368,12 +353,15 @@
 
       </div>
 
-      <!-- ================= 6 QUICK FILTER CARDS ================= -->
+      <!-- ================= 6 INTERACTIVE QUICK FILTER CARDS (Bottom Row) ================= -->
       <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-3">
         
+        <!-- 1. সব অর্ডার -->
         <div onclick="setQuickFilter('ALL')" id="filterCard-ALL" class="filter-card bg-black text-white rounded-2xl p-3.5 shadow-sm flex items-center justify-between">
           <div class="flex items-center gap-2.5">
-            <div class="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center text-sm"><i class="fa-solid fa-border-all"></i></div>
+            <div class="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center text-sm">
+              <i class="fa-solid fa-border-all"></i>
+            </div>
             <div>
               <div id="quickCount-ALL" class="text-lg font-black num leading-tight">০</div>
               <div class="text-[11px] text-zinc-300 font-medium">সব অর্ডার</div>
@@ -382,9 +370,12 @@
           <i class="fa-solid fa-chevron-right text-xs text-zinc-400"></i>
         </div>
 
+        <!-- 2. কনফার্মড -->
         <div onclick="setQuickFilter('Confirmed')" id="filterCard-Confirmed" class="filter-card bg-white border border-zinc-200 rounded-2xl p-3.5 shadow-sm flex items-center justify-between">
           <div class="flex items-center gap-2.5">
-            <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-sm"><i class="fa-solid fa-check"></i></div>
+            <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-sm">
+              <i class="fa-solid fa-check"></i>
+            </div>
             <div>
               <div id="quickCount-Confirmed" class="text-lg font-black text-zinc-900 num leading-tight">০</div>
               <div class="text-[11px] text-zinc-500 font-medium">কনফার্মড</div>
@@ -393,9 +384,12 @@
           <i class="fa-solid fa-chevron-right text-xs text-zinc-400"></i>
         </div>
 
+        <!-- 3. প্রসেসিং (Pending) -->
         <div onclick="setQuickFilter('Pending')" id="filterCard-Pending" class="filter-card bg-white border border-zinc-200 rounded-2xl p-3.5 shadow-sm flex items-center justify-between">
           <div class="flex items-center gap-2.5">
-            <div class="w-9 h-9 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-sm"><i class="fa-solid fa-spinner"></i></div>
+            <div class="w-9 h-9 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-sm">
+              <i class="fa-solid fa-spinner"></i>
+            </div>
             <div>
               <div id="quickCount-Pending" class="text-lg font-black text-zinc-900 num leading-tight">০</div>
               <div class="text-[11px] text-zinc-500 font-medium">প্রসেসিং</div>
@@ -404,9 +398,12 @@
           <i class="fa-solid fa-chevron-right text-xs text-zinc-400"></i>
         </div>
 
+        <!-- 4. শিpped -->
         <div onclick="setQuickFilter('Shipped')" id="filterCard-Shipped" class="filter-card bg-white border border-zinc-200 rounded-2xl p-3.5 shadow-sm flex items-center justify-between">
           <div class="flex items-center gap-2.5">
-            <div class="w-9 h-9 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-sm"><i class="fa-solid fa-truck-fast"></i></div>
+            <div class="w-9 h-9 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-sm">
+              <i class="fa-solid fa-truck-fast"></i>
+            </div>
             <div>
               <div id="quickCount-Shipped" class="text-lg font-black text-zinc-900 num leading-tight">০</div>
               <div class="text-[11px] text-zinc-500 font-medium">শিপড</div>
@@ -415,9 +412,12 @@
           <i class="fa-solid fa-chevron-right text-xs text-zinc-400"></i>
         </div>
 
+        <!-- 5. ডেলিভার্ড -->
         <div onclick="setQuickFilter('Delivered')" id="filterCard-Delivered" class="filter-card bg-white border border-zinc-200 rounded-2xl p-3.5 shadow-sm flex items-center justify-between">
           <div class="flex items-center gap-2.5">
-            <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm"><i class="fa-solid fa-circle-check"></i></div>
+            <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
             <div>
               <div id="quickCount-Delivered" class="text-lg font-black text-zinc-900 num leading-tight">০</div>
               <div class="text-[11px] text-zinc-500 font-medium">ডেলিভার্ড</div>
@@ -426,9 +426,12 @@
           <i class="fa-solid fa-chevron-right text-xs text-zinc-400"></i>
         </div>
 
+        <!-- 6. ক্যানসেলড -->
         <div onclick="setQuickFilter('Cancelled')" id="filterCard-Cancelled" class="filter-card bg-white border border-zinc-200 rounded-2xl p-3.5 shadow-sm flex items-center justify-between">
           <div class="flex items-center gap-2.5">
-            <div class="w-9 h-9 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center text-sm"><i class="fa-solid fa-xmark"></i></div>
+            <div class="w-9 h-9 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center text-sm">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
             <div>
               <div id="quickCount-Cancelled" class="text-lg font-black text-zinc-900 num leading-tight">০</div>
               <div class="text-[11px] text-zinc-500 font-medium">ক্যানসেলড</div>
@@ -443,13 +446,17 @@
       <div class="space-y-3">
         <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
           
+          <!-- Search Input -->
           <div class="relative flex-1">
             <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-zinc-400 text-sm"></i>
             <input type="text" id="searchInput" oninput="filterOrders()" placeholder="নাম, ঠিকানা, অর্ডার আইডি বা মোবাইল নাম্বার দিয়ে খুঁজুন..." 
               class="w-full bg-white border border-zinc-200 rounded-2xl pl-11 pr-4 py-3 text-xs sm:text-sm outline-none focus:border-black shadow-sm transition" />
           </div>
 
+          <!-- Filters -->
           <div class="flex items-center gap-2 flex-wrap sm:flex-nowrap">
+            
+            <!-- Filter: Date Preset + Custom Range -->
             <div class="relative">
               <select id="dateFilter" onchange="handleDatePresetChange()" class="bg-white border border-zinc-200 text-xs font-bold text-zinc-700 rounded-2xl px-4 py-3 outline-none focus:border-black shadow-sm cursor-pointer appearance-none pr-8">
                 <option value="ALL">📅 সব সময়ের অর্ডার (All Time)</option>
@@ -462,6 +469,7 @@
               <i class="fa-solid fa-chevron-down absolute right-3 top-3.5 text-[10px] text-zinc-400 pointer-events-none"></i>
             </div>
 
+            <!-- Status Filter -->
             <div class="relative">
               <select id="statusFilter" onchange="filterOrders()" class="bg-white border border-zinc-200 text-xs font-bold text-zinc-700 rounded-2xl px-4 py-3 outline-none focus:border-black shadow-sm cursor-pointer appearance-none pr-8">
                 <option value="ALL">⚡ সকল স্ট্যাটাস</option>
@@ -474,6 +482,7 @@
               <i class="fa-solid fa-chevron-down absolute right-3 top-3.5 text-[10px] text-zinc-400 pointer-events-none"></i>
             </div>
 
+            <!-- Refresh Button -->
             <button onclick="loadOrders()" id="refreshBtn" title="রিফ্রেশ করুন" class="w-11 h-11 bg-white hover:bg-zinc-50 border border-zinc-200 text-zinc-700 rounded-2xl flex items-center justify-center text-sm shadow-sm transition">
               <i class="fa-solid fa-rotate" id="refreshIcon"></i>
             </button>
@@ -481,6 +490,7 @@
 
         </div>
 
+        <!-- 📅 Custom Date Range Picker (Shown when "CUSTOM" is selected) -->
         <div id="customDateRangeBox" class="bg-white border border-zinc-300 rounded-2xl p-3.5 shadow-sm hidden flex flex-wrap items-center justify-between gap-3">
           <div class="flex items-center gap-2 text-xs font-bold text-zinc-800">
             <i class="fa-solid fa-calendar-days text-black"></i> তারিখ থেকে তারিখ নির্বাচন করুন:
@@ -498,6 +508,7 @@
       <!-- ================= ORDER DATA TABLE ================= -->
       <div class="bg-white border border-zinc-200 rounded-3xl shadow-sm overflow-hidden">
         
+        <!-- Table Top Header Bar -->
         <div class="px-6 py-4 border-b border-zinc-100 flex items-center justify-between">
           <div class="flex items-center gap-2.5">
             <h3 class="font-extrabold text-zinc-900 text-base">অর্ডার তালিকা</h3>
@@ -540,6 +551,7 @@
   <!-- ================= 3. RIGHT SIDEBAR ================= -->
   <aside class="w-80 bg-white border-l border-zinc-200 p-5 flex flex-col gap-5 shrink-0 hidden xl:flex">
     
+    <!-- 1. Delivery Truck Promo Banner -->
     <div class="rounded-2xl overflow-hidden border border-zinc-200 shadow-sm relative group bg-zinc-900">
       <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&auto=format&fit=crop&q=80" alt="Delivery" class="w-full h-32 object-cover opacity-80 group-hover:scale-105 transition duration-500" />
       <div class="p-4 bg-white">
@@ -548,6 +560,7 @@
       </div>
     </div>
 
+    <!-- 2. অর্ডার স্ট্যাটাস সারাংশ Card -->
     <div class="bg-white border border-zinc-200 rounded-2xl p-4 shadow-sm">
       <h4 class="font-black text-xs text-zinc-900 mb-3 flex items-center justify-between">
         <span>অর্ডার স্ট্যাটাস সারাংশ</span>
@@ -585,6 +598,7 @@
       </div>
     </div>
 
+    <!-- 3. Fast Courier Card -->
     <div class="bg-zinc-50 border border-zinc-200 rounded-2xl p-4 shadow-sm text-center">
       <div class="w-9 h-9 rounded-xl bg-zinc-200 text-zinc-900 flex items-center justify-center mx-auto text-sm mb-2">
         <i class="fa-solid fa-truck-fast"></i>
@@ -596,6 +610,7 @@
       </a>
     </div>
 
+    <!-- 4. Support Help Card -->
     <div class="bg-white border border-zinc-200 rounded-2xl p-4 shadow-sm text-center mt-auto">
       <div class="w-9 h-9 rounded-xl bg-zinc-100 text-zinc-900 flex items-center justify-center mx-auto text-sm mb-2">
         <i class="fa-solid fa-headset"></i>
@@ -676,7 +691,7 @@
       }
     }
 
-    // Dynamic Analytics Calculator
+    // Dynamic Analytics Calculator & Quick Counter Update
     function calculateAnalytics(filteredOrders, allList) {
       let selectedSales = 0;
       let totalRevenue = 0, totalOrdersCount = allList.length;
@@ -688,6 +703,7 @@
       const yesterday = new Date();
       yesterday.setDate(yesterday.getDate() - 1);
 
+      // 1. Calculate Selected Period Sales for the Black Card (Top Left)
       filteredOrders.forEach(o => {
         const s = (o.status || 'Pending').toLowerCase();
         if (!s.includes('cancel')) {
@@ -695,6 +711,7 @@
         }
       });
 
+      // 2. Overall counts & categories
       allList.forEach(o => {
         const amt = o.numericTotal;
         totalRevenue += amt;
@@ -714,14 +731,17 @@
           pendingCount++;
         }
 
+        // Today check
         if (isSameDay(o.time, today)) {
           todayCount++;
         }
+        // Yesterday revenue check
         if (isSameDay(o.time, yesterday)) {
           if (!s.includes('cancel')) yesterdayRevenue += amt;
         }
       });
 
+      // Top Stat Cards Update
       const datePreset = document.getElementById('dateFilter').value;
       let subTitleText = "ফিল্টারের সময় অনুযায়ী মোট সেলস";
       let mainTitleText = "মোট অর্ডার (সর্বমোট সমূহ)";
@@ -749,25 +769,24 @@
       document.getElementById('statTodayCount').innerText = todayCount;
       document.getElementById('statYesterdayRevenue').innerText = `৳${yesterdayRevenue.toLocaleString()}`;
       
+      // Confirmed Card: Amount + Sub quantity
       document.getElementById('statConfirmedAmount').innerText = `৳${confirmedAmount.toLocaleString()}`;
       document.getElementById('statConfirmedCount').innerText = confirmedCount;
 
+      // Cancelled Card: Amount + Sub quantity
       document.getElementById('statCancelledAmount').innerText = `৳${cancelledAmount.toLocaleString()}`;
       document.getElementById('statCancelledCount').innerText = cancelledCount;
 
+      // Bottom Quick Filter Badges Counts
       document.getElementById('quickCount-ALL').innerText = totalOrdersCount;
       document.getElementById('quickCount-Confirmed').innerText = confirmedCount;
       document.getElementById('quickCount-Pending').innerText = pendingCount;
       document.getElementById('quickCount-Shipped').innerText = shippedCount;
       document.getElementById('quickCount-Delivered').innerText = deliveredCount;
       document.getElementById('quickCount-Cancelled').innerText = cancelledCount;
-
-      document.getElementById('sideDeliveredCount').innerText = deliveredCount;
-      document.getElementById('sideProcessingCount').innerText = pendingCount;
-      document.getElementById('sideShippedCount').innerText = shippedCount;
-      document.getElementById('sideCancelledCount').innerText = cancelledCount;
     }
 
+    // Set Quick Filter when clicking bottom 6 cards
     function setQuickFilter(statusKey) {
       currentQuickStatus = statusKey;
       
@@ -803,6 +822,7 @@
       filterOrders();
     }
 
+    // Helper Date Functions - Robust Parser
     function parseOrderDate(dateStr) {
       if (!dateStr) return null;
       let d = new Date(dateStr);
@@ -865,6 +885,7 @@
       filterOrders();
     }
 
+    // Fraud Badge
     function renderFraudBadge(fraud) {
       if (!fraud || fraud.status !== 'success' || !fraud.data || !fraud.data.summary) {
         return `<span class="inline-flex items-center gap-1 text-[10px] font-semibold text-zinc-500 bg-zinc-100 border border-zinc-200 px-2 py-0.5 rounded-full"><i class="fa-solid fa-magnifying-glass"></i> নো ফ্রড ডাটা</span>`;
@@ -881,6 +902,7 @@
       }
     }
 
+    // Filter Logic
     function filterOrders() {
       const q = document.getElementById('searchInput').value.toLowerCase().trim();
       const statusSelectVal = document.getElementById('statusFilter').value;
@@ -929,6 +951,7 @@
       renderOrders(filtered);
     }
 
+    // Render Table Rows
     function renderOrders(orders) {
       const tbody = document.getElementById('orderTableBody');
       document.getElementById('filteredCountBadge').innerText = orders.length;
@@ -1055,7 +1078,9 @@
       }
     }
 
-    // Manual Order Creation
+    // ==========================================
+    // ➕ MANUAL ORDER MODAL & CREATION
+    // ==========================================
     function openNewOrderModal() {
       document.getElementById('newOrderModal').classList.remove('hidden');
       updateManualPrice();
@@ -1136,9 +1161,7 @@
       }
     }
 
-    // ============================================================
-    // ⚙️ SETTINGS MODAL: API, PIXEL & NOTIFICATION EMAIL
-    // ============================================================
+    // Settings Modal
     async function openSettingsModal() {
       document.getElementById('settingsModal').classList.remove('hidden');
       try {
@@ -1149,8 +1172,6 @@
           document.getElementById('cfgSfApiKey').value = data.settings.steadfastApiKey || '';
           document.getElementById('cfgSfSecretKey').value = data.settings.steadfastSecretKey || '';
           document.getElementById('cfgBdCourierKey').value = data.settings.bdcourierApiKey || '';
-          // 📧 ইমেইল লোড করা
-          document.getElementById('cfgNotifyEmail').value = data.settings.notificationEmail || '';
         }
       } catch(e) {}
     }
@@ -1170,9 +1191,7 @@
         metaPixelId: document.getElementById('cfgMetaPixel').value.trim(),
         steadfastApiKey: document.getElementById('cfgSfApiKey').value.trim(),
         steadfastSecretKey: document.getElementById('cfgSfSecretKey').value.trim(),
-        bdcourierApiKey: document.getElementById('cfgBdCourierKey').value.trim(),
-        // 📧 ইমেইল পে-লোড যোগ করা
-        notificationEmail: document.getElementById('cfgNotifyEmail').value.trim()
+        bdcourierApiKey: document.getElementById('cfgBdCourierKey').value.trim()
       };
 
       try {
@@ -1183,7 +1202,7 @@
         });
         const data = await res.json();
         if(res.ok && data.ok) {
-          showToast("✅ সেটিংস ও ইমেইল সফলভাবে সংরক্ষিত হয়েছে!");
+          showToast("✅ সেটিংস সফলভাবে সংরক্ষিত হয়েছে!");
           closeSettingsModal();
         } else {
           alert("❌ সেটিংস সংরক্ষণ ব্যর্থ হয়েছে!");
