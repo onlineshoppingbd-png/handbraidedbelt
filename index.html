@@ -130,11 +130,11 @@
     .modal.open .modal-card { transform: none; opacity: 1; }
     .modal-scroll { scrollbar-width: thin; scrollbar-color: #d4d4d8 transparent; }
 
-    .field { width: 100%; border: 1.5px solid #e4e4e7; background: #fafafa; border-radius: 12px; padding: 10px 14px; font-size: 14px; outline: none; color: #18181b; transition: all .2s; }
+    .field { width: 100%; border: 1.5px solid #e4e4e7; background: #fafafa; border-radius: 12px; padding: 12px 14px; font-size: 15px; outline: none; color: #18181b; transition: all .2s; }
     .field:focus { border-color: #18181b; background: #fff; box-shadow: 0 0 0 3px rgba(24,24,27,0.08); }
     .field.error { border-color: #ef4444; background: #fff5f5; }
-    .field-error { display: none; color: #dc2626; font-size: 12px; margin-top: 4px; }
-    .field-error.show { display: flex; align-items: center; gap: 5px; }
+    .field-error { display: none; color: #dc2626; font-size: 13px; margin-top: 5px; }
+    .field-error.show { display: flex; align-items: center; gap: 6px; }
 
     @keyframes marquee { 0% { transform: translateX(0) } 100% { transform: translateX(-50%) } }
     .marquee { animation: marquee 26s linear infinite; }
@@ -295,7 +295,7 @@
           <div class="phone-mockup w-full max-w-[310px] sm:max-w-[340px]">
             <div class="w-20 h-3 bg-zinc-800 mx-auto rounded-b-xl mb-1"></div>
             <div class="relative w-full aspect-[9/16] bg-black">
-              <!-- Unmuted YouTube Embed (Note: browsers allow autoplay with sound only if user interacted with page first) -->
+              <!-- Unmuted YouTube Embed -->
               <iframe 
                 class="w-full h-full object-cover"
                 src="https://www.youtube.com/embed/ouXV2AhR5GA?autoplay=1&loop=1&playlist=ouXV2AhR5GA" 
@@ -373,14 +373,14 @@
           </div>
 
           <!-- Slider Controls -->
-          <button id="sliderPrev" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white text-zinc-900 flex items-center justify-center text-sm shadow-md transition-all" aria-label="Previous">
+          <button id="sliderPrev" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white text-zinc-900 flex items-center justify-center text-sm shadow-md transition-all z-20" aria-label="Previous">
             <i class="fa-solid fa-chevron-left"></i>
           </button>
-          <button id="sliderNext" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white text-zinc-900 flex items-center justify-center text-sm shadow-md transition-all" aria-label="Next">
+          <button id="sliderNext" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white text-zinc-900 flex items-center justify-center text-sm shadow-md transition-all z-20" aria-label="Next">
             <i class="fa-solid fa-chevron-right"></i>
           </button>
 
-          <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10" id="sliderDots">
+          <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 z-20" id="sliderDots">
             <button class="w-2.5 h-2.5 rounded-full bg-white transition-all scale-125 shadow" data-slide="0"></button>
             <button class="w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all shadow" data-slide="1"></button>
             <button class="w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all shadow" data-slide="2"></button>
@@ -412,7 +412,7 @@
           <div class="price-card bg-white border border-zinc-200 rounded-3xl p-6 sm:p-7 shadow-card flex flex-col">
             <!-- Package Image preview container -->
             <div class="w-full aspect-square rounded-2xl overflow-hidden mb-4 bg-zinc-100 border border-zinc-100">
-              <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/43326-b0c7.webp?resolution=3762_3762" alt="Classic Black Belt" class="w-full h-full object-cover filter brightness-95 contrast-105" />
+              <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112204-26d5.webp?resolution=3762_3762" alt="Classic Black Belt" class="w-full h-full object-cover filter brightness-95 contrast-105" />
             </div>
             <div class="flex items-center justify-between">
               <span class="text-xs font-bold text-zinc-900 bg-zinc-100 px-3 py-1 rounded-full">ক্লাসিক ব্ল্যাক</span>
@@ -446,7 +446,7 @@
             
             <!-- Package Image preview container -->
             <div class="w-full aspect-square rounded-2xl overflow-hidden mb-4 bg-zinc-800 border border-zinc-700">
-              <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/43326-b0c7.webp?resolution=3762_3762" alt="Dark Brown Belt" class="w-full h-full object-cover sepia-[0.3] hue-rotate-15" />
+              <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112011-51063.webp?resolution=2624_2624" alt="Dark Brown Belt" class="w-full h-full object-cover" />
             </div>
 
             <div class="flex items-center justify-between">
@@ -479,7 +479,7 @@
           <div class="price-card bg-white border border-zinc-200 rounded-3xl p-6 sm:p-7 shadow-card flex flex-col">
             <!-- Package Image preview container -->
             <div class="w-full aspect-square rounded-2xl overflow-hidden mb-4 bg-zinc-100 border border-zinc-100 relative">
-              <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112009-48bf.webp?resolution=3549_3549" alt="Combo Pack" class="w-full h-full object-cover" />
+              <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGYIGqUBQseqEpXhsmCdQOrE5tfV7FTfHhBvYID38NS2lEiPUu9gyQVRpSnkB7SY_PWhk_OKB6wwhz-YPCTnPSHXNVQcvfvNiuf-1b3FbvCjCu0Zn7gQVvnISvfMF_DThqhjLGb5M2eTgyDVvU6_aVWapMnD7i49uF_gFroUTdtwmO4bu28WRuaXPuSKo/s320/ChatGPT%20Image%20Sep%2019,%202026,%2005_30_02%20AM.png" alt="Combo Pack" class="w-full h-full object-cover" />
               <span class="absolute top-2 right-2 bg-black text-white text-[10px] font-extrabold px-2 py-1 rounded-md">দুটি বেল্ট একসাথে</span>
             </div>
             <div class="flex items-center justify-between">
@@ -489,10 +489,10 @@
             <h3 class="mt-3 text-xl font-bold text-zinc-900">ব্ল্যাক + ব্রাউন কম্বো প্যাক</h3>
             <p class="text-zinc-500 text-xs">দুটি ভিন্ন কালারের আকর্ষণীয় কম্বো</p>
             <div class="mt-4 flex items-end gap-3">
-              <span class="text-4xl sm:text-5xl font-bold text-zinc-900 leading-none">৳১,৪৯০</span>
-              <span class="text-zinc-400 line-through text-base mb-1">৳২,৬০০</span>
+              <span class="text-4xl sm:text-5xl font-bold text-zinc-900 leading-none">৳১,৬৫০</span>
+              <span class="text-zinc-400 line-through text-base mb-1">৳১,৭৯০</span>
             </div>
-            <p class="mt-1 text-xs text-zinc-500"> &nbsp;·&nbsp; <span class="text-black font-bold">৳১,১০০ সাশ্রয় + ফ্রি ডেলিভারি</span></p>
+            <p class="mt-1 text-xs text-zinc-500"> &nbsp;·&nbsp; <span class="text-black font-bold">বিশেষ সাশ্রয় + ফ্রি ডেলিভারি</span></p>
 
             <ul class="mt-5 space-y-2.5 text-sm text-zinc-700 flex-1">
               <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-black mt-1"></i> ১টি ব্ল্যাক ও ১টি ডার্ক ব্রাউন বেল্ট</li>
@@ -720,66 +720,66 @@
   <div id="orderModal" class="modal fixed inset-0 z-[60] flex items-end sm:items-center justify-center p-0 sm:p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div id="modalBackdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
 
-    <div class="modal-card relative w-full sm:max-w-md bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl overflow-hidden max-h-[94vh] flex flex-col">
-      <div class="bg-black text-white px-5 py-3.5 flex items-center justify-between shrink-0">
-        <div class="flex items-center gap-2.5">
-          <span class="w-8 h-8 rounded-xl bg-white/10 text-white flex items-center justify-center text-base"><i class="fa-solid fa-cart-shopping"></i></span>
+    <div class="modal-card relative w-full sm:max-w-lg bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl overflow-hidden max-h-[94vh] flex flex-col">
+      <div class="bg-black text-white px-6 py-4.5 flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-3">
+          <span class="w-9 h-9 rounded-xl bg-white/10 text-white flex items-center justify-center text-lg"><i class="fa-solid fa-cart-shopping"></i></span>
           <div>
-            <h3 id="modalTitle" class="text-base font-bold leading-tight">অর্ডার ফর্ম</h3>
-            <p class="text-[11px] text-zinc-400">ক্যাশ অন ডেলিভারি কনফার্ম করুন</p>
+            <h3 id="modalTitle" class="text-lg font-bold leading-tight">অর্ডার ফর্ম</h3>
+            <p class="text-xs text-zinc-400">তথ্য দিয়ে আপনার ক্যাশ অন ডেলিভারি অর্ডার কনফার্ম করুন</p>
           </div>
         </div>
-        <button id="modalClose" class="w-7 h-7 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white" aria-label="বন্ধ করুন">
-          <i class="fa-solid fa-xmark text-sm"></i>
+        <button id="modalClose" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white" aria-label="বন্ধ করুন">
+          <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
 
       <div class="modal-scroll overflow-y-auto">
-        <form id="orderForm" class="px-5 py-4 space-y-3" novalidate>
+        <form id="orderForm" class="px-6 py-6 space-y-4" novalidate>
           <div class="hidden">
             <input type="text" name="product" id="productName" value="Hand Braided Leather Belt" readonly />
           </div>
 
           <div>
-            <label for="quantity" class="block text-[11px] font-bold text-zinc-700 mb-1">প্যাকেজ / কালার বাছাই করুন <span class="text-red-500">*</span></label>
-            <select id="quantity" name="quantity" class="field font-bold text-zinc-900 bg-white py-2 text-xs">
+            <label for="quantity" class="block text-xs font-bold text-zinc-700 mb-1.5">প্যাকেজ / কালার বাছাই করুন <span class="text-red-500">*</span></label>
+            <select id="quantity" name="quantity" class="field font-bold text-zinc-900 bg-white py-2.5">
               <option value="black">ক্লাসিক ব্ল্যাক কালার — ৳৮৯০</option>
               <option value="chocolate" selected>ডার্ক ব্রাউন কালার — ৳৮৯০ (Most Popular)</option>
-              <option value="combo">ব্ল্যাক + ব্রাউন কম্বো প্যাক — ৳১,৪৯০ (৳১,১০০ সাশ্রয়)</option>
+              <option value="combo">ব্ল্যাক + ব্রাউন কম্বো প্যাক — ৳১,৬৫০ (৳১,৭৯০)</option>
             </select>
           </div>
 
           <div>
-            <label for="customerName" class="block text-[11px] font-bold text-zinc-700 mb-1">আপনার নাম <span class="text-red-500">*</span></label>
-            <input type="text" id="customerName" name="name" placeholder="যেমন: তানভীর আহমেদ" class="field py-2 text-xs" autocomplete="name" required />
-            <p class="field-error" data-error-for="customerName"><i class="fa-solid fa-circle-exclamation"></i> নাম লিখুন</p>
+            <label for="customerName" class="block text-xs font-bold text-zinc-700 mb-1.5">আপনার নাম <span class="text-red-500">*</span></label>
+            <input type="text" id="customerName" name="name" placeholder="যেমন: তানভীর আহমেদ" class="field py-2.5" autocomplete="name" required />
+            <p class="field-error" data-error-for="customerName"><i class="fa-solid fa-circle-exclamation"></i> অনুগ্রহ করে আপনার নাম লিখুন</p>
           </div>
 
           <div>
-            <label for="phone" class="block text-[11px] font-bold text-zinc-700 mb-1">মোবাইল নাম্বার <span class="text-red-500">*</span></label>
-            <input type="tel" id="phone" name="phone" placeholder="01xxxxxxxxx" class="field py-2 text-xs" inputmode="numeric" maxlength="14" autocomplete="tel" required />
-            <p class="field-error" data-error-for="phone"><i class="fa-solid fa-circle-exclamation"></i> সঠিক ১১ ডিজিটের নাম্বার দিন (01 দিয়ে শুরু)</p>
+            <label for="phone" class="block text-xs font-bold text-zinc-700 mb-1.5">মোবাইল নাম্বার <span class="text-red-500">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="01xxxxxxxxx (১১ ডিজিট)" class="field py-2.5" inputmode="numeric" maxlength="14" autocomplete="tel" required />
+            <p class="field-error" data-error-for="phone"><i class="fa-solid fa-circle-exclamation"></i> সঠিক ১১ ডিজিটের মোবাইল নাম্বার দিন (01 দিয়ে শুরু)</p>
           </div>
 
           <div>
-            <label for="address" class="block text-[11px] font-bold text-zinc-700 mb-1">সম্পূর্ণ ঠিকানা <span class="text-red-500">*</span></label>
-            <textarea id="address" name="address" rows="2" placeholder="বাসা/ফ্ল্যাট নং, রোড, এলাকা, থানা, জেলা" class="field resize-none py-1.5 text-xs" autocomplete="street-address" required></textarea>
-            <p class="field-error" data-error-for="address"><i class="fa-solid fa-circle-exclamation"></i> সম্পূর্ণ ঠিকানা লিখুন</p>
+            <label for="address" class="block text-xs font-bold text-zinc-700 mb-1.5">সম্পূর্ণ ঠিকানা <span class="text-red-500">*</span></label>
+            <textarea id="address" name="address" rows="2" placeholder="বাসা/ফ্ল্যাট নং, রোড, এলাকা, থানা, জেলা" class="field resize-none py-2.5" autocomplete="street-address" required></textarea>
+            <p class="field-error" data-error-for="address"><i class="fa-solid fa-circle-exclamation"></i> সম্পূর্ণ ঠিকানা লিখুন (কমপক্ষে ১০ অক্ষর)</p>
           </div>
 
           <div>
-            <label class="block text-[11px] font-bold text-zinc-700 mb-1">পেমেন্ট মেথড</label>
-            <div class="p-2.5 bg-zinc-50 border border-zinc-200 rounded-xl flex items-center gap-2.5">
-              <div class="w-7 h-7 rounded-full bg-black text-white flex items-center justify-center text-xs"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+            <label class="block text-xs font-bold text-zinc-700 mb-1.5">পেমেন্ট মেথড</label>
+            <div class="p-3.5 bg-zinc-50 border border-zinc-200 rounded-xl flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center text-sm"><i class="fa-solid fa-hand-holding-dollar"></i></div>
               <div>
-                <span class="text-xs font-bold text-zinc-900 block leading-tight">ক্যাশ অন ডেলিভারি (Cash on Delivery)</span>
-                <span class="text-[10px] text-zinc-500">পণ্য হাতে পেয়ে মূল্য পরিশোধ করবেন।</span>
+                <span class="text-sm font-bold text-zinc-900 block">ক্যাশ অন ডেলিভারি (Cash on Delivery)</span>
+                <span class="text-xs text-zinc-500">পণ্য হাতে পেয়ে চেক করে মূল্য পরিশোধ করবেন।</span>
               </div>
             </div>
           </div>
 
           <!-- Order Summary -->
-          <div class="bg-zinc-50 border border-zinc-200 rounded-xl p-3 text-xs space-y-1.5">
+          <div class="bg-zinc-50 border border-zinc-200 rounded-2xl p-4 text-sm space-y-2">
             <div class="flex justify-between text-zinc-600">
               <span>প্যাকেজ (<span id="sumPkg">ডার্ক ব্রাউন কালার</span>)</span>
               <span id="sumPrice" class="font-bold text-zinc-900">৳৮৯০</span>
@@ -788,36 +788,36 @@
               <span>ডেলিভারি চার্জ</span>
               <span id="sumDelivery" class="font-bold text-black">ফ্রি (Free)</span>
             </div>
-            <div class="border-t border-dashed border-zinc-200 my-1"></div>
+            <div class="border-t border-dashed border-zinc-200 my-2"></div>
             <div class="flex justify-between items-center">
-              <span class="font-bold text-zinc-900 text-sm">সর্বমোট প্রদেয়</span>
-              <span id="sumTotal" class="text-xl font-black text-zinc-900">৳৮৯০</span>
+              <span class="font-bold text-zinc-900 text-base">সর্বমোট প্রদেয়</span>
+              <span id="sumTotal" class="text-2xl font-black text-zinc-900">৳৮৯০</span>
             </div>
           </div>
 
-          <button type="submit" id="submitBtn" class="btn w-full inline-flex items-center justify-center gap-2 bg-black hover:bg-zinc-800 text-white font-bold text-sm py-3 rounded-xl shadow-md mt-1">
-            <span class="btn-text inline-flex items-center gap-2"><i class="fa-solid fa-circle-check"></i> অর্ডার কনফার্ম করুন</span>
+          <button type="submit" id="submitBtn" class="btn w-full inline-flex items-center justify-center gap-2 bg-black hover:bg-zinc-800 text-white font-bold text-lg px-6 py-4 rounded-xl shadow-md mt-2">
+            <span class="btn-text inline-flex items-center gap-2"><i class="fa-solid fa-circle-check"></i> অর্ডার কনফার্ম করুন (ক্যাশ অন ডেলিভারি)</span>
             <span class="btn-loading hidden items-center gap-2"><span class="spinner"></span> প্রসেস হচ্ছে...</span>
           </button>
         </form>
 
         <!-- Success View -->
-        <div id="successView" class="hidden px-5 py-8 text-center">
-          <div class="pop-in mx-auto w-14 h-14 rounded-full bg-black text-white flex items-center justify-center shadow-md">
-            <svg width="32" height="32" viewBox="0 0 52 52" fill="none"><path class="check-path" d="M12 27 L22 37 L40 17" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div id="successView" class="hidden px-6 py-10 text-center">
+          <div class="pop-in mx-auto w-16 h-16 rounded-full bg-black text-white flex items-center justify-center shadow-md">
+            <svg width="36" height="36" viewBox="0 0 52 52" fill="none"><path class="check-path" d="M12 27 L22 37 L40 17" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <h3 class="mt-3 text-xl font-bold text-zinc-900">ধন্যবাদ! অর্ডার সফল হয়েছে 🎉</h3>
-          <p class="mt-1 text-zinc-600 text-xs leading-relaxed">
+          <h3 class="mt-4 text-2xl font-bold text-zinc-900">ধন্যবাদ! অর্ডার সফল হয়েছে 🎉</h3>
+          <p class="mt-1.5 text-zinc-600 text-sm leading-relaxed">
             আপনার ক্যাশ অন ডেলিভারি অর্ডারটি সফলভাবে গ্রহণ করা হয়েছে। শিঘ্রই আমাদের প্রতিনিধি আপনার সাথে যোগাযোগ করবেন।
           </p>
 
-          <div id="successSummary" class="mt-4 bg-zinc-50 border border-zinc-200 rounded-xl p-3 text-left text-xs space-y-2"></div>
+          <div id="successSummary" class="mt-5 bg-zinc-50 border border-zinc-200 rounded-2xl p-4 text-left text-xs sm:text-sm space-y-2.5"></div>
 
-          <div class="mt-5 flex gap-2.5">
-            <a href="#" data-wa-link target="_blank" rel="noopener" class="btn flex-1 inline-flex items-center justify-center gap-1.5 bg-[#25D366] hover:bg-[#1fbd5a] text-white font-bold px-3 py-2.5 rounded-xl text-xs shadow-sm">
-              <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp এ কথা বলুন
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a href="#" data-wa-link target="_blank" rel="noopener" class="btn flex-1 inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white font-bold px-4 py-3 rounded-xl text-sm shadow-sm">
+              <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp এ কথা বলুন
             </a>
-            <button id="successClose" class="btn flex-1 inline-flex items-center justify-center gap-1.5 bg-black hover:bg-zinc-800 text-white font-bold px-3 py-2.5 rounded-xl text-xs shadow-sm">
+            <button id="successClose" class="btn flex-1 inline-flex items-center justify-center gap-2 bg-black hover:bg-zinc-800 text-white font-bold px-4 py-3 rounded-xl text-sm shadow-sm">
               <i class="fa-solid fa-house"></i> হোমে ফিরুন
             </button>
           </div>
@@ -839,7 +839,7 @@
     const PACKAGES = {
       'black': { label: 'ক্লাসিক ব্ল্যাক কালার বেল্ট', price: 890 },
       'chocolate': { label: 'ডার্ক ব্রাউন কালার বেল্ট', price: 890 },
-      'combo': { label: 'ব্ল্যাক + ব্রাউন কম্বো প্যাক', price: 1490 }
+      'combo': { label: 'ব্ল্যাক + ব্রাউন কম্বো প্যাক', price: 1650 }
     };
 
     const $ = (s, r = document) => r.querySelector(s);
@@ -897,8 +897,8 @@
         if (slideInterval) clearInterval(slideInterval);
       }
 
-      prevBtn.addEventListener('click', () => { pauseAutoSlide(); updateSlider(currentIndex - 1); startAutoSlide(); });
-      nextBtn.addEventListener('click', () => { pauseAutoSlide(); updateSlider(currentIndex + 1); startAutoSlide(); });
+      prevBtn.addEventListener('click', (e) => { e.preventDefault(); pauseAutoSlide(); updateSlider(currentIndex - 1); startAutoSlide(); });
+      nextBtn.addEventListener('click', (e) => { e.preventDefault(); pauseAutoSlide(); updateSlider(currentIndex + 1); startAutoSlide(); });
       dots.forEach((dot, idx) => dot.addEventListener('click', () => { pauseAutoSlide(); updateSlider(idx); startAutoSlide(); }));
 
       wrapper.addEventListener('mouseenter', pauseAutoSlide);
@@ -1032,7 +1032,7 @@
     }
 
     function renderSuccess(order) {
-      const row = (icon, label, val) => `<div class="flex gap-2"><span class="w-4 text-black"><i class="fa-solid ${icon}"></i></span><span class="text-zinc-500 w-16 shrink-0 font-medium">${label}:</span><span class="font-bold text-zinc-900">${val}</span></div>`;
+      const row = (icon, label, val) => `<div class="flex gap-2.5"><span class="w-4 text-black"><i class="fa-solid ${icon}"></i></span><span class="text-zinc-500 w-20 shrink-0 font-medium">${label}:</span><span class="font-bold text-zinc-900">${val}</span></div>`;
       $('#successSummary').innerHTML =
         row('fa-belt', 'পণ্য', order.product) +
         row('fa-tag', 'প্যাকেজ', order.quantity) +
