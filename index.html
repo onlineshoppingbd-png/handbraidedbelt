@@ -7,40 +7,43 @@
   <meta name="description" content="প্রিমিয়াম হ্যান্ড ব্রেইডেড লেদার বেল্ট। ১০০% জেনুইন লেদার, ভিন্টেজ ব্রাস ফিনিশ বাকল, কোনো পাঞ্চ হোল নেই (এডজাস্টেবল সাইজ)। ক্যাশ অন ডেলিভারি, সারাদেশে ফ্রি ডেলিভারি।" />
   <meta name="theme-color" content="#ffffff" />
 
-  <!-- Dynamic Meta Pixel Code Loader -->
+  <!-- Dynamic Meta Pixel Code (Fetched from Worker Settings) -->
   <script>
-    (async function() {
-      const CONFIG_STORE_CODE = 'AL';
-      const CONFIG_WORKER_URL = 'https://steep-rain-e346.azwadahshafhossain.workers.dev';
-      
+    async function initDynamicPixel() {
       try {
-        const res = await fetch(`${CONFIG_WORKER_URL}/settings?store=${CONFIG_STORE_CODE}`);
-        if (res.ok) {
-          const data = await res.json();
-          if (data && data.pixel_id) {
-            initPixel(data.pixel_id);
-            return;
+        // আপনার ওয়ার্কার থেকে স্টোরের সেটিংস ফেচ করা
+        const res = await fetch('https://steep-rain-e346.azwadahshafhossain.workers.dev/settings?store=FP', { cache: 'no-store' });
+        const data = await res.json();
+        
+        if (data.ok && data.settings && data.settings.metaPixelId) {
+          const pixelId = data.settings.metaPixelId.trim();
+          if (pixelId && /^\d+$/.test(pixelId)) {
+            // ফেসবুক পিক্সেল ইনিশিয়ালাইজ করা
+            !(function (f, b, e, v, n, t, s) {
+              if (f.fbq) return;
+              n = f.fbq = function () {
+                n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+              };
+              if (!f._fbq) f._fbq = n;
+              n.push = n;
+              n.loaded = !0;
+              n.version = '2.0';
+              n.queue = [];
+              t = b.createElement(e);
+              t.async = !0;
+              t.src = v;
+              s = b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t, s);
+            })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+            fbq('init', pixelId);
+            fbq('track', 'PageView');
           }
         }
-      } catch (e) {
-        console.warn('Pixel fetch fallback triggered', e);
+      } catch (err) {
+        console.warn("Could not load dynamic pixel:", err);
       }
-      initPixel('0000000000000000');
-
-      function initPixel(pixelId) {
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', pixelId);
-        fbq('track', 'PageView');
-      }
-    })();
-  </script>
+    }
 
   <!-- Google Font: Hind Siliguri -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
