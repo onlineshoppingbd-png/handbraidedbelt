@@ -10,7 +10,7 @@
     <!-- Preconnect Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- Base Meta Pixel Loader Shell (Dynamic) -->
@@ -32,6 +32,7 @@
             theme: {
                 extend: {
                     fontFamily: {
+                        bangla: ['"Hind Siliguri"', 'sans-serif'],
                         sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
                         serif: ['"Playfair Display"', 'serif'],
                     },
@@ -64,7 +65,6 @@
         body { background-color: #FAF7F2; color: #1E1B18; -webkit-font-smoothing: antialiased; }
         ::selection { background: #8C6239; color: #FFFFFF; }
         
-        /* Smooth Scrollbar */
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: #FAF7F2; }
         ::-webkit-scrollbar-thumb { background: #D5C7B8; border-radius: 4px; }
@@ -88,7 +88,45 @@
         }
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        /* Lightbox modal animation */
+        /* Iconic Pill Button */
+        .btn-pill-cta {
+            background-color: #2E2E2E;
+            color: #ffffff;
+            border-radius: 9999px;
+            padding: 11px 28px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+            transition: all 0.25s ease;
+        }
+        .btn-pill-cta:hover {
+            background-color: #1a1a1a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.22);
+        }
+        .btn-pill-cta:active { transform: translateY(0); }
+
+        .btn-arrow-icon {
+            width: 24px;
+            height: 24px;
+            background: #ffffff;
+            color: #2E2E2E;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: bold;
+            transition: transform 0.25s ease;
+        }
+        .btn-pill-cta:hover .btn-arrow-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Lightbox modal */
         .lightbox-modal {
             opacity: 0;
             visibility: hidden;
@@ -100,7 +138,7 @@
         }
     </style>
 </head>
-<body class="font-sans antialiased pb-24 md:pb-12 selection:bg-chocolate-800 selection:text-white">
+<body class="font-bangla antialiased pb-24 md:pb-12 selection:bg-chocolate-800 selection:text-white">
 
     <!-- 1. Top Announcement Bar -->
     <div class="bg-chocolate-900 text-chocolate-100 py-2.5 overflow-hidden text-xs tracking-wider uppercase font-medium">
@@ -130,48 +168,48 @@
             </a>
 
             <div class="flex items-center gap-3">
-                <button onclick="triggerViewContent()" class="hidden sm:inline-flex border border-sand hover:bg-white text-chocolate-800 text-xs font-semibold px-4 py-2 rounded-full transition">
+                <button onclick="triggerViewContent()" class="hidden sm:inline-flex border border-sand hover:bg-white text-chocolate-800 text-xs font-semibold px-4 py-2 rounded-full transition font-sans">
                     View Product
                 </button>
-                <a href="#checkoutSection" class="bg-chocolate-900 hover:bg-chocolate-800 text-cream text-xs font-semibold px-5 py-2.5 rounded-full transition shadow-sm">
+                <a href="#checkoutSection" class="bg-chocolate-900 hover:bg-chocolate-800 text-cream text-xs font-semibold px-5 py-2.5 rounded-full transition shadow-sm font-sans">
                     Order (৳890)
                 </a>
             </div>
         </div>
     </header>
 
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 pt-8 space-y-16 sm:space-y-24">
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 pt-8 space-y-14 sm:space-y-20">
 
         <!-- 3. Hero Showcase -->
         <section class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div class="lg:col-span-6 text-center lg:text-left order-2 lg:order-1">
-                <span class="inline-block text-[11px] uppercase tracking-[0.2em] font-semibold text-chocolate-600 mb-3">
+                <span class="inline-block text-[11px] uppercase tracking-[0.2em] font-semibold text-chocolate-600 mb-3 font-sans">
                     Everyday Refinement
                 </span>
                 <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-chocolate-900 leading-[1.1] mb-5">
                     Hand-Braided Leather Belt
                 </h1>
-                <p class="text-sm sm:text-base text-chocolate-700 leading-relaxed max-w-md mx-auto lg:mx-0 mb-8">
+                <p class="text-sm sm:text-base text-chocolate-700 leading-relaxed max-w-md mx-auto lg:mx-0 mb-8 font-sans">
                     Crafted without punched holes for a personalized micro-fit. Finished with an antiqued vintage brass buckle that pairs effortlessly with tailored trousers or casual denim.
                 </p>
 
                 <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
-                    <a href="#checkoutSection" class="w-full sm:w-auto bg-chocolate-900 hover:bg-chocolate-800 text-cream font-semibold text-sm px-8 py-3.5 rounded-full transition text-center shadow-md">
+                    <a href="#checkoutSection" class="w-full sm:w-auto bg-chocolate-900 hover:bg-chocolate-800 text-cream font-semibold text-sm px-8 py-3.5 rounded-full transition text-center shadow-md font-sans">
                         Order Now (৳890)
                     </a>
-                    <button onclick="triggerViewContent()" class="w-full sm:w-auto border border-sand bg-white/80 hover:bg-white text-chocolate-800 text-sm font-semibold px-6 py-3.5 rounded-full transition text-center">
+                    <button onclick="triggerViewContent()" class="w-full sm:w-auto border border-sand bg-white/80 hover:bg-white text-chocolate-800 text-sm font-semibold px-6 py-3.5 rounded-full transition text-center font-sans">
                         <i class="fa-regular fa-image text-xs mr-1.5 text-chocolate-600"></i> View Content
                     </button>
                 </div>
 
-                <div class="mt-8 pt-6 border-t border-sand/80 flex items-center justify-center lg:justify-start gap-6 text-xs text-chocolate-600 font-medium">
+                <div class="mt-8 pt-6 border-t border-sand/80 flex items-center justify-center lg:justify-start gap-6 text-xs text-chocolate-600 font-medium font-sans">
                     <span><i class="fa-solid fa-check mr-1.5 text-chocolate-800"></i> Free Shipping</span>
                     <span><i class="fa-solid fa-check mr-1.5 text-chocolate-800"></i> Cash On Delivery</span>
                     <span><i class="fa-solid fa-check mr-1.5 text-chocolate-800"></i> Universal 32"–42"</span>
                 </div>
             </div>
 
-            <!-- Hero Image Box (Clickable Lightbox) -->
+            <!-- Hero Image Box (Clickable to Lightbox) -->
             <div class="lg:col-span-6 order-1 lg:order-2">
                 <div class="relative max-w-md mx-auto rounded-3xl overflow-hidden bg-white p-3 border border-sand shadow-card cursor-pointer group" onclick="openLightbox(0)">
                     <img id="heroImage" src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/43326-b0c7.webp?resolution=3762_3762" 
@@ -182,7 +220,7 @@
                         <div class="w-8 h-8 rounded-full bg-latte text-chocolate-800 flex items-center justify-center text-xs">
                             <i class="fa-solid fa-ruler-combined"></i>
                         </div>
-                        <div class="leading-none">
+                        <div class="leading-none font-sans">
                             <span class="text-[10px] text-chocolate-400 uppercase font-semibold block">Hole-Free</span>
                             <span class="text-xs font-bold text-chocolate-900 mt-0.5 block">Custom Fit (32"–42")</span>
                         </div>
@@ -195,10 +233,10 @@
         <section class="space-y-6">
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-sand pb-4">
                 <div>
-                    <span class="text-[11px] font-semibold tracking-[0.2em] text-chocolate-600 uppercase block">Gallery</span>
+                    <span class="text-[11px] font-semibold tracking-[0.2em] text-chocolate-600 uppercase block font-sans">Gallery</span>
                     <h2 class="font-serif text-2xl sm:text-3xl font-bold text-chocolate-900">Texture & Finish</h2>
                 </div>
-                <p class="text-xs text-chocolate-600 max-w-xs">Tap any photo to view in high resolution.</p>
+                <p class="text-xs text-chocolate-600 max-w-xs font-sans">Tap any photo to view in high resolution.</p>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
@@ -206,7 +244,7 @@
                     <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112011-51063.webp?resolution=2624_2624" 
                          alt="Vintage Chocolate" 
                          class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="p-3 bg-white border-t border-sand/50">
+                    <div class="p-3 bg-white border-t border-sand/50 font-sans">
                         <p class="text-xs font-bold text-chocolate-900">Vintage Chocolate</p>
                         <p class="text-[11px] text-chocolate-500">Warm hand-dyed tone</p>
                     </div>
@@ -216,7 +254,7 @@
                     <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112204-26d5.webp?resolution=3762_3762" 
                          alt="Classic Black" 
                          class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="p-3 bg-white border-t border-sand/50">
+                    <div class="p-3 bg-white border-t border-sand/50 font-sans">
                         <p class="text-xs font-bold text-chocolate-900">Classic Black</p>
                         <p class="text-[11px] text-chocolate-500">Monochrome tailored style</p>
                     </div>
@@ -226,7 +264,7 @@
                     <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112013-3faa.webp?resolution=2624_2624" 
                          alt="Precision Weave" 
                          class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="p-3 bg-white border-t border-sand/50">
+                    <div class="p-3 bg-white border-t border-sand/50 font-sans">
                         <p class="text-xs font-bold text-chocolate-900">Precision Weave</p>
                         <p class="text-[11px] text-chocolate-500">Supple flexible braid</p>
                     </div>
@@ -236,7 +274,7 @@
                     <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112101-e946.webp?resolution=1973_1973" 
                          alt="Brass Hardware" 
                          class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="p-3 bg-white border-t border-sand/50">
+                    <div class="p-3 bg-white border-t border-sand/50 font-sans">
                         <p class="text-xs font-bold text-chocolate-900">Brass Hardware</p>
                         <p class="text-[11px] text-chocolate-500">Anti-rust vintage buckle</p>
                     </div>
@@ -244,13 +282,74 @@
             </div>
         </section>
 
-        <!-- 5. 9:16 Reels Format Video with Auto Unmuted Playback -->
-        <section id="reelsSection" class="bg-white rounded-3xl p-6 sm:p-12 border border-sand shadow-subtle text-center">
-            <span class="text-[11px] font-semibold tracking-[0.2em] text-chocolate-600 uppercase block mb-2">Video Demonstration</span>
-            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-chocolate-900 mb-2">Product in Real Life</h2>
-            <p class="text-xs sm:text-sm text-chocolate-600 max-w-sm mx-auto mb-8">Inspect the buckle tension, belt thickness, and texture in motion.</p>
+        <!-- ============================================== -->
+        <!-- ✨ FEATURE CHECKLIST SECTION (BEFORE YOUTUBE)  -->
+        <!-- ============================================== -->
+        <section class="max-w-xl mx-auto space-y-6">
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-sand shadow-card space-y-6">
+                
+                <!-- English Highlights with Golden/Yellow Checkmarks -->
+                <div class="space-y-3 font-sans text-sm font-semibold text-chocolate-900 border-b border-sand pb-6">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-amber-500 text-sm"></i>
+                        <span>Luxury Vintage Look</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-amber-500 text-sm"></i>
+                        <span>Perfect Fit Without Holes</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-amber-500 text-sm"></i>
+                        <span>Built To Last</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-amber-500 text-sm"></i>
+                        <span>Premium Leather</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-amber-500 text-sm"></i>
+                        <span>100% Original Leather</span>
+                    </div>
+                </div>
 
-            <!-- 9:16 Vertical Reels Container (Unmuted Autoplay Enabled) -->
+                                <!-- Bangla Feature Checklist with Dark Checkmarks -->
+                <div class="space-y-3.5 text-sm font-semibold text-chocolate-900 pt-2">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-black text-sm"></i>
+                        <span>১০০% প্রিমিয়াম জেনুইন লেদার</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-black text-sm"></i>
+                        <span>হ্যান্ড-ব্রেইডেড প্রিমিয়াম ডিজাইন</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-black text-sm"></i>
+                        <span>ছিদ্রবিহীন অ্যাডজাস্টেবল ফিট</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-black text-sm"></i>
+                        <span>মজবুত ও দীর্ঘস্থায়ী</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-black text-sm"></i>
+                        <span>ভিন্টেজ ব্রাস বাকল</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-black text-sm"></i>
+                        <span>ফরমাল ও ক্যাজুয়াল—উভয়ের জন্য উপযোগী</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. 9:16 Reels Format Video with Autoplay -->
+        <section id="reelsSection" class="bg-white rounded-3xl p-6 sm:p-12 border border-sand shadow-subtle text-center">
+            <span class="text-[11px] font-semibold tracking-[0.2em] text-chocolate-600 uppercase block mb-2 font-sans">Video Demonstration</span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-chocolate-900 mb-2">Product in Real Life</h2>
+            <p class="text-xs sm:text-sm text-chocolate-600 max-w-sm mx-auto mb-8 font-sans">Inspect the buckle tension, belt thickness, and texture in motion.</p>
+
+            <!-- 9:16 Vertical Reels Container (Autoplay Enabled) -->
             <div class="relative w-full max-w-[300px] sm:max-w-[320px] aspect-[9/16] rounded-3xl overflow-hidden mx-auto shadow-float border-4 border-chocolate-900 bg-black">
                 <iframe 
                     class="w-full h-full absolute inset-0"
@@ -270,16 +369,16 @@
                 <div class="flex items-center justify-between border-b border-sand pb-4">
                     <div>
                         <h3 class="font-serif text-xl sm:text-2xl font-bold text-chocolate-900">Checkout</h3>
-                        <p class="text-xs text-chocolate-600 mt-0.5">Cash on delivery. Inspect before payment.</p>
+                        <p class="text-xs text-chocolate-600 mt-0.5 font-sans">Cash on delivery. Inspect before payment.</p>
                     </div>
-                    <span class="text-xs font-bold bg-latte text-chocolate-800 px-3 py-1 rounded-full border border-sand">
+                    <span class="text-xs font-bold bg-latte text-chocolate-800 px-3 py-1 rounded-full border border-sand font-sans">
                         Price: ৳890
                     </span>
                 </div>
 
                 <!-- Variant Selector -->
                 <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-chocolate-700 mb-2">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-chocolate-700 mb-2 font-sans">
                         1. Select Color
                     </label>
                     <div class="grid grid-cols-2 gap-3" id="variantSelector">
@@ -287,7 +386,7 @@
                         <div onclick="selectVariant('chocolate')" id="card-chocolate" 
                              class="p-3 rounded-2xl border-2 border-chocolate-800 bg-chocolate-50 cursor-pointer transition flex items-center gap-3">
                             <div class="w-10 h-10 rounded-xl bg-chocolate-700 shrink-0 border border-chocolate-800"></div>
-                            <div class="leading-none">
+                            <div class="leading-none font-sans">
                                 <span class="font-bold text-xs text-chocolate-900 block">Vintage Chocolate</span>
                                 <span class="text-[11px] text-chocolate-600 mt-1 block">৳890</span>
                             </div>
@@ -297,7 +396,7 @@
                         <div onclick="selectVariant('black')" id="card-black" 
                              class="p-3 rounded-2xl border-2 border-sand bg-white cursor-pointer transition flex items-center gap-3 hover:border-chocolate-400">
                             <div class="w-10 h-10 rounded-xl bg-black shrink-0 border border-zinc-800"></div>
-                            <div class="leading-none">
+                            <div class="leading-none font-sans">
                                 <span class="font-bold text-xs text-chocolate-900 block">Classic Black</span>
                                 <span class="text-[11px] text-chocolate-600 mt-1 block">৳890</span>
                             </div>
@@ -306,7 +405,7 @@
                 </div>
 
                 <!-- Quantity & Calculations -->
-                <div class="bg-chocolate-50/50 p-4 rounded-2xl border border-sand space-y-3">
+                <div class="bg-chocolate-50/50 p-4 rounded-2xl border border-sand space-y-3 font-sans">
                     <div class="flex items-center justify-between">
                         <span class="text-xs font-semibold text-chocolate-800">Quantity</span>
                         <div class="flex items-center gap-3 bg-white p-1 rounded-xl border border-sand">
@@ -337,7 +436,7 @@
                 </div>
 
                 <!-- Order Form -->
-                <form id="orderForm" novalidate class="space-y-4">
+                <form id="orderForm" novalidate class="space-y-4 font-sans">
                     <div>
                         <label class="block text-xs font-bold text-chocolate-800 mb-1">Your Full Name *</label>
                         <input type="text" id="custName" placeholder="Enter recipient name" required class="input-field" onfocus="handleFormInteraction()">
@@ -384,9 +483,9 @@
                     </div>
                     <div>
                         <h4 class="font-serif text-2xl font-bold text-chocolate-900">Order Placed!</h4>
-                        <p class="text-xs text-chocolate-600 mt-1 max-w-sm mx-auto">Thank you for your order. We have registered your consignment and our team will contact you shortly.</p>
+                        <p class="text-xs text-chocolate-600 mt-1 max-w-sm mx-auto font-sans">Thank you for your order. We have registered your consignment and our team will contact you shortly.</p>
                     </div>
-                    <a id="whatsappConfirmLink" href="#" target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold py-3.5 px-6 rounded-xl text-xs tracking-wide shadow-sm hover:bg-[#20bd5a] transition">
+                    <a id="whatsappConfirmLink" href="#" target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold py-3.5 px-6 rounded-xl text-xs tracking-wide shadow-sm hover:bg-[#20bd5a] transition font-sans">
                         <i class="fa-brands fa-whatsapp text-base"></i> Send Confirmation on WhatsApp
                     </a>
                 </div>
@@ -397,7 +496,7 @@
     </main>
 
     <!-- 7. Minimal Footer -->
-    <footer class="mt-20 border-t border-sand bg-white py-10 text-center text-xs text-chocolate-500 space-y-3">
+    <footer class="mt-20 border-t border-sand bg-white py-10 text-center text-xs text-chocolate-500 space-y-3 font-sans">
         <span class="font-serif font-bold text-sm text-chocolate-900 uppercase tracking-widest block">AZWAD LEATHER</span>
         <div class="flex items-center justify-center gap-4 text-chocolate-700">
             <a href="tel:+8801627257060" class="hover:underline">Phone: 01627257060</a>
@@ -409,11 +508,11 @@
 
     <!-- 8. Mobile Sticky Bottom CTA -->
     <div class="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-md border-t border-sand p-3 z-40 md:hidden flex items-center justify-between gap-4 shadow-lg">
-        <div class="leading-none pl-1">
+        <div class="leading-none pl-1 font-sans">
             <span class="text-[10px] text-chocolate-500 uppercase font-semibold block">Price (COD)</span>
             <span class="font-bold text-chocolate-900 text-base" id="stickyPriceText">৳890</span>
         </div>
-        <a href="#checkoutSection" class="bg-chocolate-900 text-cream text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-xl shadow-md">
+        <a href="#checkoutSection" class="bg-chocolate-900 text-cream text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-xl shadow-md font-sans">
             Order Now
         </a>
     </div>
@@ -446,7 +545,7 @@
     <!-- ============================================== -->
     <script>
         const CONFIG = {
-            WORKER_URL: 'https://steep-rain-e346.azwadahshafhossain.workers.dev',
+            WORKER_URL: 'https://proud-smoke-56cf.azwadhossain128.workers.dev',
             WHATSAPP_NUMBER: '8801627257060',
             STORE_NAME: 'Azwad Leather',
             STORE_CODE: 'AL'
@@ -479,7 +578,7 @@
         let isPixelActive = false;
         let activePixelId = null;
         let hasPurchasedFired = false;
-        let hasInitiatedCheckout = false; // Triggered once when interacting with form
+        let hasInitiatedCheckout = false;
 
         /* Dynamic Meta Pixel Auto-Loader */
         async function loadDynamicPixel() {
