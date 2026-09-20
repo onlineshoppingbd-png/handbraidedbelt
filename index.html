@@ -1,21 +1,19 @@
 <!DOCTYPE html>
-<html lang="bn" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Azwad Leather | Premium Hand Braided Leather Belt</title>
-    <meta name="description" content="প্রিমিয়াম হ্যান্ড ব্রেইডেড লেদার বেল্ট। ১০০% জেনুইন লেদার, ভিন্টেজ ব্রাস ফিনিশ বাকল, কোনো পাঞ্চ হোল নেই। সারাদেশে ফ্রি হোম ডেলিভারি ও ক্যাশ অন ডেলিভারি।">
-    <meta name="theme-color" content="#2A1B12">
+    <title>Azwad Leather | Hand-Braided Leather Belt</title>
+    <meta name="description" content="Handcrafted braided leather belt with antique brass buckle. Fully adjustable hole-free fit. Complimentary nationwide delivery.">
+    <meta name="theme-color" content="#FAF7F2">
 
-    <!-- Preconnect to Fonts -->
+    <!-- Preconnect Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- Meta Pixel Code (100% Fixed & Single-Fire Setup) -->
+    <!-- Base Meta Pixel Loader Shell (Dynamic) -->
     <script>
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -25,823 +23,426 @@
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
-        
-        // 🛑 ফেসবুকের ফেক অটোমেটিক বাটন-ক্লিক ট্র্যাকিং বন্ধ করার কমান্ড:
-        fbq('set', 'autoConfig', false, '628150683565093');
-        fbq('init', '628150683565093');
-        fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=628150683565093&ev=PageView&noscript=1"/></noscript>
 
-    <!-- Tailwind CSS Setup -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        bangla: ['"Hind Siliguri"', 'sans-serif'],
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
                         serif: ['"Playfair Display"', 'serif'],
-                        sans: ['system-ui', '-apple-system', 'sans-serif']
                     },
                     colors: {
-                        brand: {
-                            50: '#FDFBF7',
-                            100: '#F4F1EA',
-                            200: '#E8E1D5',
-                            300: '#D5C8B5',
-                            400: '#B8A388',
-                            500: '#9B7E5B',
+                        cream: '#FAF7F2',
+                        latte: '#F3EFEA',
+                        sand: '#E7DFD5',
+                        chocolate: {
+                            50: '#FBF8F5',
+                            100: '#F4ECE4',
+                            200: '#E6D5C5',
+                            400: '#B89274',
                             600: '#8C6239',
-                            700: '#6A4A2B',
-                            800: '#4A3424',
-                            900: '#2A1B12',
-                            950: '#1A100B'
-                        },
-                        success: '#25D366'
+                            700: '#6E4826',
+                            800: '#4A3019',
+                            900: '#2A1B0E'
+                        }
                     },
                     boxShadow: {
-                        'soft': '0 10px 40px -10px rgba(42, 27, 18, 0.08)',
-                        'card': '0 4px 20px -2px rgba(42, 27, 18, 0.05)',
-                        'floating': '0 20px 40px -10px rgba(0, 0, 0, 0.2)'
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'slide-up': 'slideUp 0.5s ease-out forwards',
-                        'marquee': 'marquee 25s linear infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(20px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' },
-                        },
-                        marquee: {
-                            '0%': { transform: 'translateX(0)' },
-                            '100%': { transform: 'translateX(-50%)' },
-                        }
+                        'subtle': '0 2px 20px -2px rgba(42, 27, 14, 0.04)',
+                        'card': '0 8px 30px -4px rgba(42, 27, 14, 0.06)',
+                        'float': '0 20px 40px -10px rgba(42, 27, 14, 0.12)'
                     }
                 }
             }
         }
     </script>
 
-    <!-- Custom CSS -->
     <style>
-        body { background-color: #FDFBF7; color: #2A1B12; -webkit-font-smoothing: antialiased; }
-        ::selection { background: #8C6239; color: #ffffff; }
-
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #F4F1EA; }
-        ::-webkit-scrollbar-thumb { background: #B8A388; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #8C6239; }
-
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-        .bg-hero-gradient { background: linear-gradient(180deg, #F4F1EA 0%, #FDFBF7 100%); }
-        .bg-dark-texture {
-            background-color: #2A1B12;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234a3424' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
+        body { background-color: #FAF7F2; color: #1E1B18; -webkit-font-smoothing: antialiased; }
+        ::selection { background: #8C6239; color: #FFFFFF; }
+        
+        /* Smooth Scrollbar */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #FAF7F2; }
+        ::-webkit-scrollbar-thumb { background: #D5C7B8; border-radius: 4px; }
 
         .marquee-wrapper { overflow: hidden; white-space: nowrap; display: flex; width: 100%; align-items: center; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .animate-marquee { animation: marquee 24s linear infinite; }
 
         .input-field {
-            width: 100%; background: #FDFBF7; border: 1.5px solid #E8E1D5; border-radius: 12px;
-            padding: 12px 16px; font-size: 15px; color: #2A1B12; transition: all 0.2s ease; outline: none;
+            width: 100%; background: #FFFFFF; border: 1.5px solid #E7DFD5; border-radius: 12px;
+            padding: 12px 14px; font-size: 14px; color: #1E1B18; transition: all 0.2s ease; outline: none;
         }
-        .input-field:focus { border-color: #8C6239; background: #ffffff; box-shadow: 0 0 0 3px rgba(140, 98, 57, 0.1); }
-        .input-field.error { border-color: #ef4444; background-color: #fef2f2; }
-        .error-message { display: none; color: #ef4444; font-size: 12px; margin-top: 5px; font-weight: 600; }
-        .error-message.show { display: block; }
+        .input-field:focus { border-color: #8C6239; box-shadow: 0 0 0 3px rgba(140, 98, 57, 0.1); }
+        .input-field.error { border-color: #ef4444; background: #fff8f8; }
+        .error-label { display: none; color: #ef4444; font-size: 11px; font-weight: 600; margin-top: 4px; }
+        .error-label.show { display: block; }
 
-        .btn-primary {
-            background: #2A1B12; color: #ffffff; transition: all 0.3s ease; position: relative; overflow: hidden;
+        .spin-loader {
+            width: 18px; height: 18px; border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%; border-top-color: #fff; animation: spin 0.7s linear infinite;
         }
-        .btn-primary:hover { background: #4A3424; transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(42, 27, 18, 0.4); }
-        .btn-primary:active { transform: translateY(0); }
+        @keyframes spin { to { transform: rotate(360deg); } }
 
-        .custom-radio input[type="radio"] {
-            appearance: none; width: 18px; height: 18px; border: 2px solid #D5C8B5; border-radius: 50%;
-            outline: none; cursor: pointer; position: relative; transition: all 0.2s; margin: 0; flex-shrink: 0;
+        /* Lightbox modal animation */
+        .lightbox-modal {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.25s ease-out, visibility 0.25s;
         }
-        .custom-radio input[type="radio"]:checked { border-color: #8C6239; }
-        .custom-radio input[type="radio"]:checked::after {
-            content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 8px; height: 8px; background-color: #8C6239; border-radius: 50%;
+        .lightbox-modal.open {
+            opacity: 1;
+            visibility: visible;
         }
-
-        .modal-overlay { opacity: 0; visibility: hidden; transition: all 0.3s ease-out; backdrop-filter: blur(4px); }
-        .modal-overlay.open { opacity: 1; visibility: visible; }
-        .modal-content { transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-        .modal-overlay.open .modal-content { transform: translateY(0); }
-        @media (min-width: 640px) {
-            .modal-content { transform: scale(0.95) translateY(20px); opacity: 0; }
-            .modal-overlay.open .modal-content { transform: scale(1) translateY(0); opacity: 1; }
-        }
-
-        .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s ease; }
-        .faq-item.active .faq-answer { grid-template-rows: 1fr; }
-        .faq-inner { overflow: hidden; }
-        .faq-icon { transition: transform 0.4s ease; }
-        .faq-item.active .faq-icon { transform: rotate(180deg); }
-
-        .loader-spinner {
-            width: 20px; height: 20px; border: 2.5px solid rgba(255,255,255,0.3);
-            border-radius: 50%; border-top-color: #fff; animation: spin 0.8s linear infinite;
-        }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-        .success-path { stroke-dasharray: 100; stroke-dashoffset: 100; animation: dash 1s ease-out forwards; animation-delay: 0.2s; }
-        @keyframes dash { to { stroke-dashoffset: 0; } }
     </style>
 </head>
-<body class="font-bangla relative">
+<body class="font-sans antialiased pb-24 md:pb-12 selection:bg-chocolate-800 selection:text-white">
 
-    <!-- Moving Announcement Bar (Marquee) -->
-    <div class="bg-brand-900 text-brand-100 py-2.5 overflow-hidden z-50 relative border-b border-brand-800 flex items-center">
+    <!-- 1. Top Announcement Bar -->
+    <div class="bg-chocolate-900 text-chocolate-100 py-2.5 overflow-hidden text-xs tracking-wider uppercase font-medium">
         <div class="marquee-wrapper">
-            <div class="flex animate-marquee gap-8 sm:gap-16 text-[13px] sm:text-sm font-semibold tracking-wide px-4">
-                <span class="flex items-center gap-2"><i class="fa-solid fa-truck-fast text-brand-400"></i> সারাদেশে সম্পূর্ণ ফ্রি হোম ডেলিভারি</span>
-                <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-brand-400"></i> ১০০% ক্যাশ অন ডেলিভারি (আগে চেক করুন, পরে পে করুন)</span>
-                <span class="flex items-center gap-2"><i class="fa-solid fa-gem text-brand-400"></i> ১০০% জেনুইন লেদার গ্যারান্টি</span>
-                <span class="flex items-center gap-2"><i class="fa-solid fa-truck-fast text-brand-400"></i> সারাদেশে সম্পূর্ণ ফ্রি হোম ডেলিভারি</span>
-                <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-brand-400"></i> ১০০% ক্যাশ অন ডেলিভারি (আগে চেক করুন, পরে পে করুন)</span>
-                <span class="flex items-center gap-2"><i class="fa-solid fa-gem text-brand-400"></i> ১০০% জেনুইন লেদার গ্যারান্টি</span>
+            <div class="flex animate-marquee gap-12 sm:gap-20 items-center px-4">
+                <span>Free Nationwide Home Delivery</span>
+                <span>Cash on Delivery Inspection Guaranteed</span>
+                <span>Hole-Free Custom Micro-Fit</span>
+                <span>Free Nationwide Home Delivery</span>
+                <span>Cash on Delivery Inspection Guaranteed</span>
+                <span>Hole-Free Custom Micro-Fit</span>
             </div>
         </div>
     </div>
 
-    <!-- Header Navigation -->
-    <header class="sticky top-0 z-40 bg-brand-50/95 backdrop-blur-md border-b border-brand-200 transition-all duration-300" id="mainHeader">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                
-                <button class="lg:hidden text-brand-900 p-2 -ml-2" aria-label="Menu">
-                    <i class="fa-solid fa-bars text-2xl"></i>
-                </button>
-
-                <a href="#" class="flex flex-col items-center justify-center group flex-1 lg:flex-none">
-                    <h1 class="font-serif text-3xl font-extrabold text-brand-900 tracking-wider uppercase leading-none group-hover:text-brand-600 transition-colors">
-                        Azwad<span class="text-brand-600 font-normal">Leather</span>
-                    </h1>
-                    <span class="text-[10px] tracking-[0.25em] text-brand-500 uppercase font-bold mt-1.5">Crafted For Real Men</span>
-                </a>
-
-                <nav class="hidden lg:flex items-center gap-8 font-serif font-semibold text-[15px] text-brand-800 tracking-wide uppercase">
-                    <a href="#hero" class="hover:text-brand-600 transition-colors">Home</a>
-                    <a href="#reels" class="hover:text-brand-600 transition-colors">Watch Video</a>
-                    <a href="#gallery" class="hover:text-brand-600 transition-colors">Gallery</a>
-                    <a href="#pricing" class="hover:text-brand-600 transition-colors">Pricing</a>
-                    <a href="#faq" class="hover:text-brand-600 transition-colors">FAQ</a>
-                </nav>
-
-                <div class="flex items-center gap-4">
-                    <button class="hidden sm:flex w-10 h-10 rounded-full bg-brand-100 items-center justify-center text-brand-900 hover:bg-brand-200 transition-colors">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                    <button onclick="openCheckoutModal()" class="relative flex w-12 h-12 rounded-full bg-brand-900 items-center justify-center text-white hover:bg-brand-800 transition-colors shadow-md group">
-                        <i class="fa-solid fa-bag-shopping text-xl group-hover:scale-110 transition-transform"></i>
-                        <span class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center border-2 border-brand-50">1</span>
-                    </button>
+    <!-- 2. Clean Minimal Header -->
+    <header class="sticky top-0 z-40 bg-cream/90 backdrop-blur-md border-b border-sand/60">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-chocolate-900 text-cream flex items-center justify-center font-serif font-bold text-sm tracking-tighter">
+                    AL
                 </div>
+                <div class="leading-tight">
+                    <span class="font-serif text-lg font-bold tracking-wider text-chocolate-900 uppercase block">Azwad</span>
+                    <span class="text-[9px] tracking-[0.25em] text-chocolate-600 font-semibold uppercase block -mt-0.5">Leather Atelier</span>
+                </div>
+            </a>
 
+            <div class="flex items-center gap-3">
+                <button onclick="triggerViewContent()" class="hidden sm:inline-flex border border-sand hover:bg-white text-chocolate-800 text-xs font-semibold px-4 py-2 rounded-full transition">
+                    View Product
+                </button>
+                <a href="#checkoutSection" class="bg-chocolate-900 hover:bg-chocolate-800 text-cream text-xs font-semibold px-5 py-2.5 rounded-full transition shadow-sm">
+                    Order (৳890)
+                </a>
             </div>
         </div>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="hero" class="bg-hero-gradient relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-32">
-            <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-                <div class="absolute -top-[20%] -right-[10%] w-[70%] h-[70%] rounded-full bg-brand-100/50 blur-3xl"></div>
-                <div class="absolute -bottom-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-brand-200/40 blur-3xl"></div>
-            </div>
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 pt-8 space-y-16 sm:space-y-24">
 
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-                    
-                    <div class="lg:col-span-6 text-center lg:text-left order-2 lg:order-1 flex flex-col justify-center h-full">
-                        <div class="inline-flex items-center gap-3 mb-6 mx-auto lg:mx-0">
-                            <span class="h-[1px] w-12 bg-brand-600"></span>
-                            <span class="font-serif text-brand-600 font-bold tracking-[0.2em] text-xs sm:text-sm uppercase">Premium Hand-Braided</span>
-                            <span class="h-[1px] w-12 bg-brand-600 hidden sm:block lg:hidden"></span>
-                        </div>
-                        
-                        <h2 class="font-serif text-5xl sm:text-6xl lg:text-[5.5rem] font-bold leading-[1.05] text-brand-900 mb-4 text-balance">
-                            Leather Belt
-                        </h2>
-                        
-                        <p class="font-serif text-2xl sm:text-3xl text-brand-700 font-semibold italic mb-8">
-                            Classic design. Lasting quality.
-                        </p>
+        <!-- 3. Hero Showcase -->
+        <section class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div class="lg:col-span-6 text-center lg:text-left order-2 lg:order-1">
+                <span class="inline-block text-[11px] uppercase tracking-[0.2em] font-semibold text-chocolate-600 mb-3">
+                    Everyday Refinement
+                </span>
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-chocolate-900 leading-[1.1] mb-5">
+                    Hand-Braided Leather Belt
+                </h1>
+                <p class="text-sm sm:text-base text-chocolate-700 leading-relaxed max-w-md mx-auto lg:mx-0 mb-8">
+                    Crafted without punched holes for a personalized micro-fit. Finished with an antiqued vintage brass buckle that pairs effortlessly with tailored trousers or casual denim.
+                </p>
 
-                        <p class="text-lg sm:text-xl text-brand-800 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium mb-10 text-balance opacity-90">
-                            Experience the perfect blend of durability, comfort, and timeless style. The hole-free braided design offers a custom adjustable fit, making it the ideal belt for both formal and casual wear.
-                        </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
+                    <a href="#checkoutSection" class="w-full sm:w-auto bg-chocolate-900 hover:bg-chocolate-800 text-cream font-semibold text-sm px-8 py-3.5 rounded-full transition text-center shadow-md">
+                        Order Now (৳890)
+                    </a>
+                    <button onclick="triggerViewContent()" class="w-full sm:w-auto border border-sand bg-white/80 hover:bg-white text-chocolate-800 text-sm font-semibold px-6 py-3.5 rounded-full transition text-center">
+                        <i class="fa-regular fa-image text-xs mr-1.5 text-chocolate-600"></i> View Content
+                    </button>
+                </div>
 
-                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                           
-                            <a href="#reels" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 font-serif font-bold text-lg px-8 py-4.5 rounded-full text-brand-900 hover:bg-brand-100 transition-colors uppercase tracking-widest">
-                                <i class="fa-solid fa-play"></i> Watch Video
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-6 relative order-1 lg:order-2">
-                        <div class="relative w-full max-w-lg mx-auto lg:max-w-none animate-float z-10">
-                            <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/43326-b0c7.webp?resolution=3762_3762" alt="Hand Braided Leather Belt Showcase" class="w-full h-auto rounded-[2rem] object-cover shadow-2xl border-8 border-white">
-                            
-                            <div class="absolute -left-4 sm:-left-8 top-12 bg-white px-5 py-3 rounded-2xl shadow-floating border border-brand-100 flex items-center gap-3 animate-slide-up" style="animation-delay: 0.3s;">
-                                <div class="w-10 h-10 rounded-full bg-brand-900 text-white flex items-center justify-center text-lg"><i class="fa-solid fa-ruler-horizontal"></i></div>
-                                <div>
-                                    <p class="text-[10px] text-brand-500 font-bold uppercase tracking-wider">Perfect Fit</p>
-                                    <p class="text-sm font-bold text-brand-900">Fits 32" – 42"</p>
-                                </div>
-                            </div>
-
-                            <div class="absolute -right-4 sm:-right-8 bottom-12 bg-white px-5 py-3 rounded-2xl shadow-floating border border-brand-100 flex items-center gap-3 animate-slide-up" style="animation-delay: 0.6s;">
-                                <div class="w-10 h-10 rounded-full bg-brand-600 text-white flex items-center justify-center text-lg"><i class="fa-solid fa-award"></i></div>
-                                <div>
-                                    <p class="text-[10px] text-brand-500 font-bold uppercase tracking-wider">Material</p>
-                                    <p class="text-sm font-bold text-brand-900">100% Genuine Leather</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] aspect-square rounded-full border border-brand-300/50 -z-10"></div>
-                    </div>
-
+                <div class="mt-8 pt-6 border-t border-sand/80 flex items-center justify-center lg:justify-start gap-6 text-xs text-chocolate-600 font-medium">
+                    <span><i class="fa-solid fa-check mr-1.5 text-chocolate-800"></i> Free Shipping</span>
+                    <span><i class="fa-solid fa-check mr-1.5 text-chocolate-800"></i> Cash On Delivery</span>
+                    <span><i class="fa-solid fa-check mr-1.5 text-chocolate-800"></i> Universal 32"–42"</span>
                 </div>
             </div>
-        </section>
 
-        <!-- Trust Badges Bar -->
-        <section class="border-y border-brand-200 bg-white py-10 relative z-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 text-center divide-x-0 md:divide-x divide-brand-200/50">
-                    <div class="flex flex-col items-center group">
-                        <div class="w-16 h-16 rounded-full bg-brand-50 border border-brand-200 flex items-center justify-center text-2xl text-brand-900 mb-4 group-hover:scale-110 group-hover:bg-brand-900 group-hover:text-white transition-all duration-300">
-                            <i class="fa-solid fa-cow"></i>
-                        </div>
-                        <h3 class="font-serif font-bold text-lg text-brand-900 leading-tight">Genuine<br>Leather</h3>
-                    </div>
-                    <div class="flex flex-col items-center group">
-                        <div class="w-16 h-16 rounded-full bg-brand-50 border border-brand-200 flex items-center justify-center text-2xl text-brand-900 mb-4 group-hover:scale-110 group-hover:bg-brand-900 group-hover:text-white transition-all duration-300">
-                            <i class="fa-solid fa-bezier-curve"></i>
-                        </div>
-                        <h3 class="font-serif font-bold text-lg text-brand-900 leading-tight">Hand-Braided<br>Design</h3>
-                    </div>
-                    <div class="flex flex-col items-center group">
-                        <div class="w-16 h-16 rounded-full bg-brand-50 border border-brand-200 flex items-center justify-center text-2xl text-brand-900 mb-4 group-hover:scale-110 group-hover:bg-brand-900 group-hover:text-white transition-all duration-300">
+            <!-- Hero Image Box (Clickable Lightbox) -->
+            <div class="lg:col-span-6 order-1 lg:order-2">
+                <div class="relative max-w-md mx-auto rounded-3xl overflow-hidden bg-white p-3 border border-sand shadow-card cursor-pointer group" onclick="openLightbox(0)">
+                    <img id="heroImage" src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/43326-b0c7.webp?resolution=3762_3762" 
+                         alt="Braided Leather Belt on Model" 
+                         class="w-full h-auto rounded-2xl object-cover aspect-[4/5] group-hover:scale-[1.02] transition-transform duration-500">
+                    
+                    <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-sand shadow-subtle flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-latte text-chocolate-800 flex items-center justify-center text-xs">
                             <i class="fa-solid fa-ruler-combined"></i>
                         </div>
-                        <h3 class="font-serif font-bold text-lg text-brand-900 leading-tight">Hole-Free<br>Custom Fit</h3>
-                    </div>
-                    <div class="flex flex-col items-center group">
-                        <div class="w-16 h-16 rounded-full bg-brand-50 border border-brand-200 flex items-center justify-center text-2xl text-brand-900 mb-4 group-hover:scale-110 group-hover:bg-brand-900 group-hover:text-white transition-all duration-300">
-                            <i class="fa-solid fa-shield-halved"></i>
+                        <div class="leading-none">
+                            <span class="text-[10px] text-chocolate-400 uppercase font-semibold block">Hole-Free</span>
+                            <span class="text-xs font-bold text-chocolate-900 mt-0.5 block">Custom Fit (32"–42")</span>
                         </div>
-                        <h3 class="font-serif font-bold text-lg text-brand-900 leading-tight">Built to<br>Last Long</h3>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Product Video Section -->
-        <section id="reels" class="py-20 md:py-32 bg-brand-50 relative overflow-hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-                    <div class="inline-flex items-center gap-3 mb-4">
-                        <span class="h-[1px] w-8 bg-brand-400"></span>
-                        <span class="font-serif text-brand-600 font-bold tracking-[0.2em] text-xs uppercase">Watch It In Action</span>
-                        <span class="h-[1px] w-8 bg-brand-400"></span>
+        <!-- 4. 4-Card Image Showcase with Working Lightbox -->
+        <section class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-sand pb-4">
+                <div>
+                    <span class="text-[11px] font-semibold tracking-[0.2em] text-chocolate-600 uppercase block">Gallery</span>
+                    <h2 class="font-serif text-2xl sm:text-3xl font-bold text-chocolate-900">Texture & Finish</h2>
+                </div>
+                <p class="text-xs text-chocolate-600 max-w-xs">Tap any photo to view in high resolution.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+                <div onclick="openLightbox(1)" class="group cursor-pointer rounded-2xl overflow-hidden bg-white border border-sand shadow-subtle">
+                    <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112011-51063.webp?resolution=2624_2624" 
+                         alt="Vintage Chocolate" 
+                         class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="p-3 bg-white border-t border-sand/50">
+                        <p class="text-xs font-bold text-chocolate-900">Vintage Chocolate</p>
+                        <p class="text-[11px] text-chocolate-500">Warm hand-dyed tone</p>
                     </div>
-                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-900 mb-6">See The Quality Up Close</h2>
-                    <p class="text-lg text-brand-700">আমাদের হ্যান্ড ব্রেইডেড লেদার বেল্টের আসল সৌন্দর্য ও কোয়ালিটি দেখতে ভিডিওটি প্লে করুন।</p>
                 </div>
 
-                <div class="max-w-4xl mx-auto">
-                    <div class="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-brand-900 bg-black">
-                        <iframe 
-                            id="reelVideo"
-                            class="w-full h-full absolute inset-0"
-                            src="https://www.youtube.com/embed/ouXV2AhR5GA?autoplay=1&loop=1&playlist=ouXV2AhR5GA&controls=1&modestbranding=1&rel=0" 
-                            title="Azwad Leather Belt Video" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
+                <div onclick="openLightbox(2)" class="group cursor-pointer rounded-2xl overflow-hidden bg-white border border-sand shadow-subtle">
+                    <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112204-26d5.webp?resolution=3762_3762" 
+                         alt="Classic Black" 
+                         class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="p-3 bg-white border-t border-sand/50">
+                        <p class="text-xs font-bold text-chocolate-900">Classic Black</p>
+                        <p class="text-[11px] text-chocolate-500">Monochrome tailored style</p>
+                    </div>
+                </div>
+
+                <div onclick="openLightbox(3)" class="group cursor-pointer rounded-2xl overflow-hidden bg-white border border-sand shadow-subtle">
+                    <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112013-3faa.webp?resolution=2624_2624" 
+                         alt="Precision Weave" 
+                         class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="p-3 bg-white border-t border-sand/50">
+                        <p class="text-xs font-bold text-chocolate-900">Precision Weave</p>
+                        <p class="text-[11px] text-chocolate-500">Supple flexible braid</p>
+                    </div>
+                </div>
+
+                <div onclick="openLightbox(4)" class="group cursor-pointer rounded-2xl overflow-hidden bg-white border border-sand shadow-subtle">
+                    <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112101-e946.webp?resolution=1973_1973" 
+                         alt="Brass Hardware" 
+                         class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="p-3 bg-white border-t border-sand/50">
+                        <p class="text-xs font-bold text-chocolate-900">Brass Hardware</p>
+                        <p class="text-[11px] text-chocolate-500">Anti-rust vintage buckle</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Gallery Section -->
-        <section id="gallery" class="py-20 md:py-32 bg-dark-texture text-brand-100 relative border-t border-brand-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- 5. 9:16 Reels Format Video with Auto Unmuted Playback -->
+        <section id="reelsSection" class="bg-white rounded-3xl p-6 sm:p-12 border border-sand shadow-subtle text-center">
+            <span class="text-[11px] font-semibold tracking-[0.2em] text-chocolate-600 uppercase block mb-2">Video Demonstration</span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-chocolate-900 mb-2">Product in Real Life</h2>
+            <p class="text-xs sm:text-sm text-chocolate-600 max-w-sm mx-auto mb-8">Inspect the buckle tension, belt thickness, and texture in motion.</p>
+
+            <!-- 9:16 Vertical Reels Container (Unmuted Autoplay Enabled) -->
+            <div class="relative w-full max-w-[300px] sm:max-w-[320px] aspect-[9/16] rounded-3xl overflow-hidden mx-auto shadow-float border-4 border-chocolate-900 bg-black">
+                <iframe 
+                    class="w-full h-full absolute inset-0"
+                    src="https://www.youtube.com/embed/ouXV2AhR5GA?autoplay=1&loop=1&playlist=ouXV2AhR5GA&controls=1&rel=0&playsinline=1" 
+                    title="Azwad Braided Belt Review" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <!-- 6. In-Form Smart Checkout (Single Variant Mode) -->
+        <section id="checkoutSection" class="scroll-mt-24">
+            <div class="max-w-xl mx-auto bg-white rounded-3xl p-6 sm:p-8 border-2 border-chocolate-800 shadow-card space-y-6">
                 
-                <div class="text-center max-w-2xl mx-auto mb-16">
-                    <div class="inline-flex items-center gap-3 mb-4">
-                        <span class="h-[1px] w-12 bg-brand-600"></span>
-                        <span class="font-serif text-brand-400 font-bold tracking-[0.2em] text-xs uppercase">Featured Gallery</span>
-                        <span class="h-[1px] w-12 bg-brand-600"></span>
+                <div class="flex items-center justify-between border-b border-sand pb-4">
+                    <div>
+                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-chocolate-900">Checkout</h3>
+                        <p class="text-xs text-chocolate-600 mt-0.5">Cash on delivery. Inspect before payment.</p>
                     </div>
-                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-white mb-6">Premium Craft. Real Moments.</h2>
+                    <span class="text-xs font-bold bg-latte text-chocolate-800 px-3 py-1 rounded-full border border-sand">
+                        Price: ৳890
+                    </span>
                 </div>
 
-                <div class="relative max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl border-2 border-brand-800 mb-12 group cursor-pointer" id="gallerySliderWrapper">
-                    <div class="flex transition-transform duration-700 ease-in-out h-[250px] sm:h-[400px] md:h-[500px]" id="gallerySliderTrack">
-                        <div class="w-full h-full shrink-0 relative">
-                            <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/43326-b0c7.webp?resolution=3762_3762" alt="Lifestyle" class="w-full h-full object-cover">
+                <!-- Variant Selector -->
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-chocolate-700 mb-2">
+                        1. Select Color
+                    </label>
+                    <div class="grid grid-cols-2 gap-3" id="variantSelector">
+                        <!-- Chocolate -->
+                        <div onclick="selectVariant('chocolate')" id="card-chocolate" 
+                             class="p-3 rounded-2xl border-2 border-chocolate-800 bg-chocolate-50 cursor-pointer transition flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-chocolate-700 shrink-0 border border-chocolate-800"></div>
+                            <div class="leading-none">
+                                <span class="font-bold text-xs text-chocolate-900 block">Vintage Chocolate</span>
+                                <span class="text-[11px] text-chocolate-600 mt-1 block">৳890</span>
+                            </div>
                         </div>
-                        <div class="w-full h-full shrink-0 relative">
-                            <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112013-3faa.webp?resolution=2624_2624" alt="Belt details" class="w-full h-full object-cover">
-                        </div>
-                        <div class="w-full h-full shrink-0 relative">
-                            <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112101-e946.webp?resolution=1973_1973" alt="Texture" class="w-full h-full object-cover">
+
+                        <!-- Black -->
+                        <div onclick="selectVariant('black')" id="card-black" 
+                             class="p-3 rounded-2xl border-2 border-sand bg-white cursor-pointer transition flex items-center gap-3 hover:border-chocolate-400">
+                            <div class="w-10 h-10 rounded-xl bg-black shrink-0 border border-zinc-800"></div>
+                            <div class="leading-none">
+                                <span class="font-bold text-xs text-chocolate-900 block">Classic Black</span>
+                                <span class="text-[11px] text-chocolate-600 mt-1 block">৳890</span>
+                            </div>
                         </div>
                     </div>
-                    
-                    <button id="btnPrevSlide" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-brand-600 transition-colors z-10 opacity-80 hover:opacity-100 backdrop-blur-sm border border-white/20">
-                        <i class="fa-solid fa-chevron-left text-sm md:text-base"></i>
+                </div>
+
+                <!-- Quantity & Calculations -->
+                <div class="bg-chocolate-50/50 p-4 rounded-2xl border border-sand space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-semibold text-chocolate-800">Quantity</span>
+                        <div class="flex items-center gap-3 bg-white p-1 rounded-xl border border-sand">
+                            <button type="button" onclick="adjustQty(-1)" class="w-7 h-7 rounded-lg bg-chocolate-900 text-cream flex items-center justify-center font-bold text-sm">
+                                -
+                            </button>
+                            <span id="quantityDisplay" class="font-bold text-sm w-4 text-center">1</span>
+                            <button type="button" onclick="adjustQty(1)" class="w-7 h-7 rounded-lg bg-chocolate-900 text-cream flex items-center justify-center font-bold text-sm">
+                                +
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-sand/60 pt-2 space-y-1.5 text-xs text-chocolate-700">
+                        <div class="flex justify-between">
+                            <span>Subtotal</span>
+                            <span id="subtotalLabel" class="font-bold text-chocolate-900">৳890</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Nationwide Delivery</span>
+                            <span class="font-bold text-emerald-700 uppercase text-[10px] bg-emerald-50 px-2 py-0.5 rounded">Free</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm font-bold text-chocolate-900 pt-2 border-t border-sand">
+                            <span>Total Payable (COD)</span>
+                            <span id="totalPayableLabel" class="text-base font-extrabold text-chocolate-900">৳890</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Form -->
+                <form id="orderForm" novalidate class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-chocolate-800 mb-1">Your Full Name *</label>
+                        <input type="text" id="custName" placeholder="Enter recipient name" required class="input-field" onfocus="handleFormInteraction()">
+                        <p class="error-label" id="err-name">Please provide your name.</p>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-chocolate-800 mb-1">Contact Mobile Number *</label>
+                        <input type="tel" id="custPhone" placeholder="017xxxxxxxx" maxlength="14" required class="input-field" onfocus="handleFormInteraction()">
+                        <p class="error-label" id="err-phone">Valid 11-digit mobile number required.</p>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-chocolate-800 mb-1">Delivery Address *</label>
+                        <textarea id="custAddress" rows="2" placeholder="House/Road, Area, Thana, District" required class="input-field resize-none" onfocus="handleFormInteraction()"></textarea>
+                        <p class="error-label" id="err-address">Complete address required.</p>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-chocolate-800 mb-1.5">Delivery Zone</label>
+                        <div class="grid grid-cols-2 gap-2 text-xs">
+                            <label class="flex items-center gap-2 p-3 rounded-xl border border-sand bg-white cursor-pointer">
+                                <input type="radio" name="deliveryArea" value="Inside Dhaka" checked class="accent-chocolate-900">
+                                <span>Inside Dhaka (Free)</span>
+                            </label>
+                            <label class="flex items-center gap-2 p-3 rounded-xl border border-sand bg-white cursor-pointer">
+                                <input type="radio" name="deliveryArea" value="Outside Dhaka" class="accent-chocolate-900">
+                                <span>Outside Dhaka (Free)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="btnSubmitOrder" class="w-full bg-chocolate-900 hover:bg-chocolate-800 text-cream font-bold py-4 rounded-xl text-sm uppercase tracking-wider transition shadow-md flex items-center justify-center gap-2">
+                        <span id="btnText">Confirm Order (৳<span id="btnPriceLabel">890</span>)</span>
+                        <span id="btnLoader" class="hidden spin-loader"></span>
                     </button>
-                    <button id="btnNextSlide" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-brand-600 transition-colors z-10 opacity-80 hover:opacity-100 backdrop-blur-sm border border-white/20">
-                        <i class="fa-solid fa-chevron-right text-sm md:text-base"></i>
-                    </button>
+                    <p class="text-center text-[11px] text-chocolate-500">Inspection on delivery allowed. 100% Cash on Delivery.</p>
+                </form>
+
+                <!-- Order Success State -->
+                <div id="orderSuccessBox" class="hidden text-center py-8 space-y-4">
+                    <div class="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center text-2xl mx-auto">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-2xl font-bold text-chocolate-900">Order Placed!</h4>
+                        <p class="text-xs text-chocolate-600 mt-1 max-w-sm mx-auto">Thank you for your order. We have registered your consignment and our team will contact you shortly.</p>
+                    </div>
+                    <a id="whatsappConfirmLink" href="#" target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold py-3.5 px-6 rounded-xl text-xs tracking-wide shadow-sm hover:bg-[#20bd5a] transition">
+                        <i class="fa-brands fa-whatsapp text-base"></i> Send Confirmation on WhatsApp
+                    </a>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
-                    <div class="relative rounded-3xl overflow-hidden aspect-[4/3] group shadow-card border border-brand-800">
-                        <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112011-51063.webp?resolution=2624_2624" alt="Chocolate Belt" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-8 w-full">
-                            <span class="inline-block px-3 py-1 bg-brand-600/90 backdrop-blur text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-3">Classic Finish</span>
-                            <h3 class="font-serif text-2xl font-bold text-white mb-2">Vintage Chocolate Belt</h3>
-                            <p class="text-brand-300 text-sm">Rich texture with vintage brass buckle.</p>
-                        </div>
-                    </div>
-
-                    <div class="relative rounded-3xl overflow-hidden aspect-[4/3] group shadow-card border border-brand-800">
-                        <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112204-26d5.webp?resolution=3762_3762" alt="Black Belt" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out filter brightness-90">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-8 w-full">
-                            <span class="inline-block px-3 py-1 bg-brand-900/90 backdrop-blur border border-brand-700 text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-3">Color Option</span>
-                            <h3 class="font-serif text-2xl font-bold text-white mb-2">Classic Black Finish</h3>
-                            <p class="text-brand-300 text-sm">Perfect for sharp, formal, and professional looks.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Pricing & Packages Section -->
-        <section id="pricing" class="py-20 md:py-32 bg-brand-50 relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center max-w-2xl mx-auto mb-16">
-                    <div class="inline-flex items-center gap-3 mb-4">
-                        <span class="h-[1px] w-8 bg-brand-400"></span>
-                        <span class="font-serif text-brand-600 font-bold tracking-[0.2em] text-xs uppercase">Choose Your Style</span>
-                        <span class="h-[1px] w-8 bg-brand-400"></span>
-                    </div>
-                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-900 mb-6">Packages & Pricing</h2>
-                    <p class="text-lg text-brand-700">সিঙ্গেল বা কম্বো প্যাকেজ অর্ডারে পাচ্ছেন সম্পূর্ণ <strong class="text-brand-900">ফ্রি হোম ডেলিভারি</strong> ও <strong class="text-brand-900">ক্যাশ অন ডেলিভারি</strong> সুবিধা।</p>
-                </div>
-
-                <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    
-                    <!-- Package 1: Black -->
-                    <div class="bg-white rounded-[2rem] p-6 sm:p-8 border-2 border-brand-200 shadow-sm flex flex-col relative transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-brand-400 group">
-                        <div class="w-full aspect-square rounded-2xl overflow-hidden mb-6 bg-brand-50 relative">
-                            <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112204-26d5.webp?resolution=3762_3762" alt="Black Belt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-95">
-                        </div>
-                        
-                        <div class="flex justify-between items-start mb-2">
-                            <div>
-                                <h3 class="font-serif text-2xl font-bold text-brand-900">Classic Black</h3>
-                                <p class="text-brand-500 text-sm mt-1">১ পিস প্রিমিয়াম বেল্ট</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-end gap-3 mt-4 mb-6">
-                            <span class="font-serif text-5xl font-bold text-brand-900 leading-none">৳৮৯০</span>
-                            <span class="text-brand-400 line-through text-lg font-medium mb-1">৳১,০৫০</span>
-                        </div>
-                        
-                        <ul class="space-y-3.5 mb-8 flex-1">
-                            <li class="flex items-start gap-3 text-brand-800">
-                                <i class="fa-solid fa-check text-brand-600 mt-1"></i>
-                                <span>কালার: ক্লাসিক ব্ল্যাক</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-brand-800">
-                                <i class="fa-solid fa-check text-brand-600 mt-1"></i>
-                                <span>সাইজ: ফিট ৩২" থেকে ৪২"</span>
-                            </li>
-                            <li class="flex items-start gap-3 font-bold text-brand-900">
-                                <i class="fa-solid fa-truck-fast text-brand-600 mt-1"></i>
-                                <span>সারাদেশে ফ্রি হোম ডেলিভারি</span>
-                            </li>
-                        </ul>
-
-                        <button onclick="openCheckoutModal('black')" class="w-full py-4 rounded-xl border-2 border-brand-900 text-brand-900 font-bold font-serif uppercase tracking-widest hover:bg-brand-900 hover:text-white transition-colors duration-300">
-                            Order Black
-                        </button>
-                    </div>
-
-                    <!-- Package 2: Chocolate -->
-                    <div class="bg-brand-900 rounded-[2rem] p-6 sm:p-8 border-2 border-brand-900 shadow-xl flex flex-col relative transform lg:-translate-y-4 group">
-                        <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-brand-600 text-white px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest whitespace-nowrap shadow-md">
-                            <i class="fa-solid fa-star mr-1 text-yellow-300"></i> Most Popular
-                        </div>
-                        
-                        <div class="w-full aspect-square rounded-2xl overflow-hidden mb-6 bg-black/20 relative">
-                            <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112011-51063.webp?resolution=2624_2624" alt="Dark Chocolate Belt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        </div>
-                        
-                        <div class="flex justify-between items-start mb-2">
-                            <div>
-                                <h3 class="font-serif text-2xl font-bold text-white">Vintage Chocolate </h3>
-                                <p class="text-brand-300 text-sm mt-1">সবচেয়ে জনপ্রিয় ভিন্টেজ শেড</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-end gap-3 mt-4 mb-6">
-                            <span class="font-serif text-5xl font-bold text-white leading-none">৳৮৯০</span>
-                            <span class="text-brand-500 line-through text-lg font-medium mb-1">৳১,০৫০</span>
-                        </div>
-                        
-                        <ul class="space-y-3.5 mb-8 flex-1">
-                            <li class="flex items-start gap-3 text-brand-100">
-                                <i class="fa-solid fa-check text-brand-400 mt-1"></i>
-                                <span>কালার: ডার্ক ব্রাউন (Rich)</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-brand-100">
-                                <i class="fa-solid fa-check text-brand-400 mt-1"></i>
-                                <span>ভিন্টেজ ব্রাস ফিনিশ বাকল</span>
-                            </li>
-                            <li class="flex items-start gap-3 font-bold text-white">
-                                <i class="fa-solid fa-truck-fast text-brand-400 mt-1"></i>
-                                <span>সারাদেশে ফ্রি হোম ডেলিভারি</span>
-                            </li>
-                        </ul>
-
-                        <button onclick="openCheckoutModal('chocolate')" class="btn-primary w-full py-4 rounded-xl font-bold font-serif uppercase tracking-widest border border-brand-700 bg-brand-600 hover:bg-brand-500">
-                            Order Chocolate
-                        </button>
-                    </div>
-
-                    <!-- Package 3: Combo -->
-                    <div class="bg-white rounded-[2rem] p-6 sm:p-8 border-2 border-brand-200 shadow-sm flex flex-col relative transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-brand-400 group">
-                        
-                        <div class="absolute top-4 right-4 bg-brand-900 text-white px-3 py-1 rounded font-bold text-[10px] uppercase tracking-wider z-10">
-                            Save ৳90
-                        </div>
-
-                        <div class="w-full aspect-square rounded-2xl overflow-hidden mb-6 bg-brand-50 relative">
-                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGYIGqUBQseqEpXhsmCdQOrE5tfV7FTfHhBvYID38NS2lEiPUu9gyQVRpSnkB7SY_PWhk_OKB6wwhz-YPCTnPSHXNVQcvfvNiuf-1b3FbvCjCu0Zn7gQVvnISvfMF_DThqhjLGb5M2eTgyDVvU6_aVWapMnD7i49uF_gFroUTdtwmO4bu28WRuaXPuSKo/s320/ChatGPT%20Image%20Sep%2019,%202026,%2005_30_02%20AM.png" alt="Combo Pack" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-95">
-                        </div>
-                        
-                        <div class="flex justify-between items-start mb-2">
-                            <div>
-                                <h3 class="font-serif text-2xl font-bold text-brand-900">Dual Combo Pack</h3>
-                                <p class="text-brand-500 text-sm mt-1">২টি ভিন্ন কালারের আকর্ষণীয় প্যাক</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-end gap-3 mt-4 mb-6">
-                            <span class="font-serif text-5xl font-bold text-brand-900 leading-none">৳১,৬৯০</span>
-                            <span class="text-brand-400 line-through text-lg font-medium mb-1">৳১,৭৮০</span>
-                        </div>
-                        
-                        <ul class="space-y-3.5 mb-8 flex-1">
-                            <li class="flex items-start gap-3 text-brand-800">
-                                <i class="fa-solid fa-check text-brand-600 mt-1"></i>
-                                <span>১টি ব্ল্যাক + ১টি ডার্ক ব্রাউন</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-brand-800">
-                                <i class="fa-solid fa-check text-brand-600 mt-1"></i>
-                                <span>ফরমাল ও ক্যাজুয়াল উভয় লুকে বেস্ট</span>
-                            </li>
-                            <li class="flex items-start gap-3 font-bold text-brand-900">
-                                <i class="fa-solid fa-truck-fast text-brand-600 mt-1"></i>
-                                <span>সারাদেশে ফ্রি হোম ডেলিভারি</span>
-                            </li>
-                        </ul>
-
-                        <button onclick="openCheckoutModal('combo')" class="w-full py-4 rounded-xl border-2 border-brand-900 text-brand-900 font-bold font-serif uppercase tracking-widest hover:bg-brand-900 hover:text-white transition-colors duration-300">
-                            Order Combo
-                        </button>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section id="faq" class="py-20 md:py-32 bg-white border-y border-brand-200">
-            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center mb-16">
-                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-900 mb-4">Frequently Asked Questions</h2>
-                    <p class="text-brand-600">আপনার মনে থাকা প্রশ্নগুলোর উত্তর</p>
-                </div>
-
-                <div class="space-y-4" id="faqAccordion">
-                    <div class="faq-item active bg-brand-50 border border-brand-200 rounded-2xl overflow-hidden">
-                        <button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleFaq(this)">
-                            <h3 class="font-bold text-brand-900 text-lg pr-4">এটি কি ১০০% আসল চামড়ার তৈরি?</h3>
-                            <span class="faq-icon w-8 h-8 rounded-full bg-brand-200 flex items-center justify-center shrink-0 text-brand-800">
-                                <i class="fa-solid fa-chevron-down text-sm"></i>
-                            </span>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-inner px-6 pb-6 text-brand-700 leading-relaxed">
-                                হ্যাঁ, আমাদের প্রতিটি বেল্ট প্রিমিয়াম কোয়ালিটির জেনুইন কাউ লেদার (খাঁটি গরুর চামড়া) দিয়ে তৈরি। এতে কোনো প্রকার সিন্থেটিক, পিইউ (PU) বা রেক্সিন মেশানো হয়নি, তাই এটি দীর্ঘদিন ব্যবহারে ফাটে না বা নষ্ট হয় না।
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faq-item bg-brand-50 border border-brand-200 rounded-2xl overflow-hidden">
-                        <button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleFaq(this)">
-                            <h3 class="font-bold text-brand-900 text-lg pr-4">কোনো অগ্রিম টাকা দিতে হবে কি?</h3>
-                            <span class="faq-icon w-8 h-8 rounded-full bg-brand-200 flex items-center justify-center shrink-0 text-brand-800">
-                                <i class="fa-solid fa-chevron-down text-sm"></i>
-                            </span>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-inner px-6 pb-6 text-brand-700 leading-relaxed">
-                                একদমই না! অর্ডার কনফার্ম করতে কোনো প্রকার অগ্রিম পেমেন্ট বা ডেলিভারি চার্জ বিকাশ করতে হবে না। আমরা সম্পূর্ণ ক্যাশ অন ডেলিভারিতে পার্সেল পাঠিয়ে থাকি। পণ্য হাতে পেয়ে, চেক করে তারপর ডেলিভারি ম্যানকে টাকা পরিশোধ করবেন।
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faq-item bg-brand-50 border border-brand-200 rounded-2xl overflow-hidden">
-                        <button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleFaq(this)">
-                            <h3 class="font-bold text-brand-900 text-lg pr-4">ডেলিভারি চার্জ কত এবং ডেলিভারি পেতে কতদিন লাগে?</h3>
-                            <span class="faq-icon w-8 h-8 rounded-full bg-brand-200 flex items-center justify-center shrink-0 text-brand-800">
-                                <i class="fa-solid fa-chevron-down text-sm"></i>
-                            </span>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-inner px-6 pb-6 text-brand-700 leading-relaxed">
-                                বর্তমানে আমাদের স্পেশাল অফার চলছে, তাই সারা বাংলাদেশে ডেলিভারি চার্জ সম্পূর্ণ ফ্রি (৳0)। ঢাকার ভিতরে ডেলিভারি পেতে সাধারণত ১-২ দিন এবং ঢাকার বাইরে ২-৪ দিন সময় লাগে।
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faq-item bg-brand-50 border border-brand-200 rounded-2xl overflow-hidden">
-                        <button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleFaq(this)">
-                            <h3 class="font-bold text-brand-900 text-lg pr-4">সাইজ ছোট বা বড় হলে পরিবর্তনের সুযোগ আছে কি?</h3>
-                            <span class="faq-icon w-8 h-8 rounded-full bg-brand-200 flex items-center justify-center shrink-0 text-brand-800">
-                                <i class="fa-solid fa-chevron-down text-sm"></i>
-                            </span>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-inner px-6 pb-6 text-brand-700 leading-relaxed">
-                                এই বেল্টটিতে কোনো ফিক্সড পাঞ্চ হোল নেই এবং এটি ব্রেইডেড (বিনুনি) ডিজাইনের। তাই আপনার ফিট অনুযায়ী যেকোনো জায়গায় পিন আটকে সাইজ অ্যাডজাস্ট করতে পারবেন (৩২ ইঞ্চি থেকে ৪২ ইঞ্চি পর্যন্ত)। এরপরও যদি সাইজ ছোট করার প্রয়োজন হয়, বাকলের পেছনের স্ক্রু খুলে খুব সহজেই বেল্ট কেটে ছোট করে নেওয়া যায়।
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-brand-950 text-brand-200 pt-16 pb-24 md:pb-12 border-t-[6px] border-brand-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-12 gap-10 lg:gap-16">
-                
-                <div class="md:col-span-5">
-                    <h2 class="font-serif text-3xl font-extrabold text-white tracking-wider uppercase mb-4">
-                        Azwad<span class="text-brand-500 font-normal">Leather</span>
-                    </h2>
-                    <p class="text-brand-400 text-sm leading-relaxed mb-6 max-w-sm">
-                        প্রিমিয়াম জেনুইন লেদার বেল্ট ও এক্সেসরিজের বিশ্বস্ত প্রতিষ্ঠান। আমাদের লক্ষ্য আপনাকে সেরা মানের ও ক্লাসিক ডিজাইনের লেদার গুডস প্রদান করা।
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-brand-900 flex items-center justify-center hover:bg-brand-700 transition-colors"><i class="fa-brands fa-facebook-f text-white"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-brand-900 flex items-center justify-center hover:bg-brand-700 transition-colors"><i class="fa-brands fa-instagram text-white"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-brand-900 flex items-center justify-center hover:bg-brand-700 transition-colors"><i class="fa-brands fa-youtube text-white"></i></a>
-                    </div>
-                </div>
-
-                <div class="md:col-span-3">
-                    <h4 class="font-serif font-bold text-white text-lg tracking-widest uppercase mb-6">Quick Links</h4>
-                    <ul class="space-y-3 text-sm text-brand-400">
-                        <li><a href="#hero" class="hover:text-white transition-colors">Home</a></li>
-                        <li><a href="#reels" class="hover:text-white transition-colors">Product Video</a></li>
-                        <li><a href="#gallery" class="hover:text-white transition-colors">Product Gallery</a></li>
-                        <li><a href="#pricing" class="hover:text-white transition-colors">Packages & Pricing</a></li>
-                    </ul>
-                </div>
-
-                <div class="md:col-span-4">
-                    <h4 class="font-serif font-bold text-white text-lg tracking-widest uppercase mb-6">Contact Us</h4>
-                    <ul class="space-y-4 text-sm text-brand-400">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-location-dot mt-1 text-brand-500"></i>
-                            <span>Dhaka, Bangladesh</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-phone text-brand-500"></i>
-                            <a href="tel:+8801627257060" class="hover:text-white transition-colors font-sans text-base">01627257060</a>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-brands fa-whatsapp text-success text-lg"></i>
-                            <a href="#" data-wa-link class="hover:text-white transition-colors font-sans text-base">01627257060</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="mt-16 pt-8 border-t border-brand-900/50 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-brand-500">
-                <p>&copy; <span id="currentYear"></span> Azwad Leather. All rights reserved.</p>
-                <div class="flex gap-4">
-                    <a href="#" class="hover:text-brand-300">Privacy Policy</a>
-                    <a href="#" class="hover:text-brand-300">Terms of Service</a>
-                </div>
-            </div>
+    <!-- 7. Minimal Footer -->
+    <footer class="mt-20 border-t border-sand bg-white py-10 text-center text-xs text-chocolate-500 space-y-3">
+        <span class="font-serif font-bold text-sm text-chocolate-900 uppercase tracking-widest block">AZWAD LEATHER</span>
+        <div class="flex items-center justify-center gap-4 text-chocolate-700">
+            <a href="tel:+8801627257060" class="hover:underline">Phone: 01627257060</a>
+            <span>•</span>
+            <a href="#" id="footerWaLink" target="_blank" class="text-emerald-700 font-semibold hover:underline">WhatsApp Support</a>
         </div>
+        <p class="text-[11px] text-chocolate-400">&copy; <span id="yearSpan"></span> Azwad Leather. All rights reserved.</p>
     </footer>
 
-    <!-- Mobile Sticky Bottom CTA -->
-    <div class="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-md border-t border-brand-200 p-3 z-40 md:hidden shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
-        <div class="flex items-center justify-between gap-4">
-            <div class="flex flex-col">
-                <span class="text-[10px] text-brand-500 font-bold uppercase tracking-wider">Starting from</span>
-                <span class="font-serif font-bold text-brand-900 text-xl leading-none mt-0.5">৳৮৯০</span>
-            </div>
-            <button onclick="openCheckoutModal()" class="btn-primary flex-1 py-3 rounded-xl font-bold uppercase tracking-widest text-sm shadow-md">
-                <i class="fa-solid fa-bag-shopping mr-2"></i> Order Now
+    <!-- 8. Mobile Sticky Bottom CTA -->
+    <div class="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-md border-t border-sand p-3 z-40 md:hidden flex items-center justify-between gap-4 shadow-lg">
+        <div class="leading-none pl-1">
+            <span class="text-[10px] text-chocolate-500 uppercase font-semibold block">Price (COD)</span>
+            <span class="font-bold text-chocolate-900 text-base" id="stickyPriceText">৳890</span>
+        </div>
+        <a href="#checkoutSection" class="bg-chocolate-900 text-cream text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-xl shadow-md">
+            Order Now
+        </a>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- 9. FULLSCREEN LIGHTBOX MODAL                   -->
+    <!-- ============================================== -->
+    <div id="lightboxModal" class="lightbox-modal fixed inset-0 z-[100] bg-black/95 flex flex-col justify-between p-4">
+        <div class="flex justify-end p-2">
+            <button onclick="closeLightbox()" class="text-white hover:text-sand text-3xl p-2 transition">
+                <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
-    </div>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="#" data-wa-link class="fixed bottom-[80px] md:bottom-8 right-4 md:right-8 w-14 h-14 rounded-full bg-success text-white flex items-center justify-center text-3xl shadow-floating z-40 hover:scale-110 transition-transform duration-300" aria-label="Chat on WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+        <div class="flex-1 flex items-center justify-center p-2 relative overflow-hidden">
+            <img id="lightboxMainImg" src="" alt="Full Preview" class="max-h-[60vh] sm:max-h-[72vh] w-auto max-w-full object-contain rounded-2xl shadow-2xl transition-all duration-300">
+        </div>
 
+        <div class="text-center text-white font-sans text-xs font-bold tracking-widest py-1" id="lightboxCounter">
+            1/5
+        </div>
 
-    <!-- ============================================== -->
-    <!-- DETAILED BUT MINIMAL SECURE CHECKOUT MODAL     -->
-    <!-- ============================================== -->
-    <div id="checkoutModal" class="modal-overlay fixed inset-0 z-[60] flex items-end sm:items-center justify-center p-0 sm:p-4 bg-brand-900/50" role="dialog" aria-modal="true">
-        
-        <div class="modal-content w-full sm:max-w-[460px] bg-brand-50 sm:rounded-[1.5rem] shadow-2xl flex flex-col relative overflow-hidden max-h-[92vh]">
-            
-            <div class="bg-brand-900 text-white px-5 py-4 shrink-0 relative overflow-hidden shadow-md z-10 flex justify-between items-center rounded-t-2xl sm:rounded-t-[1.5rem]">
-                <div class="absolute inset-0 opacity-10 bg-[url('https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/43326-b0c7.webp')] bg-cover bg-center"></div>
-                <div class="relative z-10">
-                    <h3 class="font-serif text-xl font-bold leading-none mb-1">Secure Checkout</h3>
-                    <p class="text-xs text-brand-300">তথ্য দিয়ে আপনার অর্ডারটি কনফার্ম করুন</p>
-                </div>
-                <button type="button" onclick="closeCheckoutModal()" class="relative z-10 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/25 transition-colors">
-                    <i class="fa-solid fa-xmark text-sm"></i>
-                </button>
-            </div>
-
-            <div class="modal-scroll overflow-y-auto px-5 pb-5 pt-5 relative z-0 flex-1">
-                <form id="checkoutForm" novalidate class="space-y-5">
-                    <input type="hidden" name="product" id="productInput" value="Hand Braided Leather Belt">
-
-                    <div class="bg-white rounded-xl p-3 shadow-card border border-brand-200 flex gap-4 items-center">
-                        <img id="modalProductImg" src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112011-51063.webp?resolution=2624_2624" alt="Product" class="w-16 h-16 rounded-lg object-cover bg-brand-50 shrink-0">
-                        <div class="flex-1 min-w-0">
-                            <div class="text-[10px] text-brand-500 font-bold uppercase tracking-wider mb-1">Selected Item</div>
-                            <div class="relative w-full">
-                                <select id="packageSelect" name="package" class="appearance-none bg-brand-50 text-brand-900 text-[13px] font-bold w-full outline-none cursor-pointer border border-brand-200 rounded-lg py-1.5 pl-2.5 pr-6 shadow-sm">
-                                    <option value="black">Classic Black — ৳890</option>
-                                    <option value="chocolate" selected>Vintage Chocolate — ৳890</option>
-                                    <option value="combo">Combo Pack (Both) — ৳1,690</option>
-                                </select>
-                                <i class="fa-solid fa-chevron-down absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] text-brand-600 pointer-events-none"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white rounded-xl p-4 shadow-card border border-brand-200 space-y-4">
-                        <div class="flex items-center gap-2 mb-1">
-                            <i class="fa-regular fa-user text-brand-600 text-[15px]"></i>
-                            <h4 class="font-bold text-brand-900 text-[15px]">ডেলিভারি তথ্য</h4>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-3">
-                            <div>
-                                <label for="cName" class="block text-[11px] font-bold text-brand-600 mb-1 ml-1">আপনার নাম <span class="text-red-500">*</span></label>
-                                <input type="text" id="cName" name="name" class="input-field" placeholder="নাম লিখুন" required autocomplete="name">
-                                <p class="error-message" id="err-cName">নাম লিখুন</p>
-                            </div>
-                            <div>
-                                <label for="cPhone" class="block text-[11px] font-bold text-brand-600 mb-1 ml-1">মোবাইল নাম্বার <span class="text-red-500">*</span></label>
-                                <input type="tel" id="cPhone" name="phone" class="input-field font-sans" placeholder="01xxxxxxxxx" maxlength="14" required autocomplete="tel">
-                                <p class="error-message" id="err-cPhone">সঠিক নাম্বার দিন</p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="cAddress" class="block text-[11px] font-bold text-brand-600 mb-1 ml-1">সম্পূর্ণ ঠিকানা <span class="text-red-500">*</span></label>
-                            <textarea id="cAddress" name="address" rows="2" class="input-field resize-none h-[65px]" placeholder="বাসা/ফ্ল্যাট নং, রোড, এলাকা, থানা, জেলা" required autocomplete="street-address"></textarea>
-                            <p class="error-message" id="err-cAddress">ঠিকানা লিখুন</p>
-                        </div>
-
-                        <div class="pt-2 border-t border-brand-100">
-                            <label class="block text-[11px] font-bold text-brand-600 mb-2 ml-1">ডেলিভারি এরিয়া (ফ্রি চার্জ)</label>
-                            <div class="grid grid-cols-2 gap-3">
-                                <label class="custom-radio flex items-center gap-2.5 p-2.5 rounded-lg border border-brand-200 bg-brand-50 hover:bg-brand-100 transition-colors">
-                                    <input type="radio" name="deliveryArea" value="Inside Dhaka" checked>
-                                    <span class="text-xs font-bold text-brand-900 leading-tight">Inside Dhaka</span>
-                                </label>
-                                <label class="custom-radio flex items-center gap-2.5 p-2.5 rounded-lg border border-brand-200 bg-brand-50 hover:bg-brand-100 transition-colors">
-                                    <input type="radio" name="deliveryArea" value="Outside Dhaka">
-                                    <span class="text-xs font-bold text-brand-900 leading-tight">Outside Dhaka</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white rounded-xl p-4 shadow-card border border-brand-200">
-                        <div class="flex items-center gap-2 mb-3">
-                            <i class="fa-regular fa-credit-card text-brand-600 text-[15px]"></i>
-                            <h4 class="font-bold text-brand-900 text-[15px]">পেমেন্ট মেথড</h4>
-                        </div>
-                        <label class="flex items-center gap-3 p-3 rounded-lg border border-brand-800 bg-brand-50 relative overflow-hidden cursor-pointer">
-                            <i class="fa-solid fa-check text-brand-200 text-5xl absolute -right-3 -bottom-3 opacity-50"></i>
-                            <div class="w-5 h-5 rounded-full bg-brand-800 flex items-center justify-center text-white shrink-0 z-10">
-                                <div class="w-2 h-2 bg-white rounded-full"></div>
-                            </div>
-                            <div class="z-10">
-                                <div class="font-bold text-brand-900 text-[13px]">ক্যাশ অন ডেলিভারি (COD)</div>
-                                <div class="text-[11px] text-brand-600 mt-0.5">পণ্য হাতে পেয়ে মূল্য পরিশোধ করুন</div>
-                            </div>
-                        </label>
-                    </div>
-
-                    <div class="px-2 pb-2">
-                        <div class="flex justify-between items-center text-[13px] text-brand-700 mb-2">
-                            <span>Subtotal</span>
-                            <span id="summarySubtotal" class="font-bold text-brand-900">৳890</span>
-                        </div>
-                        <div class="flex justify-between items-center text-[13px] text-brand-700 mb-3 border-b border-brand-200 pb-3">
-                            <span>Delivery Charge</span>
-                            <span class="font-bold text-success uppercase text-[10px] tracking-wider bg-success/10 px-2 py-0.5 rounded">Free</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="font-bold text-brand-900 text-[15px]">Total Payable</span>
-                            <span id="summaryTotal" class="font-serif font-bold text-2xl text-brand-900">৳890</span>
-                        </div>
-                    </div>
-
-                    <div class="sticky bottom-0 bg-brand-50 pt-2 pb-1 z-20">
-                        <button type="submit" id="btnSubmitOrder" class="btn-primary w-full flex items-center justify-center h-14 rounded-xl shadow-lg">
-                            <div class="btn-content flex items-center gap-2 font-bold font-serif text-[15px] tracking-widest uppercase">
-                                <i class="fa-solid fa-lock text-xs"></i> Confirm Order
-                            </div>
-                            <div class="btn-loading hidden flex items-center gap-2 font-bold font-serif tracking-widest uppercase text-sm">
-                                <div class="loader-spinner"></div> Processing...
-                            </div>
-                        </button>
-                        <p class="text-center text-[11px] text-brand-500 font-medium mt-2 flex items-center justify-center gap-1.5">
-                            <i class="fa-solid fa-shield-halved text-brand-400"></i> Your information is safe and secure
-                        </p>
-                    </div>
-                </form>
-
-                <div id="successScreen" class="hidden flex flex-col items-center justify-center py-6 px-2 text-center min-h-[350px]">
-                    <div class="w-16 h-16 rounded-full bg-success flex items-center justify-center shadow-lg mb-4 animate-slide-up">
-                        <svg width="30" height="30" viewBox="0 0 52 52" fill="none"><path class="success-path" d="M12 27 L22 37 L40 17" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    
-                    <h3 class="font-serif text-2xl font-bold text-brand-900 mb-1.5 animate-slide-up" style="animation-delay: 0.1s;">Order Confirmed!</h3>
-                    <p class="text-brand-600 text-[13px] mb-6 animate-slide-up px-4" style="animation-delay: 0.2s;">
-                        ধন্যবাদ! আপনার অর্ডারটি সফল হয়েছে। আমাদের প্রতিনিধি শীঘ্রই যোগাযোগ করবেন।
-                    </p>
-
-                    <div class="w-full space-y-3 animate-slide-up" style="animation-delay: 0.3s;">
-                        <a href="#" data-wa-link class="w-full flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold h-12 rounded-xl hover:bg-[#20b858] transition-colors shadow-md text-sm">
-                            <i class="fa-brands fa-whatsapp text-lg"></i> Contact on WhatsApp
-                        </a>
-                        <button type="button" onclick="closeCheckoutModal(true)" class="w-full flex items-center justify-center gap-2 bg-brand-100 text-brand-900 font-bold h-12 rounded-xl hover:bg-brand-200 transition-colors text-sm">
-                            <i class="fa-solid fa-arrow-left"></i> Return to Homepage
-                        </button>
-                    </div>
-                </div>
-
-            </div>
+        <div class="pb-3 px-2">
+            <div class="flex items-center justify-center gap-2.5 overflow-x-auto py-2" id="lightboxThumbnailsContainer"></div>
         </div>
     </div>
 
-
     <!-- ============================================== -->
-    <!-- JAVASCRIPT LOGIC (100% SINGLE-FIRE PURCHASE)  -->
+    <!-- JAVASCRIPT LOGIC                               -->
     <!-- ============================================== -->
     <script>
         const CONFIG = {
@@ -851,234 +452,258 @@
             STORE_CODE: 'AL'
         };
 
-        const PACKAGES = {
-            'black': { 
-                title: 'Classic Black Belt', 
-                price: 890, 
-                img: 'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112204-26d5.webp?resolution=3762_3762' 
+        const VARIANTS = {
+            'chocolate': {
+                name: 'Vintage Chocolate',
+                price: 890,
+                img: 'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112011-51063.webp?resolution=2624_2624'
             },
-            'chocolate': { 
-                title: 'Vintage Chocolate Belt', 
-                price: 890, 
-                img: 'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112011-51063.webp?resolution=2624_2624' 
-            },
-            'combo': { 
-                title: 'Dual Combo Pack (Black + Chocolate)', 
-                price: 1690, 
-                img: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGYIGqUBQseqEpXhsmCdQOrE5tfV7FTfHhBvYID38NS2lEiPUu9gyQVRpSnkB7SY_PWhk_OKB6wwhz-YPCTnPSHXNVQcvfvNiuf-1b3FbvCjCu0Zn7gQVvnISvfMF_DThqhjLGb5M2eTgyDVvU6_aVWapMnD7i49uF_gFroUTdtwmO4bu28WRuaXPuSKo/s320/ChatGPT%20Image%20Sep%2019,%202026,%2005_30_02%20AM.png' 
+            'black': {
+                name: 'Classic Black',
+                price: 890,
+                img: 'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112204-26d5.webp?resolution=3762_3762'
             }
         };
 
-        const modal = document.getElementById('checkoutModal');
-        const checkoutForm = document.getElementById('checkoutForm');
-        const successScreen = document.getElementById('successScreen');
-        const packageSelect = document.getElementById('packageSelect');
-        const btnSubmit = document.getElementById('btnSubmitOrder');
-        
-        let hasPurchasedFired = false; // 🔒 ডাবল/ট্রিপল পারচেজ আটকানোর লক
-        
-        const BN_DIGITS = ['০','১','২','৩','৪','৫','৬','৭','৮','৯'];
-        const EN_DIGITS = ['0','1','2','3','4','5','6','7','8','9'];
-        
-        function toBnNum(num) { return String(num).split('').map(c => BN_DIGITS[EN_DIGITS.indexOf(c)] || c).join(''); }
-        function toEnNum(str) { return String(str).split('').map(c => EN_DIGITS[BN_DIGITS.indexOf(c)] || c).join(''); }
-        function formatMoney(amount) { return '৳' + toBnNum(amount.toLocaleString('en-US')); }
+        // Lightbox Gallery Pool
+        const galleryImages = [
+            'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/43326-b0c7.webp?resolution=3762_3762',
+            'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112011-51063.webp?resolution=2624_2624',
+            'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112204-26d5.webp?resolution=3762_3762',
+            'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112013-3faa.webp?resolution=2624_2624',
+            'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112101-e946.webp?resolution=1973_1973'
+        ];
 
-        function initWhatsApp() {
-            const msg = encodeURIComponent(`Hello, I want to order from ${CONFIG.STORE_NAME}.`);
-            document.querySelectorAll('[data-wa-link]').forEach(link => {
-                link.href = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${msg}`;
-                link.target = '_blank';
-                link.rel = 'noopener noreferrer';
-            });
-        }
+        let selectedVariantKey = 'chocolate';
+        let currentQuantity = 1;
+        let isPixelActive = false;
+        let activePixelId = null;
+        let hasPurchasedFired = false;
+        let hasInitiatedCheckout = false; // Triggered once when interacting with form
 
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-        function toggleFaq(btn) {
-            const item = btn.parentElement;
-            document.querySelectorAll('.faq-item').forEach(i => { if(i !== item) i.classList.remove('active'); });
-            item.classList.toggle('active');
-        }
-
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('mainHeader');
-            if (window.scrollY > 10) {
-                header.classList.add('shadow-md');
-                header.classList.replace('bg-brand-50/95', 'bg-white/95');
-            } else {
-                header.classList.remove('shadow-md');
-                header.classList.replace('bg-white/95', 'bg-brand-50/95');
+        /* Dynamic Meta Pixel Auto-Loader */
+        async function loadDynamicPixel() {
+            try {
+                const res = await fetch(`${CONFIG.WORKER_URL}/settings?store=${CONFIG.STORE_CODE}`);
+                const data = await res.json();
+                if (data.ok && data.settings && data.settings.metaPixelId) {
+                    activePixelId = String(data.settings.metaPixelId).trim();
+                    if (activePixelId) {
+                        fbq('set', 'autoConfig', false, activePixelId);
+                        fbq('init', activePixelId);
+                        fbq('track', 'PageView');
+                        isPixelActive = true;
+                    }
+                }
+            } catch (err) {
+                console.warn('Pixel setup softly bypassed:', err);
             }
-        });
-
-        // Gallery Slider JS
-        const gallerySliderTrack = document.getElementById('gallerySliderTrack');
-        const btnPrevSlide = document.getElementById('btnPrevSlide');
-        const btnNextSlide = document.getElementById('btnNextSlide');
-        const gallerySlides = gallerySliderTrack.children;
-        let currentSlide = 0;
-        let slideInterval;
-
-        function goToSlide(index) {
-            if (index < 0) index = gallerySlides.length - 1;
-            if (index >= gallerySlides.length) index = 0;
-            currentSlide = index;
-            gallerySliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
         }
 
-        function nextSlide() { goToSlide(currentSlide + 1); }
-        function prevSlide() { goToSlide(currentSlide - 1); }
-
-        function startAutoSlide() { slideInterval = setInterval(nextSlide, 3500); }
-        function stopAutoSlide() { clearInterval(slideInterval); }
-
-        btnPrevSlide.addEventListener('click', (e) => { e.stopPropagation(); prevSlide(); stopAutoSlide(); });
-        btnNextSlide.addEventListener('click', (e) => { e.stopPropagation(); nextSlide(); stopAutoSlide(); });
-        
-        document.getElementById('gallerySliderWrapper').addEventListener('mouseenter', stopAutoSlide);
-        document.getElementById('gallerySliderWrapper').addEventListener('mouseleave', startAutoSlide);
-        document.getElementById('gallerySliderWrapper').addEventListener('touchstart', stopAutoSlide);
-
-        startAutoSlide();
-
-        // Modal Form Updates
-        function updateModalPrices() {
-            const pkg = PACKAGES[packageSelect.value];
-            document.getElementById('modalProductImg').src = pkg.img;
-            document.getElementById('summarySubtotal').textContent = formatMoney(pkg.price);
-            document.getElementById('summaryTotal').textContent = formatMoney(pkg.price);
+        /* ViewContent Trigger */
+        function triggerViewContent() {
+            if (isPixelActive && typeof fbq === 'function') {
+                fbq('track', 'ViewContent', {
+                    content_name: 'Hand Braided Leather Belt',
+                    content_category: 'Accessories',
+                    value: VARIANTS[selectedVariantKey].price,
+                    currency: 'BDT'
+                });
+            }
+            openLightbox(0);
         }
 
-        function openCheckoutModal(packageKey = null) {
-            checkoutForm.classList.remove('hidden');
-            successScreen.classList.add('hidden');
-            checkoutForm.reset();
-            hasPurchasedFired = false; // লক রিসেট
-            
-            document.querySelectorAll('.input-field').forEach(el => el.classList.remove('error'));
-            document.querySelectorAll('.error-message').forEach(el => el.classList.remove('show'));
-            
-            packageSelect.value = (packageKey && PACKAGES[packageKey]) ? packageKey : 'chocolate';
-            updateModalPrices();
-            
-            modal.classList.add('open');
+        /* Lightbox Handlers */
+        let currentLightboxIndex = 0;
+        const lightboxModal = document.getElementById('lightboxModal');
+        const lightboxMainImg = document.getElementById('lightboxMainImg');
+        const lightboxCounter = document.getElementById('lightboxCounter');
+        const lightboxThumbsContainer = document.getElementById('lightboxThumbnailsContainer');
+
+        function openLightbox(index = 0) {
+            currentLightboxIndex = index;
+            renderLightbox();
+            lightboxModal.classList.add('open');
             document.body.style.overflow = 'hidden';
-            if (typeof fbq === 'function') fbq('track', 'InitiateCheckout');
         }
 
-        function closeCheckoutModal(forceReset = false) {
-            modal.classList.remove('open');
+        function closeLightbox() {
+            lightboxModal.classList.remove('open');
             document.body.style.overflow = '';
-            if (forceReset) setTimeout(() => { checkoutForm.classList.remove('hidden'); successScreen.classList.add('hidden'); checkoutForm.reset(); hasPurchasedFired = false; }, 300);
         }
 
-        packageSelect.addEventListener('change', updateModalPrices);
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('open')) closeCheckoutModal(); });
+        function renderLightbox() {
+            lightboxMainImg.src = galleryImages[currentLightboxIndex];
+            lightboxCounter.textContent = `${currentLightboxIndex + 1}/${galleryImages.length}`;
 
-        const fName = document.getElementById('cName');
-        const fPhone = document.getElementById('cPhone');
-        const fAddress = document.getElementById('cAddress');
-
-        function showError(inputEl, show) {
-            const errEl = document.getElementById('err-' + inputEl.id);
-            if (show) { inputEl.classList.add('error'); errEl.classList.add('show'); } 
-            else { inputEl.classList.remove('error'); errEl.classList.remove('show'); }
+            lightboxThumbsContainer.innerHTML = galleryImages.map((imgUrl, i) => `
+                <div onclick="switchLightboxImage(${i})" 
+                     class="w-12 h-12 rounded-xl overflow-hidden cursor-pointer border-2 transition-all shrink-0 ${i === currentLightboxIndex ? 'border-chocolate-400 scale-105 opacity-100' : 'border-transparent opacity-50 hover:opacity-80'}">
+                    <img src="${imgUrl}" class="w-full h-full object-cover">
+                </div>
+            `).join('');
         }
 
-        fPhone.addEventListener('input', function() {
-            let val = toEnNum(this.value).replace(/\D/g, '');
-            if (val.startsWith('880')) val = '0' + val.slice(3);
-            this.value = val.slice(0, 11);
-            if (this.value.length === 11) showError(this, false);
+        function switchLightboxImage(i) {
+            currentLightboxIndex = i;
+            renderLightbox();
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightboxModal.classList.contains('open')) closeLightbox();
         });
 
-        [fName, fAddress].forEach(el => el.addEventListener('input', function() { if(this.value.trim().length > 0) showError(this, false); }));
+        /* Variant Switcher */
+        function selectVariant(key) {
+            if (!VARIANTS[key]) return;
+            selectedVariantKey = key;
 
-        function validateForm() {
-            let isValid = true, firstErr = null;
-            if (fName.value.trim().length < 2) { showError(fName, true); isValid = false; firstErr = firstErr || fName; }
-            if (!/^01[3-9]\d{8}$/.test(fPhone.value.trim())) { showError(fPhone, true); isValid = false; firstErr = firstErr || fPhone; }
-            if (fAddress.value.trim().length < 10) { showError(fAddress, true); isValid = false; firstErr = firstErr || fAddress; }
-            if(firstErr) firstErr.focus();
-            return isValid;
+            const cardChocolate = document.getElementById('card-chocolate');
+            const cardBlack = document.getElementById('card-black');
+
+            if (key === 'chocolate') {
+                cardChocolate.className = "p-3 rounded-2xl border-2 border-chocolate-800 bg-chocolate-50 cursor-pointer transition flex items-center gap-3";
+                cardBlack.className = "p-3 rounded-2xl border-2 border-sand bg-white cursor-pointer transition flex items-center gap-3 hover:border-chocolate-400";
+            } else {
+                cardBlack.className = "p-3 rounded-2xl border-2 border-chocolate-800 bg-chocolate-50 cursor-pointer transition flex items-center gap-3";
+                cardChocolate.className = "p-3 rounded-2xl border-2 border-sand bg-white cursor-pointer transition flex items-center gap-3 hover:border-chocolate-400";
+            }
+
+            document.getElementById('heroImage').src = VARIANTS[key].img;
+            updateSummary();
+            handleFormInteraction();
         }
 
-        function toggleLoading(isLoading) {
-            btnSubmit.disabled = isLoading;
-            const content = btnSubmit.querySelector('.btn-content'), loader = btnSubmit.querySelector('.btn-loading');
-            if (isLoading) { content.classList.add('hidden'); loader.classList.remove('hidden'); loader.classList.add('flex'); } 
-            else { content.classList.remove('hidden'); loader.classList.add('hidden'); loader.classList.remove('flex'); }
+        /* Quantity Handler */
+        function adjustQty(delta) {
+            currentQuantity = Math.max(1, currentQuantity + delta);
+            updateSummary();
+            handleFormInteraction();
         }
 
-        // ==============================================
-        // SUBMIT ORDER (100% SINGLE-FIRE PURCHASE FIXED)
-        // ==============================================
-        checkoutForm.addEventListener('submit', async function(e) {
+        function updateSummary() {
+            const v = VARIANTS[selectedVariantKey];
+            const total = v.price * currentQuantity;
+
+            document.getElementById('quantityDisplay').textContent = currentQuantity;
+            document.getElementById('subtotalLabel').textContent = `৳${total}`;
+            document.getElementById('totalPayableLabel').textContent = `৳${total}`;
+            document.getElementById('btnPriceLabel').textContent = `${total}`;
+            document.getElementById('stickyPriceText').textContent = `৳${total}`;
+        }
+
+        /* InitiateCheckout on Form Interaction (Guaranteed once per session) */
+        function handleFormInteraction() {
+            if (!hasInitiatedCheckout && isPixelActive && typeof fbq === 'function') {
+                hasInitiatedCheckout = true;
+                fbq('track', 'InitiateCheckout', {
+                    content_name: 'Hand Braided Leather Belt',
+                    value: VARIANTS[selectedVariantKey].price * currentQuantity,
+                    currency: 'BDT'
+                });
+            }
+        }
+
+        /* Order Submission Engine */
+        const orderForm = document.getElementById('orderForm');
+        const btnSubmit = document.getElementById('btnSubmitOrder');
+        const btnText = document.getElementById('btnText');
+        const btnLoader = document.getElementById('btnLoader');
+
+        function validateFields(name, phone, address) {
+            let valid = true;
+            const errName = document.getElementById('err-name');
+            const errPhone = document.getElementById('err-phone');
+            const errAddress = document.getElementById('err-address');
+
+            if (name.length < 2) { errName.classList.add('show'); valid = false; } else { errName.classList.remove('show'); }
+            if (!/^01[3-9]\d{8}$/.test(phone)) { errPhone.classList.add('show'); valid = false; } else { errPhone.classList.remove('show'); }
+            if (address.length < 8) { errAddress.classList.add('show'); valid = false; } else { errAddress.classList.remove('show'); }
+
+            return valid;
+        }
+
+        orderForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             if (btnSubmit.disabled || hasPurchasedFired) return;
-            if (!validateForm()) return;
-            toggleLoading(true);
-            
-            const pkgKey = packageSelect.value, pkg = PACKAGES[pkgKey], delArea = document.querySelector('input[name="deliveryArea"]:checked').value;
-            
-            // মেটা ডুপ্লিকেট রোধের জন্য ইউনিক আইডি
+
+            const name = document.getElementById('custName').value.trim();
+            const phone = document.getElementById('custPhone').value.trim().replace(/\D/g, '');
+            const address = document.getElementById('custAddress').value.trim();
+            const delArea = document.querySelector('input[name="deliveryArea"]:checked').value;
+
+            if (!validateFields(name, phone, address)) return;
+
+            btnSubmit.disabled = true;
+            btnText.classList.add('hidden');
+            btnLoader.classList.remove('hidden');
+
+            const v = VARIANTS[selectedVariantKey];
+            const totalAmount = v.price * currentQuantity;
             const eventId = 'pur_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7);
 
             const orderPayload = {
-                store_name: CONFIG.STORE_NAME, 
-                store_code: CONFIG.STORE_CODE, 
-                product: document.getElementById('productInput').value,
-                package: pkgKey, 
-                quantity: `${pkg.title} (${formatMoney(pkg.price)})`, 
-                name: fName.value.trim(), 
-                phone: fPhone.value.trim(),
-                address: fAddress.value.trim(), 
-                deliveryArea: delArea, 
+                store_name: CONFIG.STORE_NAME,
+                store_code: CONFIG.STORE_CODE,
+                product: 'Hand Braided Leather Belt',
+                package: selectedVariantKey,
+                quantity: `${currentQuantity}x ${v.name}`,
+                name: name,
+                phone: phone,
+                address: address,
+                deliveryArea: delArea,
                 payment: 'Cash on Delivery',
-                total: formatMoney(pkg.price), 
-                total_raw: pkg.price, 
+                total: `৳${totalAmount}`,
+                total_raw: totalAmount,
+                event_id: eventId,
                 timestamp: new Date().toISOString()
             };
 
-            // 🎯 ঠিক ১ বারই Purchase ইভেন্ট ফায়ার হবে
-            if (!hasPurchasedFired && typeof fbq === 'function') {
-                hasPurchasedFired = true;
-                fbq('track', 'Purchase', { 
-                    value: orderPayload.total_raw, 
-                    currency: 'BDT', 
-                    content_name: orderPayload.product,
-                    content_type: 'product'
-                }, { eventID: eventId });
-            }
-
             try {
-                if (CONFIG.WORKER_URL) {
-                    await fetch(`${CONFIG.WORKER_URL}/order`, { 
-                        method: 'POST', 
-                        headers: { 'Content-Type': 'application/json' }, 
-                        body: JSON.stringify(orderPayload) 
-                    }).catch(err => console.warn('Worker sync failed softly:', err));
+                const res = await fetch(`${CONFIG.WORKER_URL}/order`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(orderPayload)
+                });
+                const data = await res.json();
+
+                // 100% Single-Fire Purchase Tracking with Deduplication ID
+                if (!hasPurchasedFired) {
+                    hasPurchasedFired = true;
+                    if (isPixelActive && typeof fbq === 'function') {
+                        fbq('track', 'Purchase', {
+                            value: totalAmount,
+                            currency: 'BDT',
+                            content_name: orderPayload.product,
+                            num_items: currentQuantity
+                        }, { eventID: eventId });
+                    }
                 }
-                
-                await new Promise(r => setTimeout(r, 1000));
-                
-                const waMsg = encodeURIComponent(`আসসালামু আলাইকুম। আমি ওয়েবসাইট থেকে অর্ডার করেছি।\nনাম: ${orderPayload.name}\nমোবাইল: ${orderPayload.phone}\nআইটেম: ${pkg.title}\nমোট: ${orderPayload.total}\n\nঅনুগ্রহ করে অর্ডারটি কনফার্ম করুন।`);
-                document.querySelectorAll('#successScreen [data-wa-link]').forEach(l => l.href = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${waMsg}`);
 
-                checkoutForm.classList.add('hidden');
-                successScreen.classList.remove('hidden');
-                document.querySelector('.modal-scroll').scrollTop = 0;
+                const waMsg = encodeURIComponent(`Hello ${CONFIG.STORE_NAME},\nI placed an order on your store:\nItem: ${orderPayload.quantity}\nTotal: ${orderPayload.total}\nPhone: ${orderPayload.phone}\nPlease confirm shipment.`);
+                document.getElementById('whatsappConfirmLink').href = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${waMsg}`;
 
-            } catch (error) {
-                console.error("Order processing error:", error);
-                alert("দুঃখিত, কোনো একটি সমস্যা হয়েছে। অনুগ্রহ করে WhatsApp এ যোগাযোগ করুন।");
+                orderForm.classList.add('hidden');
+                document.getElementById('orderSuccessBox').classList.remove('hidden');
+
+            } catch (err) {
+                console.error('Order error:', err);
+                alert('Order could not be processed. Please contact us via WhatsApp.');
             } finally {
-                toggleLoading(false);
+                btnSubmit.disabled = false;
+                btnText.classList.remove('hidden');
+                btnLoader.classList.add('hidden');
             }
         });
 
-        document.addEventListener('DOMContentLoaded', () => initWhatsApp());
+        // Initialize
+        document.getElementById('yearSpan').textContent = new Date().getFullYear();
+        document.getElementById('footerWaLink').href = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent('Hello Azwad Leather Support')}`;
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            loadDynamicPixel();
+            updateSummary();
+        });
     </script>
 </body>
 </html>
