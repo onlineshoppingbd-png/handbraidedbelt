@@ -40,6 +40,13 @@
                         cream: '#FAF7F2',
                         latte: '#F3EFEA',
                         sand: '#E7DFD5',
+                        wine: {
+                            50: '#FDF2F4',
+                            100: '#FBE8EB',
+                            700: '#6B1D2F',
+                            800: '#5E1927',
+                            900: '#45111B'
+                        },
                         chocolate: {
                             50: '#FBF8F5',
                             100: '#F4ECE4',
@@ -88,44 +95,6 @@
         }
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        /* Iconic Pill Button */
-        .btn-pill-cta {
-            background-color: #2E2E2E;
-            color: #ffffff;
-            border-radius: 9999px;
-            padding: 11px 28px;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
-            transition: all 0.25s ease;
-        }
-        .btn-pill-cta:hover {
-            background-color: #1a1a1a;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.22);
-        }
-        .btn-pill-cta:active { transform: translateY(0); }
-
-        .btn-arrow-icon {
-            width: 24px;
-            height: 24px;
-            background: #ffffff;
-            color: #2E2E2E;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            font-weight: bold;
-            transition: transform 0.25s ease;
-        }
-        .btn-pill-cta:hover .btn-arrow-icon {
-            transform: rotate(45deg);
-        }
-
         /* Lightbox modal */
         .lightbox-modal {
             opacity: 0;
@@ -169,7 +138,7 @@
 
             <div class="flex items-center gap-3">
                 <button onclick="triggerViewContent()" class="hidden sm:inline-flex border border-sand hover:bg-white text-chocolate-800 text-xs font-semibold px-4 py-2 rounded-full transition font-sans">
-                    View Product
+                    View Gallery
                 </button>
                 <a href="#checkoutSection" class="bg-chocolate-900 hover:bg-chocolate-800 text-cream text-xs font-semibold px-5 py-2.5 rounded-full transition shadow-sm font-sans">
                     Order (৳890)
@@ -180,7 +149,7 @@
 
     <main class="max-w-5xl mx-auto px-4 sm:px-6 pt-8 space-y-14 sm:space-y-20">
 
-        <!-- 3. Hero Showcase -->
+        <!-- 3. Hero Showcase (1st: Black Model, 2nd: Wine Model) -->
         <section class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div class="lg:col-span-6 text-center lg:text-left order-2 lg:order-1">
                 <span class="inline-block text-[11px] uppercase tracking-[0.2em] font-semibold text-chocolate-600 mb-3 font-sans">
@@ -198,7 +167,7 @@
                         Order Now (৳890)
                     </a>
                     <button onclick="triggerViewContent()" class="w-full sm:w-auto border border-sand bg-white/80 hover:bg-white text-chocolate-800 text-sm font-semibold px-6 py-3.5 rounded-full transition text-center font-sans">
-                        <i class="fa-regular fa-image text-xs mr-1.5 text-chocolate-600"></i> View Content
+                        <i class="fa-regular fa-image text-xs mr-1.5 text-chocolate-600"></i> View Gallery
                     </button>
                 </div>
 
@@ -209,14 +178,46 @@
                 </div>
             </div>
 
-            <!-- Hero Image Box (Clickable to Lightbox) -->
+            <!-- Hero Image Box with Manual Switch (Clickable to Lightbox) -->
             <div class="lg:col-span-6 order-1 lg:order-2">
-                <div class="relative max-w-md mx-auto rounded-3xl overflow-hidden bg-white p-3 border border-sand shadow-card cursor-pointer group" onclick="openLightbox(0)">
-                    <img id="heroImage" src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/43326-b0c7.webp?resolution=3762_3762" 
-                         alt="Braided Leather Belt on Model" 
-                         class="w-full h-auto rounded-2xl object-cover aspect-[4/5] group-hover:scale-[1.02] transition-transform duration-500">
+                <div class="relative max-w-md mx-auto rounded-3xl overflow-hidden bg-white p-3 border border-sand shadow-card group">
                     
-                    <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-sand shadow-subtle flex items-center gap-3">
+                    <!-- Image Viewport (Click opens lightbox) -->
+                    <div class="relative w-full aspect-[4/5] rounded-2xl overflow-hidden cursor-pointer bg-latte" onclick="openHeroLightbox()">
+                        <!-- 1st Photo: Black Model -->
+                        <img id="heroSlide0" src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/43326-b0c7.webp?resolution=3762_3762" 
+                             alt="Classic Black Braided Belt on Model" 
+                             class="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out opacity-100 group-hover:scale-[1.02]">
+                        
+                        <!-- 2nd Photo: Wine Model -->
+                        <img id="heroSlide1" src="images/wine-model.jpg" 
+                             alt="Vintage Wine Braided Belt on Model" 
+                             class="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out opacity-0 group-hover:scale-[1.02]">
+
+                        <!-- Variant Preview Layer -->
+                        <img id="heroVariantImg" src="" 
+                             alt="Selected Variant Belt" 
+                             class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 opacity-0 pointer-events-none">
+                    </div>
+
+                    <!-- Manual Navigation Buttons (No auto-slide) -->
+                    <button type="button" onclick="prevHeroSlide(event)" aria-label="Previous image" 
+                            class="absolute left-6 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 hover:bg-white text-chocolate-900 shadow-md flex items-center justify-center text-xs transition z-20">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button type="button" onclick="nextHeroSlide(event)" aria-label="Next image" 
+                            class="absolute right-6 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 hover:bg-white text-chocolate-900 shadow-md flex items-center justify-center text-xs transition z-20">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+                    <!-- Indicator Dots (1st Black, 2nd Wine) -->
+                    <div class="absolute top-6 right-6 flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1.5 rounded-full z-20">
+                        <button type="button" onclick="showHeroSlide(0, event)" id="heroDot0" title="1. Black Model" class="w-4 h-1.5 rounded-full bg-white transition-all"></button>
+                        <button type="button" onclick="showHeroSlide(1, event)" id="heroDot1" title="2. Wine Model" class="w-1.5 h-1.5 rounded-full bg-white/50 hover:bg-white/80 transition-all"></button>
+                    </div>
+
+                    <!-- Floating Fit Badge -->
+                    <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-sand shadow-subtle flex items-center gap-3 z-20 pointer-events-none">
                         <div class="w-8 h-8 rounded-full bg-latte text-chocolate-800 flex items-center justify-center text-xs">
                             <i class="fa-solid fa-ruler-combined"></i>
                         </div>
@@ -225,60 +226,104 @@
                             <span class="text-xs font-bold text-chocolate-900 mt-0.5 block">Custom Fit (32"–42")</span>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- 4. 4-Card Image Showcase with Working Lightbox -->
+        <!-- ============================================== -->
+        <!-- 4. 6-CARD IMAGE GALLERY (VINTAGE WINE FOCUSED) -->
+        <!-- ============================================== -->
         <section class="space-y-6">
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-sand pb-4">
                 <div>
                     <span class="text-[11px] font-semibold tracking-[0.2em] text-chocolate-600 uppercase block font-sans">Gallery</span>
                     <h2 class="font-serif text-2xl sm:text-3xl font-bold text-chocolate-900">Texture & Finish</h2>
                 </div>
-                <p class="text-xs text-chocolate-600 max-w-xs font-sans">Tap any photo to view in high resolution.</p>
+                <p class="text-xs text-chocolate-600 max-w-xs font-sans">6 artisan views. Tap any photo to inspect in high resolution.</p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-                <div onclick="openLightbox(1)" class="group cursor-pointer rounded-2xl overflow-hidden bg-white border border-sand shadow-subtle">
-                    <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112011-51063.webp?resolution=2624_2624" 
-                         alt="Vintage Chocolate" 
-                         class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500">
+            <!-- 6-Photo Grid: Wine First, then Black, then Chocolate -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+                
+                <!-- 1. Vintage Wine (Rolled Belt) -->
+                <div onclick="openLightbox(2)" class="group cursor-pointer rounded-2xl overflow-hidden bg-white border border-sand hover:border-chocolate-400 shadow-subtle transition-all duration-300">
+                    <div class="aspect-square overflow-hidden bg-latte">
+                        <img src="images/wine-belt-rolled.jpg" 
+                             alt="Vintage Wine Braided Belt" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
                     <div class="p-3 bg-white border-t border-sand/50 font-sans">
-                        <p class="text-xs font-bold text-chocolate-900">Vintage Chocolate</p>
-                        <p class="text-[11px] text-chocolate-500">Warm hand-dyed tone</p>
+                        <p class="text-xs font-bold text-chocolate-900">Vintage Wine</p>
+                        <p class="text-[11px] text-chocolate-500">Royal hand-dyed burgundy tone</p>
                     </div>
                 </div>
 
-                <div onclick="openLightbox(2)" class="group cursor-pointer rounded-2xl overflow-hidden bg-white border border-sand shadow-subtle">
-                    <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112204-26d5.webp?resolution=3762_3762" 
-                         alt="Classic Black" 
-                         class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500">
+                <!-- 2. Classic Black -->
+                <div onclick="openLightbox(3)" class="group cursor-pointer rounded-2xl overflow-hidden bg-white border border-sand hover:border-chocolate-400 shadow-subtle transition-all duration-300">
+                    <div class="aspect-square overflow-hidden bg-latte">
+                        <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112204-26d5.webp?resolution=3762_3762" 
+                             alt="Classic Black" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
                     <div class="p-3 bg-white border-t border-sand/50 font-sans">
                         <p class="text-xs font-bold text-chocolate-900">Classic Black</p>
                         <p class="text-[11px] text-chocolate-500">Monochrome tailored style</p>
                     </div>
                 </div>
 
-                <div onclick="openLightbox(3)" class="group cursor-pointer rounded-2xl overflow-hidden bg-white border border-sand shadow-subtle">
-                    <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112013-3faa.webp?resolution=2624_2624" 
-                         alt="Precision Weave" 
-                         class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500">
+                <!-- 3. Vintage Chocolate -->
+                <div onclick="openLightbox(4)" class="group cursor-pointer rounded-2xl overflow-hidden bg-white border border-sand hover:border-chocolate-400 shadow-subtle transition-all duration-300">
+                    <div class="aspect-square overflow-hidden bg-latte">
+                        <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112011-51063.webp?resolution=2624_2624" 
+                             alt="Vintage Chocolate" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
                     <div class="p-3 bg-white border-t border-sand/50 font-sans">
-                        <p class="text-xs font-bold text-chocolate-900">Precision Weave</p>
-                        <p class="text-[11px] text-chocolate-500">Supple flexible braid</p>
+                        <p class="text-xs font-bold text-chocolate-900">Vintage Chocolate</p>
+                        <p class="text-[11px] text-chocolate-500">Warm hand-dyed tone</p>
                     </div>
                 </div>
 
-                <div onclick="openLightbox(4)" class="group cursor-pointer rounded-2xl overflow-hidden bg-white border border-sand shadow-subtle">
-                    <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112101-e946.webp?resolution=1973_1973" 
-                         alt="Brass Hardware" 
-                         class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500">
+                <!-- 4. Wine Hardware & Weave Detail -->
+                <div onclick="openLightbox(5)" class="group cursor-pointer rounded-2xl overflow-hidden bg-white border border-sand hover:border-chocolate-400 shadow-subtle transition-all duration-300">
+                    <div class="aspect-square overflow-hidden bg-latte">
+                        <img src="images/wine-buckle-detail.jpg" 
+                             alt="Wine Buckle & Weave Detail" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
                     <div class="p-3 bg-white border-t border-sand/50 font-sans">
-                        <p class="text-xs font-bold text-chocolate-900">Brass Hardware</p>
-                        <p class="text-[11px] text-chocolate-500">Anti-rust vintage buckle</p>
+                        <p class="text-xs font-bold text-chocolate-900">Wine Buckle & Weave</p>
+                        <p class="text-[11px] text-chocolate-500">Antique brass buckle & supple braid</p>
                     </div>
                 </div>
+
+                <!-- 5. Precision Weave -->
+                <div onclick="openLightbox(6)" class="group cursor-pointer rounded-2xl overflow-hidden bg-white border border-sand hover:border-chocolate-400 shadow-subtle transition-all duration-300">
+                    <div class="aspect-square overflow-hidden bg-latte">
+                        <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112013-3faa.webp?resolution=2624_2624" 
+                             alt="Precision Weave" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-3 bg-white border-t border-sand/50 font-sans">
+                        <p class="text-xs font-bold text-chocolate-900">Precision Weave</p>
+                        <p class="text-[11px] text-chocolate-500">Supple flexible hole-free braid</p>
+                    </div>
+                </div>
+
+                <!-- 6. Brass Hardware -->
+                <div onclick="openLightbox(7)" class="group cursor-pointer rounded-2xl overflow-hidden bg-white border border-sand hover:border-chocolate-400 shadow-subtle transition-all duration-300">
+                    <div class="aspect-square overflow-hidden bg-latte">
+                        <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112101-e946.webp?resolution=1973_1973" 
+                             alt="Brass Hardware" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-3 bg-white border-t border-sand/50 font-sans">
+                        <p class="text-xs font-bold text-chocolate-900">Brass Hardware</p>
+                        <p class="text-[11px] text-chocolate-500">Anti-rust vintage matte finish</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -312,7 +357,7 @@
                     </div>
                 </div>
 
-                                <!-- Bangla Feature Checklist with Dark Checkmarks -->
+                <!-- Bangla Feature Checklist with Dark Checkmarks -->
                 <div class="space-y-3.5 text-sm font-semibold text-chocolate-900 pt-2">
                     <div class="flex items-center gap-3">
                         <i class="fa-solid fa-check text-black text-sm"></i>
@@ -381,10 +426,31 @@
                     <label class="block text-xs font-bold uppercase tracking-wider text-chocolate-700 mb-2 font-sans">
                         1. Select Color
                     </label>
-                    <div class="grid grid-cols-2 gap-3" id="variantSelector">
-                        <!-- Chocolate -->
-                        <div onclick="selectVariant('chocolate')" id="card-chocolate" 
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="variantSelector">
+                        
+                        <!-- 1. Classic Black (Matches 1st Hero Image) -->
+                        <div onclick="selectVariant('black')" id="card-black" 
                              class="p-3 rounded-2xl border-2 border-chocolate-800 bg-chocolate-50 cursor-pointer transition flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-black shrink-0 border border-zinc-800"></div>
+                            <div class="leading-none font-sans">
+                                <span class="font-bold text-xs text-chocolate-900 block">Classic Black</span>
+                                <span class="text-[11px] text-chocolate-600 mt-1 block">৳890</span>
+                            </div>
+                        </div>
+
+                        <!-- 2. Vintage Wine -->
+                        <div onclick="selectVariant('wine')" id="card-wine" 
+                             class="p-3 rounded-2xl border-2 border-sand bg-white cursor-pointer transition flex items-center gap-3 hover:border-chocolate-400">
+                            <div class="w-10 h-10 rounded-xl bg-[#5E1927] shrink-0 border border-[#45111B]"></div>
+                            <div class="leading-none font-sans">
+                                <span class="font-bold text-xs text-chocolate-900 block">Vintage Wine</span>
+                                <span class="text-[11px] text-chocolate-600 mt-1 block">৳890</span>
+                            </div>
+                        </div>
+
+                        <!-- 3. Vintage Chocolate -->
+                        <div onclick="selectVariant('chocolate')" id="card-chocolate" 
+                             class="p-3 rounded-2xl border-2 border-sand bg-white cursor-pointer transition flex items-center gap-3 hover:border-chocolate-400">
                             <div class="w-10 h-10 rounded-xl bg-chocolate-700 shrink-0 border border-chocolate-800"></div>
                             <div class="leading-none font-sans">
                                 <span class="font-bold text-xs text-chocolate-900 block">Vintage Chocolate</span>
@@ -392,15 +458,6 @@
                             </div>
                         </div>
 
-                        <!-- Black -->
-                        <div onclick="selectVariant('black')" id="card-black" 
-                             class="p-3 rounded-2xl border-2 border-sand bg-white cursor-pointer transition flex items-center gap-3 hover:border-chocolate-400">
-                            <div class="w-10 h-10 rounded-xl bg-black shrink-0 border border-zinc-800"></div>
-                            <div class="leading-none font-sans">
-                                <span class="font-bold text-xs text-chocolate-900 block">Classic Black</span>
-                                <span class="text-[11px] text-chocolate-600 mt-1 block">৳890</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -518,7 +575,7 @@
     </div>
 
     <!-- ============================================== -->
-    <!-- 9. FULLSCREEN LIGHTBOX MODAL                   -->
+    <!-- 9. FULLSCREEN LIGHTBOX MODAL (8 PHOTOS)        -->
     <!-- ============================================== -->
     <div id="lightboxModal" class="lightbox-modal fixed inset-0 z-[100] bg-black/95 flex flex-col justify-between p-4">
         <div class="flex justify-end p-2">
@@ -532,7 +589,7 @@
         </div>
 
         <div class="text-center text-white font-sans text-xs font-bold tracking-widest py-1" id="lightboxCounter">
-            1/5
+            1/8
         </div>
 
         <div class="pb-3 px-2">
@@ -552,33 +609,103 @@
         };
 
         const VARIANTS = {
-            'chocolate': {
-                name: 'Vintage Chocolate',
-                price: 890,
-                img: 'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112011-51063.webp?resolution=2624_2624'
-            },
             'black': {
                 name: 'Classic Black',
                 price: 890,
                 img: 'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112204-26d5.webp?resolution=3762_3762'
+            },
+            'wine': {
+                name: 'Vintage Wine',
+                price: 890,
+                img: 'images/wine-model.jpg'
+            },
+            'chocolate': {
+                name: 'Vintage Chocolate',
+                price: 890,
+                img: 'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112011-51063.webp?resolution=2624_2624'
             }
         };
 
-        // Lightbox Gallery Pool
+        // Lightbox Gallery Pool (8 High Resolution Images)
         const galleryImages = [
-            'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/43326-b0c7.webp?resolution=3762_3762',
-            'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112011-51063.webp?resolution=2624_2624',
-            'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112204-26d5.webp?resolution=3762_3762',
-            'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112013-3faa.webp?resolution=2624_2624',
-            'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112101-e946.webp?resolution=1973_1973'
+            'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/43326-b0c7.webp?resolution=3762_3762', // 0: Black Model Hero
+            'images/wine-model.jpg', // 1: Wine Model Hero
+            'images/wine-belt-rolled.jpg', // 2: Vintage Wine Rolled
+            'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112204-26d5.webp?resolution=3762_3762', // 3: Classic Black
+            'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112011-51063.webp?resolution=2624_2624', // 4: Vintage Chocolate
+            'images/wine-buckle-detail.jpg', // 5: Wine Buckle & Weave
+            'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112013-3faa.webp?resolution=2624_2624', // 6: Precision Weave
+            'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112101-e946.webp?resolution=1973_1973' // 7: Brass Hardware
         ];
 
-        let selectedVariantKey = 'chocolate';
+        let selectedVariantKey = 'black';
         let currentQuantity = 1;
         let isPixelActive = false;
         let activePixelId = null;
         let hasPurchasedFired = false;
         let hasInitiatedCheckout = false;
+
+        /* ============================================== */
+        /* HERO MANUAL PHOTO SWITCHER (NO AUTO SLIDE)     */
+        /* ============================================== */
+        let currentHeroSlide = 0;
+        let isVariantOverrideActive = false;
+
+        function showHeroSlide(index, e) {
+            if (e) e.stopPropagation();
+            currentHeroSlide = (index % 2 + 2) % 2;
+            const slide0 = document.getElementById('heroSlide0');
+            const slide1 = document.getElementById('heroSlide1');
+            const dot0 = document.getElementById('heroDot0');
+            const dot1 = document.getElementById('heroDot1');
+            const variantImg = document.getElementById('heroVariantImg');
+
+            if (variantImg) {
+                variantImg.classList.remove('opacity-100');
+                variantImg.classList.add('opacity-0');
+            }
+            isVariantOverrideActive = false;
+
+            if (currentHeroSlide === 0) {
+                slide0.classList.remove('opacity-0');
+                slide0.classList.add('opacity-100');
+                slide1.classList.remove('opacity-100');
+                slide1.classList.add('opacity-0');
+                if (dot0 && dot1) {
+                    dot0.className = "w-4 h-1.5 rounded-full bg-white transition-all";
+                    dot1.className = "w-1.5 h-1.5 rounded-full bg-white/50 hover:bg-white/80 transition-all";
+                }
+            } else {
+                slide1.classList.remove('opacity-0');
+                slide1.classList.add('opacity-100');
+                slide0.classList.remove('opacity-100');
+                slide0.classList.add('opacity-0');
+                if (dot0 && dot1) {
+                    dot1.className = "w-4 h-1.5 rounded-full bg-white transition-all";
+                    dot0.className = "w-1.5 h-1.5 rounded-full bg-white/50 hover:bg-white/80 transition-all";
+                }
+            }
+        }
+
+        function nextHeroSlide(e) {
+            if (e) e.stopPropagation();
+            showHeroSlide(currentHeroSlide + 1, e);
+        }
+
+        function prevHeroSlide(e) {
+            if (e) e.stopPropagation();
+            showHeroSlide(currentHeroSlide - 1, e);
+        }
+
+        function openHeroLightbox() {
+            if (isVariantOverrideActive) {
+                if (selectedVariantKey === 'black') openLightbox(0);
+                else if (selectedVariantKey === 'wine') openLightbox(1);
+                else openLightbox(4);
+            } else {
+                openLightbox(currentHeroSlide === 0 ? 0 : 1);
+            }
+        }
 
         /* Dynamic Meta Pixel Auto-Loader */
         async function loadDynamicPixel() {
@@ -609,7 +736,7 @@
                     currency: 'BDT'
                 });
             }
-            openLightbox(0);
+            openLightbox(2);
         }
 
         /* Lightbox Handlers */
@@ -657,18 +784,32 @@
             if (!VARIANTS[key]) return;
             selectedVariantKey = key;
 
-            const cardChocolate = document.getElementById('card-chocolate');
-            const cardBlack = document.getElementById('card-black');
+            // Highlight chosen variant card
+            Object.keys(VARIANTS).forEach(k => {
+                const card = document.getElementById(`card-${k}`);
+                if (!card) return;
+                if (k === key) {
+                    card.className = "p-3 rounded-2xl border-2 border-chocolate-800 bg-chocolate-50 cursor-pointer transition flex items-center gap-3";
+                } else {
+                    card.className = "p-3 rounded-2xl border-2 border-sand bg-white cursor-pointer transition flex items-center gap-3 hover:border-chocolate-400";
+                }
+            });
 
-            if (key === 'chocolate') {
-                cardChocolate.className = "p-3 rounded-2xl border-2 border-chocolate-800 bg-chocolate-50 cursor-pointer transition flex items-center gap-3";
-                cardBlack.className = "p-3 rounded-2xl border-2 border-sand bg-white cursor-pointer transition flex items-center gap-3 hover:border-chocolate-400";
+            // Set matching hero view
+            if (key === 'black') {
+                showHeroSlide(0);
+            } else if (key === 'wine') {
+                showHeroSlide(1);
             } else {
-                cardBlack.className = "p-3 rounded-2xl border-2 border-chocolate-800 bg-chocolate-50 cursor-pointer transition flex items-center gap-3";
-                cardChocolate.className = "p-3 rounded-2xl border-2 border-sand bg-white cursor-pointer transition flex items-center gap-3 hover:border-chocolate-400";
+                const variantImg = document.getElementById('heroVariantImg');
+                if (variantImg && VARIANTS[key].img) {
+                    variantImg.src = VARIANTS[key].img;
+                    variantImg.classList.remove('opacity-0');
+                    variantImg.classList.add('opacity-100');
+                    isVariantOverrideActive = true;
+                }
             }
 
-            document.getElementById('heroImage').src = VARIANTS[key].img;
             updateSummary();
             handleFormInteraction();
         }
