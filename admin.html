@@ -161,7 +161,7 @@
     </div>
   </div>
 
-  <!-- ================= ⚙️ SETTINGS MODAL (DYNAMIC CLIENT CONFIG WITH META CAPI) ================= -->
+  <!-- ================= ⚙️ SETTINGS MODAL ================= -->
   <div id="settingsModal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center z-50 p-4 hidden transition-all">
     <div class="bg-white rounded-3xl max-w-lg w-full shadow-2xl border border-slate-100 overflow-hidden flex flex-col max-h-[90vh]">
       <div class="bg-slate-900 text-white px-5 py-4 flex items-center justify-between">
@@ -179,14 +179,12 @@
 
       <form id="settingsForm" onsubmit="saveSettings(event)" class="p-5 overflow-y-auto space-y-3.5 text-xs sm:text-sm">
         
-        <!-- Store Code Selector -->
         <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
           <label class="block font-bold text-slate-800 mb-1">স্টোর কোড (Store Code)</label>
           <input type="text" id="cfgStoreCode" value="AL" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 font-mono text-xs font-bold uppercase outline-none focus:border-slate-900" />
           <p class="text-[10px] text-slate-400 mt-1">প্রতিটি ক্লায়েন্ট স্টোরের জন্য ইউনিক কোড (যেমন: AL, SB, TZ)</p>
         </div>
 
-        <!-- 🚚 SteadFast Webhook URL to Copy -->
         <div class="bg-emerald-50/70 p-3.5 rounded-2xl border border-emerald-200 space-y-1.5">
           <label class="block font-bold text-emerald-900 text-xs flex items-center gap-1.5">
             <i class="fa-solid fa-link text-emerald-700"></i> SteadFast Webhook URL (কপি করে SteadFast-এ দিন)
@@ -200,7 +198,6 @@
           <p class="text-[10px] text-emerald-700 leading-tight">SteadFast মার্চেন্ট প্যানেলে গিয়ে এই URL-টি Webhook সেটিংসে পেস্ট করে দিন।</p>
         </div>
 
-        <!-- SteadFast API Credentials -->
         <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200 space-y-2.5">
           <div class="font-bold text-slate-800 flex items-center gap-1.5">
             <i class="fa-solid fa-truck-fast text-slate-900"></i> SteadFast Courier API
@@ -215,7 +212,6 @@
           </div>
         </div>
 
-        <!-- 🎯 Meta Pixel & CAPI Settings (Updated) -->
         <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200 space-y-2.5">
           <div class="font-bold text-slate-800 flex items-center gap-1.5">
             <i class="fa-brands fa-facebook text-blue-600"></i> Meta Pixel & Conversions API (CAPI)
@@ -544,13 +540,13 @@
       return parseInt(numOnly, 10) || 0;
     };
 
-    // Auth
+    // ================= 🔐 PERMANENT AUTHENTICATION =================
     function checkAuth() {
       const pass = document.getElementById('adminPass').value;
       if (pass === PASSWORD) {
         document.getElementById('loginGate').classList.add('opacity-0', 'pointer-events-none');
         setTimeout(() => document.getElementById('loginGate').classList.add('hidden'), 300);
-        sessionStorage.setItem('isAuth', 'true');
+        localStorage.setItem('admin_logged_in', 'true'); // চিরস্থায়ী সংরক্ষণ
         loadOrders();
       } else {
         document.getElementById('loginError').classList.remove('hidden');
@@ -558,16 +554,20 @@
     }
 
     function logout() {
-      sessionStorage.removeItem('isAuth');
-      location.reload();
+      if (confirm("আপনি কি নিশ্চিতভাবে লগআউট করতে চান?")) {
+        localStorage.removeItem('admin_logged_in');
+        location.reload();
+      }
     }
 
-    if (sessionStorage.getItem('isAuth') === 'true') {
-      document.getElementById('loginGate').classList.add('hidden');
+    // অটো-চেক: আগে লগইন করা থাকলে কখনোই লগইন গেট দেখাবে না
+    if (localStorage.getItem('admin_logged_in') === 'true') {
+      const gate = document.getElementById('loginGate');
+      if (gate) gate.classList.add('hidden');
       loadOrders();
     }
 
-    // Load Orders from Worker
+    // ================= 📋 LOAD ORDERS FROM WORKER =================
     async function loadOrders() {
       const icon = document.getElementById('refreshIcon');
       if(icon) icon.classList.add('fa-spin');
@@ -1225,7 +1225,6 @@
       document.getElementById('settingsModal').classList.remove('hidden');
       document.getElementById('cfgStoreCode').value = currentStoreCode;
       
-      // Auto display the Webhook URL
       const webhookUrl = `${WORKER_URL}/steadfast-webhook`;
       document.getElementById('cfgWebhookUrlDisplay').value = webhookUrl;
 
