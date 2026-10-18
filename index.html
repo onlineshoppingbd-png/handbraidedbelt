@@ -200,10 +200,10 @@
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
 
-                    <!-- Indicator Dots (1st: Black, 2nd: Wine) -->
+                    <!-- Indicator Dots (1st: Black, 2nd: Wine Brown) -->
                     <div class="absolute top-6 right-6 flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1.5 rounded-full z-20">
                         <button type="button" onclick="showHeroSlide(0, event)" id="heroDot0" title="1. Black Model" class="w-4 h-1.5 rounded-full bg-white transition-all cursor-pointer"></button>
-                        <button type="button" onclick="showHeroSlide(1, event)" id="heroDot1" title="2. Wine Model" class="w-1.5 h-1.5 rounded-full bg-white/50 hover:bg-white/80 transition-all cursor-pointer"></button>
+                        <button type="button" onclick="showHeroSlide(1, event)" id="heroDot1" title="2. Wine Brown Model" class="w-1.5 h-1.5 rounded-full bg-white/50 hover:bg-white/80 transition-all cursor-pointer"></button>
                     </div>
 
                     <!-- Floating Fit Badge -->
@@ -236,16 +236,16 @@
             <!-- 6-Photo Grid: Wine First, then Black, then Chocolate -->
             <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
                 
-                <!-- 1. Vintage Wine (Rolled Belt) -->
+                <!-- 1. Vintage Wine Brown (Rolled Belt) -->
                 <div onclick="openLightbox(2)" class="group cursor-pointer rounded-2xl overflow-hidden bg-white border border-sand hover:border-chocolate-400 shadow-subtle transition-all duration-300">
                     <div class="aspect-square overflow-hidden bg-latte">
-                        <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000122518-52f7.webp?resolution=1254_1254" 
-                             alt="Vintage Wine Braided Belt" 
+                        <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/a6-77106.webp?resolution=1254_1254" 
+                             alt="Vintage Wine Brown Braided Belt" 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-3 bg-white border-t border-sand/50 font-sans">
-                        <p class="text-xs font-bold text-chocolate-900">Vintage Wine</p>
-                        <p class="text-[11px] text-chocolate-500">Royal hand-dyed burgundy tone</p>
+                        <p class="text-xs font-bold text-chocolate-900">Vintage Wine Brown</p>
+                        <p class="text-[11px] text-chocolate-500">Royal hand-dyed wine brown tone</p>
                     </div>
                 </div>
 
@@ -275,15 +275,15 @@
                     </div>
                 </div>
 
-                <!-- 4. Wine Hardware & Weave Detail -->
+                <!-- 4. Wine Brown Buckle & Weave Detail -->
                 <div onclick="openLightbox(5)" class="group cursor-pointer rounded-2xl overflow-hidden bg-white border border-sand hover:border-chocolate-400 shadow-subtle transition-all duration-300">
                     <div class="aspect-square overflow-hidden bg-latte">
-                        <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000122517-8582.webp?resolution=1254_1254" 
-                             alt="Wine Buckle & Weave Detail" 
+                        <img src="https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/a7-1559.webp?resolution=1280_1280" 
+                             alt="Wine Brown Buckle & Weave Detail" 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-3 bg-white border-t border-sand/50 font-sans">
-                        <p class="text-xs font-bold text-chocolate-900">Wine Buckle & Weave</p>
+                        <p class="text-xs font-bold text-chocolate-900">Wine Brown Buckle & Weave</p>
                         <p class="text-[11px] text-chocolate-500">Antique brass buckle & supple braid</p>
                     </div>
                 </div>
@@ -428,24 +428,31 @@
                             </div>
                         </div>
 
-                        <!-- 2. Vintage Wine -->
+                        <!-- 2. Vintage Wine Brown -->
                         <div onclick="selectVariant('wine')" id="card-wine" 
                              class="p-3 rounded-2xl border-2 border-sand bg-white cursor-pointer transition flex items-center gap-3 hover:border-chocolate-400">
-                            <div class="w-10 h-10 rounded-xl bg-[#5E1927] shrink-0 border border-[#45111B]"></div>
+                            <div class="w-10 h-10 rounded-xl bg-[#4A1D1F] shrink-0 border border-[#351214] shadow-sm"></div>
                             <div class="leading-none font-sans">
-                                <span class="font-bold text-xs text-chocolate-900 block">Vintage Wine</span>
+                                <span class="font-bold text-xs text-chocolate-900 block">Vintage Wine Brown</span>
                                 <span class="text-[11px] text-chocolate-600 mt-1 block">৳890</span>
                             </div>
                         </div>
 
-                        <!-- 3. Vintage Chocolate -->
-                        <div onclick="selectVariant('chocolate')" id="card-chocolate" 
-                             class="p-3 rounded-2xl border-2 border-sand bg-white cursor-pointer transition flex items-center gap-3 hover:border-chocolate-400">
-                            <div class="w-10 h-10 rounded-xl bg-chocolate-700 shrink-0 border border-chocolate-800"></div>
-                            <div class="leading-none font-sans">
-                                <span class="font-bold text-xs text-chocolate-900 block">Vintage Chocolate</span>
-                                <span class="text-[11px] text-chocolate-600 mt-1 block">৳890</span>
+                        <!-- 3. Vintage Chocolate (Stock Out) -->
+                        <div id="card-chocolate" 
+                             class="p-3 rounded-2xl border-2 border-sand/60 bg-latte/40 cursor-not-allowed opacity-60 transition flex items-center justify-between pointer-events-none select-none">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-chocolate-700/60 shrink-0 border border-chocolate-800/40 relative flex items-center justify-center">
+                                    <i class="fa-solid fa-ban text-white/70 text-xs"></i>
+                                </div>
+                                <div class="leading-none font-sans">
+                                    <span class="font-bold text-xs text-chocolate-700 line-through block">Vintage Chocolate</span>
+                                    <span class="text-[11px] text-chocolate-500 mt-1 block">৳890</span>
+                                </div>
                             </div>
+                            <span class="text-[9px] font-bold bg-red-100 text-red-600 px-2 py-1 rounded-full uppercase tracking-wider font-sans border border-red-200 shrink-0">
+                                Stock Out
+                            </span>
                         </div>
 
                     </div>
@@ -611,7 +618,7 @@
 
         const heroSlides = [
             'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/43326-b0c7.webp?resolution=3762_3762', // 0: Black Model
-            'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000122519-34b2.webp?resolution=3762_3762'  // 1: Wine Model
+            'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/a5-6cf10.webp?resolution=1254_1254'      // 1: Wine Brown Model
         ];
 
         const VARIANTS = {
@@ -621,13 +628,14 @@
                 img: 'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/43326-b0c7.webp?resolution=3762_3762'
             },
             'wine': {
-                name: 'Vintage Wine',
+                name: 'Vintage Wine Brown',
                 price: 890,
-                img: 'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000122519-34b2.webp?resolution=3762_3762'
+                img: 'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/a5-6cf10.webp?resolution=1254_1254'
             },
             'chocolate': {
                 name: 'Vintage Chocolate',
                 price: 890,
+                stockOut: true,
                 img: 'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112011-51063.webp?resolution=2624_2624'
             }
         };
@@ -635,11 +643,11 @@
         // All 8 High-Resolution CDN Images for Lightbox
         const galleryImages = [
             'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/43326-b0c7.webp?resolution=3762_3762', // 0: Black Model Hero
-            'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000122519-34b2.webp?resolution=3762_3762', // 1: Wine Model Hero
-            'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000122518-52f7.webp?resolution=1254_1254', // 2: Vintage Wine Rolled
+            'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/a5-6cf10.webp?resolution=1254_1254',      // 1: Wine Brown Model Hero
+            'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/a6-77106.webp?resolution=1254_1254',      // 2: Vintage Wine Brown Rolled
             'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112204-26d5.webp?resolution=3762_3762', // 3: Classic Black
             'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112011-51063.webp?resolution=2624_2624', // 4: Vintage Chocolate
-            'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000122517-8582.webp?resolution=1254_1254', // 5: Wine Buckle & Weave
+            'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/a7-1559.webp?resolution=1280_1280',       // 5: Wine Brown Buckle & Weave
             'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112013-3faa.webp?resolution=2624_2624', // 6: Precision Weave
             'https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/1000112101-e946.webp?resolution=1973_1973'  // 7: Brass Hardware
         ];
@@ -785,11 +793,12 @@
 
         /* Variant Switcher */
         function selectVariant(key) {
-            if (!VARIANTS[key]) return;
+            if (!VARIANTS[key] || VARIANTS[key].stockOut || key === 'chocolate') return;
             selectedVariantKey = key;
 
             // Highlight chosen variant card
             Object.keys(VARIANTS).forEach(k => {
+                if (k === 'chocolate') return; // Keep stock-out card untouched
                 const card = document.getElementById(`card-${k}`);
                 if (!card) return;
                 if (k === key) {
@@ -804,16 +813,6 @@
                 showHeroSlide(0);
             } else if (key === 'wine') {
                 showHeroSlide(1);
-            } else if (key === 'chocolate') {
-                isChocolateActive = true;
-                const heroImg = document.getElementById('heroImage');
-                if (heroImg) heroImg.src = VARIANTS['chocolate'].img;
-                const dot0 = document.getElementById('heroDot0');
-                const dot1 = document.getElementById('heroDot1');
-                if (dot0 && dot1) {
-                    dot0.className = "w-1.5 h-1.5 rounded-full bg-white/50 hover:bg-white/80 transition-all cursor-pointer";
-                    dot1.className = "w-1.5 h-1.5 rounded-full bg-white/50 hover:bg-white/80 transition-all cursor-pointer";
-                }
             }
 
             updateSummary();
